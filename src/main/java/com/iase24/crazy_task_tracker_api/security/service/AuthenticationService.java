@@ -55,8 +55,9 @@ public class AuthenticationService {
             log.info("Токен для пользователя сгенерирован");
             try {
                 emailService.sendSimpleEmail(request.getEmail(), "Welcome %s"
-                        .formatted(user.getFirstName()), "Добро пожаловать на сайт test.iase24.com! Ваш пароль (%s) никому его не показывайте"
-                        .formatted(request.getPassword()));
+                                .formatted(user.getFirstName()),
+                        "Добро пожаловать на сайт test.iase24.com! Ваш пароль (%s) никому его не показывайте"
+                                .formatted(request.getPassword()));
             } catch (MailException mailException) {
                 log.error("Ошибка при отправке электронного письма..{}", (Object) mailException.getStackTrace());
                 throw new BusinessException("Unable to send email");
