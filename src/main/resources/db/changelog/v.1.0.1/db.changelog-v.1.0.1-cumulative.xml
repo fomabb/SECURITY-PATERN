@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2024-11-30-crate-table-users-06" author="Nikolay Kirilyuk">
+        <tagDatabase tag="create-table-users"/>
+    </changeSet>
+
+    <include file="06-create-table-users.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-11-30-create-table-archive-deleted-user-07 " author="Nikolay Kirilyuk">
+        <tagDatabase tag="archive-deleted-user-table"/>
+    </changeSet>
+
+    <include file="07-create-table-archive-deleted.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-11-30-create-index-message-for-table-archive-08" author="Nikolay Kirilyuk">
+        <tagDatabase tag="index-message"/>
+    </changeSet>
+
+    <include file="08-create-index-message.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-11-30-insert-admin-static" author="Nikolay Kirilyuk">
+        <tagDatabase tag="insert-admin"/>
+    </changeSet>
+
+    <include file="static-data-insert/static-data-insert-admin.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

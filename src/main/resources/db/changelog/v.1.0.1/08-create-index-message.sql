@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS idx_archive_message ON archive_deleted_user(message);
