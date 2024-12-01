@@ -77,6 +77,7 @@ public class AuthenticationService {
 
         var user = User.builder()
                 .firstName(request.getFirstName())
+                .workEmail(request.getWorkEmail())
                 .username(request.getLogin())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.ROLE_ADMIN)

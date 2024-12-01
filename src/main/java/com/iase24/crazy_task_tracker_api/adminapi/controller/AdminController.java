@@ -1,11 +1,11 @@
-package com.iase24.crazy_task_tracker_api.controller;
+package com.iase24.crazy_task_tracker_api.adminapi.controller;
 
+import com.iase24.crazy_task_tracker_api.adminapi.facade.UserFacade;
 import com.iase24.crazy_task_tracker_api.dto.request.UserUUIDRequest;
 import com.iase24.crazy_task_tracker_api.dto.response.DeleteUserResponse;
 import com.iase24.crazy_task_tracker_api.dto.response.GetUserResponse;
 import com.iase24.crazy_task_tracker_api.entity.ArchiveDeletedUser;
-import com.iase24.crazy_task_tracker_api.facade.UserFacade;
-import com.iase24.crazy_task_tracker_api.service.UserService;
+import com.iase24.crazy_task_tracker_api.adminapi.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;

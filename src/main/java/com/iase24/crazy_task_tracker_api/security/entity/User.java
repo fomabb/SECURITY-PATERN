@@ -30,6 +30,9 @@ public class User implements UserDetails {
     @Column(name = "first_name")
     private String firstName;
 
+    @Column(name = "work_email")
+    private String workEmail;
+
     @Column(name = "username", unique = true, nullable = false)
     private String username;
 

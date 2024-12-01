@@ -1,4 +1,4 @@
-package com.iase24.crazy_task_tracker_api.controller;
+package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

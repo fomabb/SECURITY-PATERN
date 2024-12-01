@@ -1,4 +1,4 @@
-package com.iase24.crazy_task_tracker_api.service;
+package com.iase24.crazy_task_tracker_api.adminapi.service;
 
 import com.iase24.crazy_task_tracker_api.entity.ArchiveDeletedUser;
 import com.iase24.crazy_task_tracker_api.security.entity.User;
