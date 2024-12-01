@@ -1,5 +1,6 @@
 package com.iase24.crazy_task_tracker_api.security.service;
 
+import com.iase24.crazy_task_tracker_api.businessapi.service.impl.DefaultEmailService;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.BusinessException;
 import com.iase24.crazy_task_tracker_api.security.dto.request.SignInEmployeeRequest;
 import com.iase24.crazy_task_tracker_api.security.dto.request.SignInRequest;
@@ -10,6 +11,7 @@ import com.iase24.crazy_task_tracker_api.security.entity.User;
 import com.iase24.crazy_task_tracker_api.security.entity.numentity.Role;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.mail.MailException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,6 +26,7 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
+    private final DefaultEmailService emailService;
 
 //=========================================Client=======================================================================
 
@@ -50,6 +53,15 @@ public class AuthenticationService {
             throw new BusinessException("Токен для пользователя не сгенерирован");
         } else {
             log.info("Токен для пользователя сгенерирован");
+            try {
+                emailService.sendSimpleEmail(request.getEmail(), "Welcome %s"
+                                .formatted(user.getFirstName()),
+                        "Добро пожаловать на сайт test.iase24.com! Ваш пароль (%s) никому его не показывайте"
+                                .formatted(request.getPassword()));
+            } catch (MailException mailException) {
+                log.error("Ошибка при отправке электронного письма..{}", (Object) mailException.getStackTrace());
+                throw new BusinessException("Unable to send email");
+            }
             return new JwtAuthenticationResponse(jwt);
         }
     }
