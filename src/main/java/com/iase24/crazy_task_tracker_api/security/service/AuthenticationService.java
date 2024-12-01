@@ -52,8 +52,9 @@ public class AuthenticationService {
             log.warn("Не удалось сгенерировать токен для пользователя");
             throw new BusinessException("Токен для пользователя не сгенерирован");
         } else {
-            log.info("Токен для пользователя сгенерирован");
             try {
+                log.info("Письмо с паролем отправлено пользователю {} на email: {}",
+                        user.getFirstName(), user.getUsername());
                 emailService.sendSimpleEmail(request.getEmail(), "Welcome %s"
                                 .formatted(user.getFirstName()),
                         "Добро пожаловать на сайт https://test.iase24.com\nВаш пароль (%s) никому его не показывайте"
@@ -62,6 +63,7 @@ public class AuthenticationService {
                 log.error("Ошибка при отправке электронного письма..{}", (Object) mailException.getStackTrace());
                 throw new BusinessException("Unable to send email");
             }
+            log.info("Токен для пользователя сгенерирован");
             return new JwtAuthenticationResponse(jwt);
         }
     }
