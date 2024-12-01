@@ -3,7 +3,7 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="2024-11-30-crate-table-users-06" author="Nikolay Kirilyuk">
         <tagDatabase tag="create-table-users"/>
@@ -34,5 +34,11 @@
     </changeSet>
 
     <include file="static-data-insert/static-data-insert-column-work_email-to-users.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-12-01-update-set-work_email-static-data" author="Nikolay Kirilyuk">
+        <tagDatabase tag="add-work_email-to-admin"/>
+    </changeSet>
+
+    <include file="static-data-insert/static-data-update-set-work-email.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
