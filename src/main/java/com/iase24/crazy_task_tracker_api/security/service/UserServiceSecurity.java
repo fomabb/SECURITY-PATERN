@@ -31,8 +31,16 @@ public class UserServiceSecurity {
      * @return созданный пользователь
      */
     public User create(User user) {
-        if (repository.existsByUsername(user.getUsername())) {
+        if (user.getRole().equals(Role.ROLE_USER) && repository.existsByUsername(user.getUsername())) {
             throw new BusinessException("Пользователь с таким email уже существует");
+        }
+
+        if (user.getRole().equals(Role.ROLE_ADMIN) && repository.existsByUsername(user.getUsername())) {
+            throw new BusinessException("Работник с таким login уже существует");
+        }
+
+        if (user.getRole().equals(Role.ROLE_ADMIN) && repository.existsByWorkEmail(user.getWorkEmail())) {
+            throw new BusinessException("Работник с таким email уже существует");
         }
         return save(user);
     }

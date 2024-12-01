@@ -1,0 +1,1 @@
+ALTER TABLE users add COLUMN work_email VARCHAR(100) UNIQUE;
