@@ -3979,3 +3979,199 @@ jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not 
 2024-12-01 23:20:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-12-01 23:20:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-12-01 23:20:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-01 23:24:53 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-01 23:24:54 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 5636 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-01 23:24:54 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-01 23:24:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-01 23:24:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 114 ms. Found 2 JPA repository interfaces.
+2024-12-01 23:24:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-01 23:24:57 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-01 23:24:57 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-01 23:24:57 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-01 23:24:57 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-01 23:24:57 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3240 ms
+2024-12-01 23:24:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-01 23:24:57 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77d95e5a
+2024-12-01 23:24:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-01 23:24:58 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-01 23:24:59 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-01 23:24:59 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-01 23:24:59 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-01 23:24:59 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-01 23:24:59 [main] INFO  liquibase.util - Run:                          0
+2024-12-01 23:24:59 [main] INFO  liquibase.util - Previously run:              12
+2024-12-01 23:24:59 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-01 23:24:59 [main] INFO  liquibase.util - -------------------------------
+2024-12-01 23:24:59 [main] INFO  liquibase.util - Total change sets:           12
+2024-12-01 23:24:59 [main] INFO  liquibase.util - Update summary generated
+2024-12-01 23:24:59 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-01 23:24:59 [main] INFO  liquibase.command - Command execution complete
+2024-12-01 23:24:59 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-01 23:24:59 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-01 23:24:59 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-01 23:25:00 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-01 23:25:00 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-01 23:25:01 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-01 23:25:01 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-01 23:25:02 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-01 23:25:03 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-01 23:25:03 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-01 23:25:04 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-01 23:25:05 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-01 23:25:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-01 23:25:05 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.663 seconds (process running for 13.547)
+2024-12-01 23:25:06 [RMI TCP Connection(3)-192.168.100.8] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-01 23:25:06 [RMI TCP Connection(3)-192.168.100.8] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-01 23:25:06 [RMI TCP Connection(3)-192.168.100.8] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-01 23:25:56 [http-nio-8076-exec-2] INFO  c.i.c.s.controller.AuthController - Получен запрос на регистрацию нового пользователя Виктория Цесляк с email: vtseslyak@mail.ru
+2024-12-01 23:25:56 [http-nio-8076-exec-2] INFO  c.i.c.security.facade.AuthFacade - Начало проверки подтверждения пароля пользователя
+2024-12-01 23:25:56 [http-nio-8076-exec-2] INFO  c.i.c.security.facade.AuthFacade - Пароль пользователя подтвержден успешно
+2024-12-01 23:25:56 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Начато выполнение сборки и сохранения пользователя в базу данных
+2024-12-01 23:25:56 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Пользователь сохранен в базу данных
+2024-12-01 23:25:57 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Начало генерации токена для пользователя
+2024-12-01 23:25:57 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Токен для пользователя сгенерирован
+2024-12-01 23:27:27 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-01 23:27:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-01 23:27:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-01 23:27:36 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-01 23:27:36 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 17240 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-01 23:27:36 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-01 23:27:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-01 23:27:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 2 JPA repository interfaces.
+2024-12-01 23:27:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-01 23:27:39 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-01 23:27:39 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-01 23:27:39 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-01 23:27:39 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-01 23:27:39 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3108 ms
+2024-12-01 23:27:39 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-01 23:27:40 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f44d033
+2024-12-01 23:27:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-01 23:27:40 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-01 23:27:41 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-01 23:27:41 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-01 23:27:41 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-01 23:27:41 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-01 23:27:41 [main] INFO  liquibase.util - Run:                          0
+2024-12-01 23:27:41 [main] INFO  liquibase.util - Previously run:              12
+2024-12-01 23:27:41 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-01 23:27:41 [main] INFO  liquibase.util - -------------------------------
+2024-12-01 23:27:41 [main] INFO  liquibase.util - Total change sets:           12
+2024-12-01 23:27:41 [main] INFO  liquibase.util - Update summary generated
+2024-12-01 23:27:41 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-01 23:27:41 [main] INFO  liquibase.command - Command execution complete
+2024-12-01 23:27:41 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-01 23:27:41 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-01 23:27:41 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-01 23:27:41 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-01 23:27:42 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-01 23:27:43 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-01 23:27:43 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-01 23:27:44 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-01 23:27:44 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-01 23:27:45 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-01 23:27:46 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-01 23:27:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-01 23:27:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-01 23:27:47 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.504 seconds (process running for 13.514)
+2024-12-01 23:27:48 [RMI TCP Connection(4)-192.168.100.8] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-01 23:27:48 [RMI TCP Connection(4)-192.168.100.8] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-01 23:27:48 [RMI TCP Connection(4)-192.168.100.8] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-01 23:28:01 [http-nio-8076-exec-2] INFO  c.i.c.a.controller.AdminController - Запрос на просмотр списка всех пользователей
+2024-12-01 23:28:01 [http-nio-8076-exec-2] INFO  c.i.c.adminapi.facade.UserFacade - Попытка вывести список пользователей
+2024-12-01 23:28:08 [http-nio-8076-exec-3] INFO  c.i.c.a.controller.AdminController - Запрос на удаление пользователя по ID: 88c10149-e78a-4a68-894b-1f32a6f12611
+2024-12-01 23:28:08 [http-nio-8076-exec-3] INFO  c.i.c.adminapi.facade.UserFacade - Начало работы с пользователем с ID: 88c10149-e78a-4a68-894b-1f32a6f12611
+2024-12-01 23:28:08 [http-nio-8076-exec-3] INFO  c.i.c.a.service.impl.UserServiceImpl - Попытка получить сведения с базы данных о пользователе с Id: 88c10149-e78a-4a68-894b-1f32a6f12611
+2024-12-01 23:28:08 [http-nio-8076-exec-3] INFO  c.i.c.adminapi.facade.UserFacade - Попытка добавить message в архив об пользователе с ID: 88c10149-e78a-4a68-894b-1f32a6f12611 по имени vtseslyak@mail.ru
+2024-12-01 23:28:09 [http-nio-8076-exec-3] INFO  c.i.c.adminapi.facade.UserFacade - Попытка удалить пользователя с ID: 88c10149-e78a-4a68-894b-1f32a6f12611
+2024-12-01 23:28:09 [http-nio-8076-exec-3] INFO  c.i.c.a.service.impl.UserServiceImpl - Попытка получить сведения с базы данных о пользователе с Id: 88c10149-e78a-4a68-894b-1f32a6f12611
+2024-12-01 23:28:09 [http-nio-8076-exec-3] INFO  c.i.c.adminapi.facade.UserFacade - Пользователь по имени vtseslyak@mail.ru с ID: 88c10149-e78a-4a68-894b-1f32a6f12611 был удален
+2024-12-01 23:28:12 [http-nio-8076-exec-4] INFO  c.i.c.s.controller.AuthController - Получен запрос на регистрацию нового пользователя Виктория Цесляк с email: vtseslyak@mail.ru
+2024-12-01 23:28:12 [http-nio-8076-exec-4] INFO  c.i.c.security.facade.AuthFacade - Начало проверки подтверждения пароля пользователя
+2024-12-01 23:28:12 [http-nio-8076-exec-4] INFO  c.i.c.security.facade.AuthFacade - Пароль пользователя подтвержден успешно
+2024-12-01 23:28:12 [http-nio-8076-exec-4] INFO  c.i.c.s.s.AuthenticationService - Начато выполнение сборки и сохранения пользователя в базу данных
+2024-12-01 23:28:12 [http-nio-8076-exec-4] INFO  c.i.c.s.s.AuthenticationService - Пользователь сохранен в базу данных
+2024-12-01 23:28:12 [http-nio-8076-exec-4] INFO  c.i.c.s.s.AuthenticationService - Начало генерации токена для пользователя
+2024-12-01 23:28:12 [http-nio-8076-exec-4] INFO  c.i.c.s.s.AuthenticationService - Токен для пользователя сгенерирован
+2024-12-01 23:29:14 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-01 23:29:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-01 23:29:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-01 23:29:22 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-01 23:29:22 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 14404 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-01 23:29:22 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-01 23:29:24 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-01 23:29:24 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143 ms. Found 2 JPA repository interfaces.
+2024-12-01 23:29:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-01 23:29:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-01 23:29:25 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-01 23:29:25 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-01 23:29:25 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-01 23:29:25 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3138 ms
+2024-12-01 23:29:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-01 23:29:26 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1f4d38f9
+2024-12-01 23:29:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-01 23:29:26 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-01 23:29:27 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-01 23:29:27 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-01 23:29:27 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-01 23:29:27 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-01 23:29:27 [main] INFO  liquibase.util - Run:                          0
+2024-12-01 23:29:27 [main] INFO  liquibase.util - Previously run:              12
+2024-12-01 23:29:27 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-01 23:29:27 [main] INFO  liquibase.util - -------------------------------
+2024-12-01 23:29:27 [main] INFO  liquibase.util - Total change sets:           12
+2024-12-01 23:29:27 [main] INFO  liquibase.util - Update summary generated
+2024-12-01 23:29:27 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-01 23:29:27 [main] INFO  liquibase.command - Command execution complete
+2024-12-01 23:29:27 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-01 23:29:27 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-01 23:29:27 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-01 23:29:28 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-01 23:29:28 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-01 23:29:29 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-01 23:29:29 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-01 23:29:30 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-01 23:29:31 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-01 23:29:31 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-01 23:29:32 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-01 23:29:33 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-01 23:29:33 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-01 23:29:33 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.446 seconds (process running for 13.399)
+2024-12-01 23:29:34 [RMI TCP Connection(2)-192.168.100.8] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-01 23:29:34 [RMI TCP Connection(2)-192.168.100.8] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-01 23:29:34 [RMI TCP Connection(2)-192.168.100.8] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-12-01 23:29:37 [http-nio-8076-exec-2] INFO  c.i.c.a.controller.AdminController - Запрос на просмотр списка всех пользователей
+2024-12-01 23:29:37 [http-nio-8076-exec-2] INFO  c.i.c.adminapi.facade.UserFacade - Попытка вывести список пользователей
+2024-12-01 23:29:45 [http-nio-8076-exec-3] INFO  c.i.c.a.controller.AdminController - Запрос на удаление пользователя по ID: 7d5340ca-c910-454a-9d97-035994e393ff
+2024-12-01 23:29:45 [http-nio-8076-exec-3] INFO  c.i.c.adminapi.facade.UserFacade - Начало работы с пользователем с ID: 7d5340ca-c910-454a-9d97-035994e393ff
+2024-12-01 23:29:45 [http-nio-8076-exec-3] INFO  c.i.c.a.service.impl.UserServiceImpl - Попытка получить сведения с базы данных о пользователе с Id: 7d5340ca-c910-454a-9d97-035994e393ff
+2024-12-01 23:29:45 [http-nio-8076-exec-3] INFO  c.i.c.adminapi.facade.UserFacade - Попытка добавить message в архив об пользователе с ID: 7d5340ca-c910-454a-9d97-035994e393ff по имени vtseslyak@mail.ru
+2024-12-01 23:29:45 [http-nio-8076-exec-3] INFO  c.i.c.adminapi.facade.UserFacade - Попытка удалить пользователя с ID: 7d5340ca-c910-454a-9d97-035994e393ff
+2024-12-01 23:29:45 [http-nio-8076-exec-3] INFO  c.i.c.a.service.impl.UserServiceImpl - Попытка получить сведения с базы данных о пользователе с Id: 7d5340ca-c910-454a-9d97-035994e393ff
+2024-12-01 23:29:45 [http-nio-8076-exec-3] INFO  c.i.c.adminapi.facade.UserFacade - Пользователь по имени vtseslyak@mail.ru с ID: 7d5340ca-c910-454a-9d97-035994e393ff был удален
+2024-12-01 23:29:49 [http-nio-8076-exec-4] INFO  c.i.c.s.controller.AuthController - Получен запрос на регистрацию нового пользователя Виктория Цесляк с email: vtseslyak@mail.ru
+2024-12-01 23:29:49 [http-nio-8076-exec-4] INFO  c.i.c.security.facade.AuthFacade - Начало проверки подтверждения пароля пользователя
+2024-12-01 23:29:49 [http-nio-8076-exec-4] INFO  c.i.c.security.facade.AuthFacade - Пароль пользователя подтвержден успешно
+2024-12-01 23:29:49 [http-nio-8076-exec-4] INFO  c.i.c.s.s.AuthenticationService - Начато выполнение сборки и сохранения пользователя в базу данных
+2024-12-01 23:29:49 [http-nio-8076-exec-4] INFO  c.i.c.s.s.AuthenticationService - Пользователь сохранен в базу данных
+2024-12-01 23:29:49 [http-nio-8076-exec-4] INFO  c.i.c.s.s.AuthenticationService - Начало генерации токена для пользователя
+2024-12-01 23:29:49 [http-nio-8076-exec-4] INFO  c.i.c.s.s.AuthenticationService - Токен для пользователя сгенерирован
+2024-12-01 23:30:47 [http-nio-8076-exec-5] INFO  c.i.c.s.controller.AuthController - Получен запрос на регистрацию нового пользователя Кирилукан с email: kirabb123@gmail.com
+2024-12-01 23:30:47 [http-nio-8076-exec-5] INFO  c.i.c.security.facade.AuthFacade - Начало проверки подтверждения пароля пользователя
+2024-12-01 23:30:47 [http-nio-8076-exec-5] INFO  c.i.c.security.facade.AuthFacade - Пароль пользователя подтвержден успешно
+2024-12-01 23:30:47 [http-nio-8076-exec-5] INFO  c.i.c.s.s.AuthenticationService - Начато выполнение сборки и сохранения пользователя в базу данных
+2024-12-01 23:30:47 [http-nio-8076-exec-5] INFO  c.i.c.s.s.AuthenticationService - Пользователь сохранен в базу данных
+2024-12-01 23:31:03 [http-nio-8076-exec-6] INFO  c.i.c.a.controller.AdminController - Запрос на удаление пользователя по ID: 470845fa-67ac-4748-87a9-f1247b435e9d
+2024-12-01 23:31:03 [http-nio-8076-exec-6] INFO  c.i.c.adminapi.facade.UserFacade - Начало работы с пользователем с ID: 470845fa-67ac-4748-87a9-f1247b435e9d
+2024-12-01 23:31:03 [http-nio-8076-exec-6] INFO  c.i.c.a.service.impl.UserServiceImpl - Попытка получить сведения с базы данных о пользователе с Id: 470845fa-67ac-4748-87a9-f1247b435e9d
+2024-12-01 23:31:03 [http-nio-8076-exec-6] INFO  c.i.c.adminapi.facade.UserFacade - Попытка добавить message в архив об пользователе с ID: 470845fa-67ac-4748-87a9-f1247b435e9d по имени kirabb123@gmail.com
+2024-12-01 23:31:03 [http-nio-8076-exec-6] INFO  c.i.c.adminapi.facade.UserFacade - Попытка удалить пользователя с ID: 470845fa-67ac-4748-87a9-f1247b435e9d
+2024-12-01 23:31:03 [http-nio-8076-exec-6] INFO  c.i.c.a.service.impl.UserServiceImpl - Попытка получить сведения с базы данных о пользователе с Id: 470845fa-67ac-4748-87a9-f1247b435e9d
+2024-12-01 23:31:03 [http-nio-8076-exec-6] INFO  c.i.c.adminapi.facade.UserFacade - Пользователь по имени kirabb123@gmail.com с ID: 470845fa-67ac-4748-87a9-f1247b435e9d был удален
+2024-12-01 23:31:06 [http-nio-8076-exec-7] INFO  c.i.c.s.controller.AuthController - Получен запрос на регистрацию нового пользователя Кирилукан с email: kirabb123@gmail.com
+2024-12-01 23:31:06 [http-nio-8076-exec-7] INFO  c.i.c.security.facade.AuthFacade - Начало проверки подтверждения пароля пользователя
+2024-12-01 23:31:06 [http-nio-8076-exec-7] INFO  c.i.c.security.facade.AuthFacade - Пароль пользователя подтвержден успешно
+2024-12-01 23:31:06 [http-nio-8076-exec-7] INFO  c.i.c.s.s.AuthenticationService - Начато выполнение сборки и сохранения пользователя в базу данных
+2024-12-01 23:31:06 [http-nio-8076-exec-7] INFO  c.i.c.s.s.AuthenticationService - Пользователь сохранен в базу данных
+2024-12-01 23:31:06 [http-nio-8076-exec-7] INFO  c.i.c.s.s.AuthenticationService - Начало генерации токена для пользователя
+2024-12-01 23:31:06 [http-nio-8076-exec-7] INFO  c.i.c.s.s.AuthenticationService - Токен для пользователя сгенерирован
