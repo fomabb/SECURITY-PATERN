@@ -29,4 +29,10 @@
 
     <include file="static-data-insert/static-data-insert-admin.sql" relativeToChangelogFile="true"/>
 
+    <changeSet id="2024-12-01-alter-column-work-email-to-users" author="Nikolay Kirilyuk">
+        <tagDatabase tag="alter-column-work-email"/>
+    </changeSet>
+
+    <include file="static-data-insert/static-data-insert-column-work_email-to-users.sql" relativeToChangelogFile="true"/>
+
 </databaseChangeLog>
