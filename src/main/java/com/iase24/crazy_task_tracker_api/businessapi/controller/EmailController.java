@@ -3,8 +3,8 @@ package com.iase24.crazy_task_tracker_api.businessapi.controller;
 import com.iase24.crazy_task_tracker_api.security.service.EmailService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.mail.MessagingException;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.MailException;
@@ -15,11 +15,11 @@ import java.io.FileNotFoundException;
 @RestController
 @RequestMapping("/email")
 @Slf4j
+@RequiredArgsConstructor
 @Tag(name = "API для отправки сообщений", description = "Интерфейс для отправки сообщений")
 public class EmailController {
 
-    @Autowired
-    EmailService emailService;
+    private final EmailService emailService;
 
     @GetMapping("/simple-email/{user-email}")
     public @ResponseBody ResponseEntity sendSimpleEmail(@PathVariable("user-email") String email) {

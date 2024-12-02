@@ -15,5 +15,4 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Клиентский API", description = "Интерфейс для бизнес логики")
 public class ClientController {
 
-
 }
