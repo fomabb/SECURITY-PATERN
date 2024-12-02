@@ -5,9 +5,11 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.request.UpdatePasswordC
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.ClientResetPasswordResponse;
 import com.iase24.crazy_task_tracker_api.security.dto.response.JwtAuthenticationResponse;
 
+import java.util.UUID;
+
 public interface ClientService {
 
     JwtAuthenticationResponse generateTokenForResetPassword(ResetPasswordClientRequest request);
 
-    ClientResetPasswordResponse resetPasswordClient(UpdatePasswordClientRequest request);
+    ClientResetPasswordResponse resetPasswordClient(UUID clientId, UpdatePasswordClientRequest request);
 }

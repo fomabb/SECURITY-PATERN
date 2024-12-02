@@ -3,7 +3,6 @@ package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.ResetPasswordClientRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.UpdatePasswordClientRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.ClientResetPasswordResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.repository.ClientRepository;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.BusinessException;
 import com.iase24.crazy_task_tracker_api.security.dto.response.JwtAuthenticationResponse;
@@ -15,7 +14,10 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.MailException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @Service
 @Slf4j
@@ -23,9 +25,9 @@ import org.springframework.stereotype.Service;
 public class ClientServiceImpl implements ClientService {
 
     private final JwtService jwtService;
-    private final ClientRepository clientRepository;
     private final UserRepository userRepository;
     private final EmailSenderServiceImpl emailService;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public JwtAuthenticationResponse generateTokenForResetPassword(ResetPasswordClientRequest request) {
@@ -55,18 +57,16 @@ public class ClientServiceImpl implements ClientService {
             }
             log.info("Токен для клиента сгенерирован");
             return new JwtAuthenticationResponse(jwt);
-
-
         }
     }
 
     @Override
-    public ClientResetPasswordResponse resetPasswordClient(UpdatePasswordClientRequest request) {
+    public ClientResetPasswordResponse resetPasswordClient(UUID clientId, UpdatePasswordClientRequest request) {
         log.info("Начало выполнения восстановления пароля");
-        User user = userRepository.findByUsername("andrekizilov@gmail.com")
+        User user = userRepository.findById(clientId)
                 .orElseThrow(() -> new EntityNotFoundException("Email not found"));
         var resetPassword = UpdatePasswordClientRequest.builder()
-                .newPassword(request.getNewPassword())
+                .newPassword(passwordEncoder.encode(request.getNewPassword()))
                 .build();
         try {
             log.info("Письмо с паролем отправлено клиенту {} на email: {}",
@@ -79,9 +79,8 @@ public class ClientServiceImpl implements ClientService {
             log.error("Ошибка при отправке клиенту электронного письма..{}", (Object) mailException.getStackTrace());
             throw new BusinessException("Unable to send email");
         }
-        User userUpdatePassword = new User();
-        userUpdatePassword.setPassword(resetPassword.getNewPassword());
-        userRepository.save(userUpdatePassword);
+        user.setPassword(resetPassword.getNewPassword());
+        userRepository.save(user);
         return new ClientResetPasswordResponse(user.getId().toString());
     }
 }

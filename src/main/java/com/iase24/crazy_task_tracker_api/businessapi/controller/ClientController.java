@@ -3,6 +3,7 @@ package com.iase24.crazy_task_tracker_api.businessapi.controller;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.ResetPasswordClientRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.UpdatePasswordClientRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.ClientResetPasswordResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.facade.ClientFacade;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
 import com.iase24.crazy_task_tracker_api.security.dto.response.JwtAuthenticationResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -13,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/client")
 @RequiredArgsConstructor
@@ -22,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 public class ClientController {
 
     private final ClientService clientService;
+    private final ClientFacade clientFacade;
 
     @PostMapping("/reset-password")
     public ResponseEntity<JwtAuthenticationResponse> generateTokenForResetPassword(@RequestBody ResetPasswordClientRequest request) {
@@ -30,8 +34,11 @@ public class ClientController {
     }
 
     @PatchMapping("/reset-password")
-    public ResponseEntity<ClientResetPasswordResponse> resetPasswordClient(@RequestBody UpdatePasswordClientRequest request) {
+    public ResponseEntity<ClientResetPasswordResponse> resetPasswordClient(
+            @RequestHeader("X-Client-Id") UUID clientId,
+            @RequestBody UpdatePasswordClientRequest request
+    ) {
         log.info("Получен запрос на восстановление пароля");
-        return ResponseEntity.ok(clientService.resetPasswordClient(request));
+        return ResponseEntity.ok(clientFacade.resetPasswordClient(clientId, request));
     }
 }
