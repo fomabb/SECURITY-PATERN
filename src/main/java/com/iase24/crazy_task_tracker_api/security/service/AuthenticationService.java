@@ -54,7 +54,7 @@ public class AuthenticationService {
             try {
                 log.info("Письмо с паролем отправлено пользователю {} на email: {}",
                         user.getFirstName(), user.getUsername());
-                emailService.sendSimpleEmail(request.getEmail(), "Welcome %s"
+                emailService.sendSimpleEmail(user.getUsername(), "Welcome %s"
                                 .formatted(user.getFirstName()),
                         "Добро пожаловать на сайт https://test.iase24.com\nВаш пароль (%s) никому его не показывайте"
                                 .formatted(request.getPassword()));
