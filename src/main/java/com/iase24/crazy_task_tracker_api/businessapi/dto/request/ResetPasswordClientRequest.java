@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Schema(description = "Запрос на смену пароля по email")
 public class ResetPasswordClientRequest {
 
     @Schema(description = "Адрес электронной почты", example = "vikabb123@gmail.com")
