@@ -19,4 +19,6 @@ public class UpdatePasswordClientRequest {
     @Size(max = 255, message = "Длина пароля должна быть не более 255 символов")
     @NotBlank(message = "Пароль не может быть пустым")
     private String newPassword;
+
+    private String confirmPassword;
 }
