@@ -1,4 +1,4 @@
-package com.iase24.crazy_task_tracker_api.businessapi.service;
+package com.iase24.crazy_task_tracker_api.security.service;
 
 import jakarta.mail.MessagingException;
 

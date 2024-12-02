@@ -1,6 +1,5 @@
-package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
+package com.iase24.crazy_task_tracker_api.security.service;
 
-import com.iase24.crazy_task_tracker_api.businessapi.service.EmailService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;

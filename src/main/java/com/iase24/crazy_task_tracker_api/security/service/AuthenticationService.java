@@ -1,6 +1,5 @@
 package com.iase24.crazy_task_tracker_api.security.service;
 
-import com.iase24.crazy_task_tracker_api.businessapi.service.impl.DefaultEmailService;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.BusinessException;
 import com.iase24.crazy_task_tracker_api.security.dto.request.SignInEmployeeRequest;
 import com.iase24.crazy_task_tracker_api.security.dto.request.SignInRequest;
