@@ -52,7 +52,7 @@ public class SecurityConfiguration {
                           hasRole - Пользователь должен иметь конкретную роль, и, соответственно быть авторизованным
                           hasAnyRole - Должен иметь одну из перечисленных ролей (не представлено в коде)
                          */
-                        .requestMatchers("/auth/**", "/actuator/**", "/email/**").permitAll()
+                        .requestMatchers("/auth/**", "/actuator/**", "/email/**", "/api/client/**").permitAll()
                         .requestMatchers("/swagger-ui/**", "/swagger-resources/*", "/v3/api-docs/**").permitAll()
                         .requestMatchers("/endpoint", "/api/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
