@@ -14,8 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
-
 @RestController
 @RequestMapping("/api/client")
 @RequiredArgsConstructor
@@ -35,10 +33,10 @@ public class ClientController {
 
     @PatchMapping("/reset-password")
     public ResponseEntity<ClientResetPasswordResponse> resetPasswordClient(
-            @RequestHeader("X-Client-Id") UUID clientId,
+            @RequestParam String token,
             @RequestBody UpdatePasswordClientRequest request
     ) {
         log.info("Получен запрос на восстановление пароля");
-        return ResponseEntity.ok(clientFacade.resetPasswordClient(clientId, request));
+        return ResponseEntity.ok(clientFacade.resetPasswordClient(token, request));
     }
 }

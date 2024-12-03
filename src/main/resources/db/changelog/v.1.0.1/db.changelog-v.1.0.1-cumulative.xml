@@ -33,12 +33,25 @@
         <tagDatabase tag="alter-column-work-email"/>
     </changeSet>
 
-    <include file="static-data-insert/static-data-insert-column-work_email-to-users.sql" relativeToChangelogFile="true"/>
+    <include file="static-data-insert/static-data-insert-column-work_email-to-users.sql"
+             relativeToChangelogFile="true"/>
 
     <changeSet id="2024-12-01-update-set-work_email-static-data" author="Nikolay Kirilyuk">
         <tagDatabase tag="add-work_email-to-admin"/>
     </changeSet>
 
     <include file="static-data-insert/static-data-update-set-work-email.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-12-03-add-columns-resetpass-enabled-static-data" author="Nikolay Kirilyuk">
+        <tagDatabase tag="alter-add-users"/>
+    </changeSet>
+
+    <include file="static-data-insert/static-data-alter-column-resetpass-enabled.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-12-03-set-enabled-admin-static-data" author="Nikolay Kirilyuk">
+        <tagDatabase tag="users-set-enabled-admin"/>
+    </changeSet>
+
+    <include file="static-data-insert/static-data-update-set-admin-enabled.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
