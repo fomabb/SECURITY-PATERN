@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 public class AuthenticationService {
 
     private final UserServiceSecurity userService;
-    private final JwtService jwtService;
+    private final JwtServiceSecurity jwtService;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final EmailSenderServiceImpl emailService;
