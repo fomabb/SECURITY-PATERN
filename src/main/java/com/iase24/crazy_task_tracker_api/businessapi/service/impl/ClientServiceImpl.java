@@ -17,8 +17,6 @@ import org.springframework.mail.MailException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
-
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -49,38 +47,47 @@ public class ClientServiceImpl implements ClientService {
                         user.getFirstName(), user.getUsername());
                 emailService.sendSimpleEmail(user.getUsername(), "Welcome %s"
                                 .formatted(user.getFirstName()),
-                        "Для смены пароля перейдите по данной ссылке: https://a-sber-web-dev.astondevs.ru/reset/"
+                        "Для смены пароля перейдите по данной ссылке: https://test.iase24.com/reset?token="
                                 + jwt + " ");
             } catch (MailException mailException) {
                 log.error("Ошибка при отправке электронного письма..{}", (Object) mailException.getStackTrace());
                 throw new BusinessException("Unable to send email");
             }
             log.info("Токен для клиента сгенерирован");
+            user.setResetToken(jwt);
+            log.info("Токен для восстановления пароля сохранен в базу данных");
+            userRepository.save(user);
             return new JwtAuthenticationResponse(jwt);
         }
     }
 
     @Override
-    public ClientResetPasswordResponse resetPasswordClient(UUID clientId, UpdatePasswordClientRequest request) {
+    public ClientResetPasswordResponse resetPasswordClient(String token, UpdatePasswordClientRequest request) {
         log.info("Начало выполнения восстановления пароля");
-        User user = userRepository.findById(clientId)
-                .orElseThrow(() -> new EntityNotFoundException("Email not found"));
-        var resetPassword = UpdatePasswordClientRequest.builder()
-                .newPassword(passwordEncoder.encode(request.getNewPassword()))
-                .build();
-        try {
-            log.info("Письмо с паролем отправлено клиенту {} на email: {}",
-                    user.getFirstName(), user.getUsername());
-            emailService.sendSimpleEmail(user.getUsername(), "Welcome %s"
-                            .formatted(user.getFirstName()),
-                    "Восстановление пароля прошло успешно! Ваш новый пароль (%s), никому его не показывайте. Удачного дня!"
-                            .formatted(request.getNewPassword()));
-        } catch (MailException mailException) {
-            log.error("Ошибка при отправке клиенту электронного письма..{}", (Object) mailException.getStackTrace());
-            throw new BusinessException("Unable to send email");
+        User userToken = userRepository.findByResetToken(token)
+                .orElseThrow(() -> new EntityNotFoundException("Token not found not found"));
+        if (token.equals(userToken.getResetToken())) {
+            var resetPassword = UpdatePasswordClientRequest.builder()
+                    .newPassword(passwordEncoder.encode(request.getNewPassword()))
+                    .build();
+            try {
+                log.info("Письмо с паролем отправлено клиенту {} на email: {}",
+                        userToken.getFirstName(), userToken.getUsername());
+                emailService.sendSimpleEmail(userToken.getUsername(), "Welcome %s"
+                                .formatted(userToken.getFirstName()),
+                        "Восстановление пароля прошло успешно! Ваш новый пароль (%s), никому его не показывайте. Удачного дня!"
+                                .formatted(request.getNewPassword()));
+            } catch (MailException mailException) {
+                log.error("Ошибка при отправке клиенту электронного письма..{}", (Object) mailException.getStackTrace());
+                throw new BusinessException("Unable to send email");
+            }
+
+            userToken.setPassword(resetPassword.getNewPassword());
+            userToken.setResetToken(null);
+            userRepository.save(userToken);
+            return new ClientResetPasswordResponse(userToken.getId().toString());
+        } else {
+            throw new EntityNotFoundException("Токен не является валидным");
         }
-        user.setPassword(resetPassword.getNewPassword());
-        userRepository.save(user);
-        return new ClientResetPasswordResponse(user.getId().toString());
     }
 }

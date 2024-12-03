@@ -56,7 +56,7 @@ public class AuthenticationService {
                         user.getFirstName(), user.getUsername());
                 emailService.sendSimpleEmail(user.getUsername(), "Welcome %s"
                                 .formatted(user.getFirstName()),
-                        "Добро пожаловать на сайт https://a-sber-web-dev.astondevs.ru/\nВаш пароль (%s) никому его не показывайте"
+                        "Добро пожаловать на сайт https://test.iase24.com/\nВаш пароль (%s) никому его не показывайте"
                                 .formatted(request.getPassword()));
             } catch (MailException mailException) {
                 log.error("Ошибка при отправке электронного письма..{}", (Object) mailException.getStackTrace());
