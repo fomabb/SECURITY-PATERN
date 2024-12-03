@@ -4,12 +4,9 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.request.UpdatePasswordC
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.ClientResetPasswordResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.BusinessException;
-import com.iase24.crazy_task_tracker_api.security.entity.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-
-import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor
