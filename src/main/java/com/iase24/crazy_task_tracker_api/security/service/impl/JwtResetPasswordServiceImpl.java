@@ -48,15 +48,13 @@ public class JwtResetPasswordServiceImpl implements JwtResetPasswordService {
                     .getBody();
             // Проверяем тип токена
             String tokenType = claims.get("type", String.class);
-            if (!"password_reset".equals(tokenType)) {
-                return false; // Неверный тип токена
-            }
-            return true; // Токен валиден
+            return "password_reset".equals(tokenType); // Неверный тип токена
+            // Токен валиден
         } catch (ExpiredJwtException e) {
-            log.error("Token expired: {}", e.getMessage());
+            log.error("Срок действия токена истек: {}", e.getMessage());
             return false;
         } catch (Exception e) {
-            log.error("Invalid token: {}", e.getMessage());
+            log.error("Недопустимый токен: {}", e.getMessage());
             return false;
         }
     }

@@ -42,7 +42,6 @@ public class AuthenticationService {
                 .username(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.ROLE_USER)
-                .enabled(true)
                 .build();
         log.info("Пользователь сохранен в базу данных");
         userService.create(user);
@@ -93,7 +92,7 @@ public class AuthenticationService {
     /**
      * Регистрация работника
      *
-     * @param request данные пользователя
+     * @param request данные работника
      * @return токен
      */
     public JwtAuthenticationResponse signUpEmployee(SignUpEmployeeRequest request) {
@@ -103,8 +102,7 @@ public class AuthenticationService {
                 .workEmail(request.getWorkEmail())
                 .username(request.getLogin())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.ROLE_ADMIN)
-                .enabled(true)
+                .role(Role.ROLE_EMPLOYEE)
                 .build();
         log.info("Работник сохранен в базу данных");
         userService.create(user);
@@ -122,7 +120,7 @@ public class AuthenticationService {
     /**
      * Аутентификация работника
      *
-     * @param request данные пользователя
+     * @param request данные работника
      * @return токен
      */
     public JwtAuthenticationResponse signInEmployee(SignInEmployeeRequest request) {
