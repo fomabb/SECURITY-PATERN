@@ -17,6 +17,8 @@ import org.springframework.mail.MailException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -37,7 +39,7 @@ public class ClientServiceImpl implements ClientService {
                 .orElseThrow(() -> new EntityNotFoundException("Client with email: %s not found"
                         .formatted(request.getEmail())));
         log.info("Начало генерации токена клиента");
-        var jwt = jwtService.generateToken(user);
+        var jwt = jwtService.generateToken(user) + UUID.randomUUID().toString().replaceAll("-", "");
         if (jwt.isEmpty()) {
             log.warn("Не удалось сгенерировать токен для работника");
             throw new BusinessException("Токен для работника не сгенерирован");
@@ -81,13 +83,11 @@ public class ClientServiceImpl implements ClientService {
                 log.error("Ошибка при отправке клиенту электронного письма..{}", (Object) mailException.getStackTrace());
                 throw new BusinessException("Unable to send email");
             }
-
             userToken.setPassword(resetPassword.getNewPassword());
             userToken.setResetToken(null);
             userRepository.save(userToken);
             return new ClientResetPasswordResponse(userToken.getId().toString());
         } else {
-            userToken.setResetToken(null);
             throw new EntityNotFoundException("Токен не является валидным");
         }
     }
