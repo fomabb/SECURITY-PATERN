@@ -87,6 +87,7 @@ public class ClientServiceImpl implements ClientService {
             userRepository.save(userToken);
             return new ClientResetPasswordResponse(userToken.getId().toString());
         } else {
+            userToken.setResetToken(null);
             throw new EntityNotFoundException("Токен не является валидным");
         }
     }
