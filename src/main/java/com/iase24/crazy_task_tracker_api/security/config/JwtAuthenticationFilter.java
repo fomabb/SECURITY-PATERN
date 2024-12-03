@@ -1,6 +1,6 @@
 package com.iase24.crazy_task_tracker_api.security.config;
 
-import com.iase24.crazy_task_tracker_api.security.service.JwtService;
+import com.iase24.crazy_task_tracker_api.security.service.JwtServiceSecurity;
 import com.iase24.crazy_task_tracker_api.security.service.UserServiceSecurity;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -25,7 +25,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     public static final String BEARER_PREFIX = "Bearer ";
     public static final String HEADER_NAME = "Authorization";
-    private final JwtService jwtService;
+    private final JwtServiceSecurity jwtService;
     private final UserServiceSecurity userService;
 
     @Override

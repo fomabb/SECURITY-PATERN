@@ -1,1 +1,0 @@
-UPDATE users SET enabled = true where id='53ac777f-fa99-4e47-875d-00782a0b8049';

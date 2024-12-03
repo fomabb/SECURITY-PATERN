@@ -29,6 +29,13 @@ public class ExampleController {
         return "Hello, admin!";
     }
 
+    @Operation(summary = "Доступен только авторизованным пользователям с ролью EMPLOYEE")
+    @GetMapping("/employee")
+    @PreAuthorize("hasRole('EMPLOYEE')")
+    public String exampleEmployee() {
+        return "Hello, employee!";
+    }
+
     @GetMapping("/get-admin")
     @Operation(summary = "Получить роль ADMIN (для демонстрации)")
     public void getAdmin() {

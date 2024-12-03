@@ -48,10 +48,4 @@
 
     <include file="static-data-insert/static-data-alter-column-resetpass-enabled.sql" relativeToChangelogFile="true"/>
 
-    <changeSet id="2024-12-03-set-enabled-admin-static-data" author="Nikolay Kirilyuk">
-        <tagDatabase tag="users-set-enabled-admin"/>
-    </changeSet>
-
-    <include file="static-data-insert/static-data-update-set-admin-enabled.sql" relativeToChangelogFile="true"/>
-
 </databaseChangeLog>

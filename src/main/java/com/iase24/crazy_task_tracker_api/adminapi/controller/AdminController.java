@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -66,6 +67,7 @@ public class AdminController {
             }
     )
     @DeleteMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<DeleteUserResponse> deleteByUserId(@RequestHeader("X-User-Id") UUID uuid) {
         log.info("Запрос на удаление пользователя по ID: {}", uuid);
         return ResponseEntity.ok(userFacade.deleteByUserId(uuid));

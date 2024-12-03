@@ -19,7 +19,7 @@ public class GetUserResponseMapper {
                     .password(user.getPassword())
                     .role(user.getRole().toString())
                     .build();
-        } else if (user.getRole().equals(Role.ROLE_ADMIN)) {
+        } else if (user.getRole().equals(Role.ROLE_EMPLOYEE)) {
             getUserResponse = GetUserResponse.builder()
                     .uuid(user.getId())
                     .firstName(user.getFirstName())
@@ -27,6 +27,8 @@ public class GetUserResponseMapper {
                     .password(user.getPassword())
                     .role(user.getRole().toString())
                     .build();
+        } else if (user.getRole().equals(Role.ROLE_ADMIN)) {
+
         }
         return getUserResponse;
     }
