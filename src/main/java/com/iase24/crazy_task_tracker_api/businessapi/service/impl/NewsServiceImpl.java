@@ -29,7 +29,6 @@ public class NewsServiceImpl implements NewsService {
     @Override
     @Transactional
     public NewsCreateDataResponse createNews(CreateNewsTwoLanguageRequest request) {
-
         NewsRu newsRu = NewsRu.builder().title(request.getTitleRu()).news(request.getInfoNewsRu()).build();
         NewsEn newsEn = NewsEn.builder().title(request.getTitleEn()).news(request.getInfoNewsEn()).build();
         ruRepository.save(newsRu);
@@ -46,7 +45,7 @@ public class NewsServiceImpl implements NewsService {
             return enRepository.findAll().stream()
                     .map(newsEn -> new NewsDataResponse(newsEn.getId(), newsEn.getTitle(), newsEn.getNews())).toList();
         } else {
-            throw new BusinessException("This language %s not found".formatted(lang));
+            throw new BusinessException("This application does not support such the <%s> language".formatted(lang));
         }
     }
 
@@ -61,7 +60,7 @@ public class NewsServiceImpl implements NewsService {
                     .map(newsEn -> new NewsDataResponse(newsEn.getId(), newsEn.getTitle(), newsEn.getNews()))
                     .orElseThrow(() -> new EntityNotFoundException("News with ID: %s not found".formatted(id)));
         } else {
-            throw new BusinessException("This language %s not found".formatted(lang));
+            throw new BusinessException("This application does not support such the <%s> language".formatted(lang));
         }
     }
 }
