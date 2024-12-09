@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -28,12 +29,16 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     @Transactional
-    public NewsCreateDataResponse createNews(CreateNewsTwoLanguageRequest request) {
-        NewsRu newsRu = NewsRu.builder().title(request.getTitleRu()).news(request.getInfoNewsRu()).build();
-        NewsEn newsEn = NewsEn.builder().title(request.getTitleEn()).news(request.getInfoNewsEn()).build();
-        ruRepository.save(newsRu);
-        enRepository.save(newsEn);
-        return new NewsCreateDataResponse(newsRu.getId(), newsEn.getId());
+    public NewsCreateDataResponse createNews(List<CreateNewsTwoLanguageRequest> request) {
+        List<NewsRu> newsRu = new ArrayList<>();
+        List<NewsEn> newsEn = new ArrayList<>();
+        for (CreateNewsTwoLanguageRequest item : request) {
+            newsRu.add(NewsRu.builder().title(item.getTitleRu()).news(item.getInfoNewsRu()).build());
+            newsEn.add(NewsEn.builder().title(item.getTitleEn()).news(item.getInfoNewsEn()).build());
+        }
+        ruRepository.saveAll(newsRu);
+        enRepository.saveAll(newsEn);
+        return new NewsCreateDataResponse(newsRu.size());
     }
 
     @Override

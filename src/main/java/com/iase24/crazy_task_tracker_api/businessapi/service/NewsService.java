@@ -8,7 +8,8 @@ import jakarta.validation.Valid;
 import java.util.List;
 
 public interface NewsService {
-    NewsCreateDataResponse createNews(@Valid CreateNewsTwoLanguageRequest request);
+
+    NewsCreateDataResponse createNews(@Valid List<CreateNewsTwoLanguageRequest> request);
 
     List<NewsDataResponse> getAllNews(String lang);
 
