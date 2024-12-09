@@ -43,7 +43,7 @@ public class NewsController {
                                     array = @ArraySchema(
                                             schema = @Schema(implementation = CreateNewsTwoLanguageRequest.class)))
                             }),
-                    @ApiResponse(responseCode = "404", description = "Родительская категория не найдена по id.",
+                    @ApiResponse(responseCode = "404", description = "Новость не добавлена.",
                             content = {@Content(mediaType = "application/json",
                                     schema = @Schema(implementation = CommonExceptionResponse.class))
                             })
@@ -51,7 +51,8 @@ public class NewsController {
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<NewsCreateDataResponse> createNewsForTwoLanguage(@RequestBody @Valid List<CreateNewsTwoLanguageRequest> request) {
+    public ResponseEntity<NewsCreateDataResponse> createNewsForTwoLanguage(
+            @RequestBody @Valid List<CreateNewsTwoLanguageRequest> request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(newsService.createNews(request));
     }
 
@@ -65,7 +66,7 @@ public class NewsController {
                                     array = @ArraySchema(
                                             schema = @Schema(implementation = NewsDataResponse.class)))
                             }),
-                    @ApiResponse(responseCode = "404", description = "Родительская категория не найдена по id.",
+                    @ApiResponse(responseCode = "404", description = "Не правильный запрос.",
                             content = {@Content(mediaType = "application/json",
                                     schema = @Schema(implementation = CommonExceptionResponse.class))
                             })
@@ -85,7 +86,7 @@ public class NewsController {
                                     array = @ArraySchema(
                                             schema = @Schema(implementation = NewsDataResponse.class)))
                             }),
-                    @ApiResponse(responseCode = "404", description = "Родительская категория не найдена по id.",
+                    @ApiResponse(responseCode = "404", description = "Новость не найдена по id.",
                             content = {@Content(mediaType = "application/json",
                                     schema = @Schema(implementation = CommonExceptionResponse.class))
                             })

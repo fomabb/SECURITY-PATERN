@@ -13383,3 +13383,54 @@ Caused by: org.postgresql.util.PSQLException: �����: ������
 2024-12-09 21:26:39 [RMI TCP Connection(3)-192.168.56.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-12-09 21:26:39 [RMI TCP Connection(3)-192.168.56.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-12-09 21:26:39 [RMI TCP Connection(3)-192.168.56.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-12-09 21:36:30 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 21:36:30 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.10 with PID 756 (E:\Java\Projects\SECURITY-PATERN\target\classes started by kirab in E:\Java\Projects\SECURITY-PATERN)
+2024-12-09 21:36:30 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 21:36:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 21:36:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 178 ms. Found 5 JPA repository interfaces.
+2024-12-09 21:36:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 21:36:36 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.3.0] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2024-12-09 21:36:36 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-09 21:36:36 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-09 21:36:36 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 21:36:36 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 21:36:36 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 21:36:36 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 21:36:36 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5395 ms
+2024-12-09 21:36:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 21:36:37 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5c25daad
+2024-12-09 21:36:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 21:36:38 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 21:36:39 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 21:36:39 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 21:36:39 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 21:36:39 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 21:36:39 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 21:36:39 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 21:36:39 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 21:36:39 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 21:36:39 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 21:36:39 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 21:36:39 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 21:36:39 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 21:36:39 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 21:36:39 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 21:36:39 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 21:36:40 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 21:36:40 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 21:36:42 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 21:36:42 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 21:36:43 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 21:36:44 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 21:36:44 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 21:36:45 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 21:36:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 21:36:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 21:36:46 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 16.876 seconds (process running for 18.526)
+2024-12-09 21:37:05 [http-nio-8076-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 21:37:05 [http-nio-8076-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 21:37:05 [http-nio-8076-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2024-12-09 21:37:07 [http-nio-8076-exec-8] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 745 ms
+2024-12-09 21:42:02 [http-nio-8076-exec-9] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию работника
+2024-12-09 21:42:02 [http-nio-8076-exec-9] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации работника
+2024-12-09 21:42:03 [http-nio-8076-exec-9] INFO  c.i.c.s.s.AuthenticationService - Работник успешно авторизован
