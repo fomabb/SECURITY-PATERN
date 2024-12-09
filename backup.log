@@ -11003,3 +11003,685 @@ io.jsonwebtoken.ExpiredJwtException: JWT expired 62474629 milliseconds ago at 20
 2024-12-04 01:42:57 [http-nio-8076-exec-10] INFO  c.i.c.b.s.impl.ClientServiceImpl - Начало выполнения восстановления пароля
 2024-12-04 01:42:57 [http-nio-8076-exec-10] ERROR c.i.c.s.s.i.JwtResetPasswordServiceImpl - Срок действия токена истек: JWT expired 78616 milliseconds ago at 2024-12-03T22:41:39.000Z. Current time: 2024-12-03T22:42:57.616Z. Allowed clock skew: 0 milliseconds.
 2024-12-04 01:43:41 [http-nio-8076-exec-7] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 453 ms
+2024-12-09 10:58:43 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 10:58:43 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 8976 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 10:58:43 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 10:58:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 10:58:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 111 ms. Found 3 JPA repository interfaces.
+2024-12-09 10:58:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 10:58:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 10:58:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 10:58:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 10:58:46 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 10:58:46 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3252 ms
+2024-12-09 10:58:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 10:58:47 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5909ae90
+2024-12-09 10:58:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 10:58:47 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 10:58:48 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 10:58:48 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 10:58:48 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 10:58:48 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 10:58:48 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 10:58:48 [main] INFO  liquibase.util - Previously run:              14
+2024-12-09 10:58:48 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 10:58:48 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 10:58:48 [main] INFO  liquibase.util - Total change sets:           14
+2024-12-09 10:58:48 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 10:58:48 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 10:58:48 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 10:58:49 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 10:58:49 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 10:58:49 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 10:58:49 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 10:58:49 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 10:58:51 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 10:58:51 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 10:58:51 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 10:58:52 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 10:58:53 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 10:58:54 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 10:58:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 10:58:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 10:58:55 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 13.014 seconds (process running for 14.264)
+2024-12-09 10:58:56 [RMI TCP Connection(3)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 10:58:56 [RMI TCP Connection(3)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 10:58:56 [RMI TCP Connection(3)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-12-09 12:03:24 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:03:24 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 15884 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:03:24 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:03:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:03:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:03:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:03:27 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:03:27 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:03:27 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:03:27 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:03:27 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3024 ms
+2024-12-09 12:03:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:03:28 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5a2035e1
+2024-12-09 12:03:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:03:28 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:03:29 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:03:29 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2024-12-09 12:03:29 [main] INFO  liquibase.command - Using deploymentId: 3735009411
+2024-12-09 12:03:29 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:03:29 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-09-create-table-news-ru-09::Nikolay Kirilyuk
+2024-12-09 12:03:29 [main] INFO  liquibase.changelog - Tag 'news_ru' applied to database
+2024-12-09 12:03:29 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-09-create-table-news-ru-09::Nikolay Kirilyuk ran successfully in 7ms
+2024-12-09 12:03:29 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/09-create-table-news-ru.sql::raw::includeAll
+2024-12-09 12:03:29 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-09 12:03:29 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/09-create-table-news-ru.sql::raw::includeAll ran successfully in 70ms
+2024-12-09 12:03:29 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-09-create-table-news-en-10::Nikolay Kirilyuk
+2024-12-09 12:03:29 [main] INFO  liquibase.changelog - Tag 'news_ru' applied to database
+2024-12-09 12:03:29 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-09-create-table-news-en-10::Nikolay Kirilyuk ran successfully in 2ms
+2024-12-09 12:03:29 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/10-create-table-news-en.sql::raw::includeAll
+2024-12-09 12:03:29 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-09 12:03:29 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/10-create-table-news-en.sql::raw::includeAll ran successfully in 31ms
+2024-12-09 12:03:29 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:03:29 [main] INFO  liquibase.util - Run:                          4
+2024-12-09 12:03:29 [main] INFO  liquibase.util - Previously run:              14
+2024-12-09 12:03:29 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:03:29 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:03:29 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:03:29 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:03:29 [main] INFO  liquibase.command - Update command completed successfully.
+2024-12-09 12:03:29 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 4
+2024-12-09 12:03:29 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:03:29 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:03:29 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:03:29 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:03:29 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:03:30 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:03:30 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:03:31 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:03:31 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:03:32 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:03:33 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:03:33 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:03:34 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:03:36 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:03:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:03:36 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.487 seconds (process running for 13.517)
+2024-12-09 12:03:36 [RMI TCP Connection(2)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:03:36 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:03:36 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-09 12:03:58 [http-nio-8076-exec-8] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 455 ms
+2024-12-09 12:07:47 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:07:47 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 14956 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:07:47 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:07:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:07:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 124 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:07:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:07:50 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:07:50 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:07:50 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:07:50 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:07:50 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3077 ms
+2024-12-09 12:07:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:07:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2cc61b3b
+2024-12-09 12:07:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:07:51 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:07:52 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:07:52 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:07:52 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:07:52 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:07:52 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:07:52 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:07:52 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:07:52 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:07:52 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:07:52 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:07:52 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:07:52 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:07:53 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:07:53 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:07:53 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:07:53 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:07:53 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:07:55 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:07:55 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:07:55 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:07:56 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:07:57 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:07:58 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:07:59 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:07:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:07:59 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.592 seconds (process running for 13.485)
+2024-12-09 12:08:00 [RMI TCP Connection(2)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:08:00 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:08:00 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-09 12:08:42 [http-nio-8076-exec-3] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию работника
+2024-12-09 12:08:42 [http-nio-8076-exec-3] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации работника
+2024-12-09 12:08:43 [http-nio-8076-exec-3] INFO  c.i.c.s.s.AuthenticationService - Работник успешно авторизован
+2024-12-09 12:09:51 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:09:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-09 12:09:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-09 12:09:57 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:09:57 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 9788 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:09:57 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:09:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:09:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 118 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:10:00 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:10:00 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:10:00 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:10:00 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:10:00 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:10:00 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3112 ms
+2024-12-09 12:10:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:10:01 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@67e4928c
+2024-12-09 12:10:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:10:01 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:10:02 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:10:02 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:10:02 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:10:02 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:10:02 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:10:02 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:10:02 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:10:02 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:10:02 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:10:02 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:10:02 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:10:02 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:10:02 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:10:02 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:10:02 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:10:03 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:10:03 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:10:04 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:10:04 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:10:05 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:10:06 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:10:06 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:10:07 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:10:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:10:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:10:09 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.762 seconds (process running for 13.652)
+2024-12-09 12:10:09 [RMI TCP Connection(1)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:10:09 [RMI TCP Connection(1)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:10:09 [RMI TCP Connection(1)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-09 12:11:00 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:11:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-09 12:11:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-09 12:13:15 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:13:15 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 432 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:13:15 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:13:17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:13:17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 130 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:13:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:13:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:13:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:13:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:13:18 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:13:18 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3133 ms
+2024-12-09 12:13:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:13:19 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@15a484a9
+2024-12-09 12:13:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:13:19 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:13:20 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:13:20 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:13:20 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:13:20 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:13:20 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:13:20 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:13:20 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:13:20 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:13:20 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:13:20 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:13:20 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:13:20 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:13:20 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:13:20 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:13:20 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:13:21 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:13:21 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:13:22 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:13:22 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:13:23 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:13:24 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:13:24 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:13:25 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:13:27 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:13:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:13:27 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.658 seconds (process running for 13.56)
+2024-12-09 12:13:27 [RMI TCP Connection(2)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:13:27 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:13:27 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-12-09 12:22:07 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:22:07 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 8976 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:22:07 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:22:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:22:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:22:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:22:10 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:22:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:22:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:22:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:22:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2934 ms
+2024-12-09 12:22:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:22:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@362be0cd
+2024-12-09 12:22:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:22:11 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:22:12 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:22:12 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:22:12 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:22:12 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:22:12 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:22:12 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:22:12 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:22:12 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:22:12 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:22:12 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:22:12 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:22:12 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:22:12 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:22:12 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:22:13 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:22:13 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:22:13 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:22:15 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:22:15 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:22:15 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:22:16 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:22:17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:22:18 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:22:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:22:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:22:19 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.38 seconds (process running for 13.291)
+2024-12-09 12:22:19 [RMI TCP Connection(2)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:22:19 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:22:19 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-09 12:22:23 [http-nio-8076-exec-8] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 652 ms
+2024-12-09 12:22:40 [http-nio-8076-exec-9] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию пользователя
+2024-12-09 12:22:40 [http-nio-8076-exec-9] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации пользователя
+2024-12-09 12:23:33 [http-nio-8076-exec-2] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию работника
+2024-12-09 12:23:33 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации работника
+2024-12-09 12:23:34 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Работник успешно авторизован
+2024-12-09 12:24:36 [http-nio-8076-exec-3] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию работника
+2024-12-09 12:24:36 [http-nio-8076-exec-3] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации работника
+2024-12-09 12:24:36 [http-nio-8076-exec-3] INFO  c.i.c.s.s.AuthenticationService - Работник успешно авторизован
+2024-12-09 12:34:02 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:34:02 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 3296 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:34:02 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:34:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:34:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 125 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:34:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:34:05 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:34:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:34:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:34:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:34:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3112 ms
+2024-12-09 12:34:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:34:06 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@294c44b7
+2024-12-09 12:34:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:34:06 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:34:07 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:34:07 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:34:07 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:34:07 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:34:07 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:34:07 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:34:07 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:34:07 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:34:07 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:34:07 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:34:07 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:34:07 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:34:07 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:34:07 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:34:07 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:34:08 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:34:08 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:34:09 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:34:09 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:34:10 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:34:11 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:34:11 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:34:12 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:34:14 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:34:14 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:34:14 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.479 seconds (process running for 13.372)
+2024-12-09 12:34:14 [RMI TCP Connection(3)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:34:14 [RMI TCP Connection(3)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:34:14 [RMI TCP Connection(3)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-09 12:38:42 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:38:42 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 17124 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:38:42 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:38:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:38:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 152 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:38:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:38:45 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:38:45 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:38:45 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:38:45 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:38:45 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3088 ms
+2024-12-09 12:38:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:38:46 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6a04d2a4
+2024-12-09 12:38:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:38:46 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:38:47 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:38:47 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:38:47 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:38:47 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:38:47 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:38:47 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:38:47 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:38:47 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:38:47 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:38:47 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:38:47 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:38:47 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:38:47 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:38:47 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:38:47 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:38:48 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:38:48 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:38:49 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:38:49 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:38:50 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:38:51 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:38:51 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:38:52 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:38:53 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:38:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:38:53 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.408 seconds (process running for 13.311)
+2024-12-09 12:38:54 [RMI TCP Connection(1)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:38:54 [RMI TCP Connection(1)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:38:54 [RMI TCP Connection(1)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-09 12:39:01 [http-nio-8076-exec-7] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 533 ms
+2024-12-09 12:40:10 [http-nio-8076-exec-2] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию работника
+2024-12-09 12:40:10 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации работника
+2024-12-09 12:40:11 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Работник успешно авторизован
+2024-12-09 12:45:04 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:45:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-09 12:45:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-09 12:45:11 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:45:11 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 16968 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:45:11 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:45:13 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:45:13 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:45:14 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:45:14 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:45:14 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:45:14 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:45:14 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:45:14 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3161 ms
+2024-12-09 12:45:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:45:15 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@556aed22
+2024-12-09 12:45:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:45:15 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:45:16 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:45:16 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:45:16 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:45:16 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:45:16 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:45:16 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:45:16 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:45:16 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:45:16 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:45:16 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:45:16 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:45:16 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:45:16 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:45:16 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:45:16 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:45:17 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:45:17 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:45:19 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:45:19 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:45:19 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:45:20 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:45:21 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:45:22 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:45:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:45:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:45:23 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.708 seconds (process running for 13.587)
+2024-12-09 12:45:24 [RMI TCP Connection(2)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:45:24 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:45:24 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-12-09 12:46:06 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:46:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-09 12:46:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-09 12:46:12 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:46:13 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 10032 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:46:13 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:46:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:46:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 146 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:46:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:46:15 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:46:15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:46:15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:46:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:46:16 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3000 ms
+2024-12-09 12:46:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:46:16 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@556aed22
+2024-12-09 12:46:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:46:16 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:46:17 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:46:17 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:46:17 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:46:17 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:46:17 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:46:17 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:46:17 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:46:17 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:46:17 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:46:17 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:46:17 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:46:17 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:46:18 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:46:18 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:46:18 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:46:18 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:46:18 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:46:20 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:46:20 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:46:20 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:46:21 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:46:22 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:46:23 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:46:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:46:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:46:24 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.493 seconds (process running for 13.365)
+2024-12-09 12:46:25 [RMI TCP Connection(2)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:46:25 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:46:25 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-09 12:46:28 [http-nio-8076-exec-7] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 576 ms
+2024-12-09 12:47:15 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:47:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-09 12:47:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-09 12:47:21 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:47:21 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 16716 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:47:21 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:47:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:47:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 132 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:47:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:47:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:47:24 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:47:24 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:47:24 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:47:24 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3191 ms
+2024-12-09 12:47:25 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:47:25 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72e75786
+2024-12-09 12:47:25 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:47:25 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:47:26 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:47:26 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:47:26 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:47:26 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:47:26 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:47:26 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:47:26 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:47:26 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:47:26 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:47:26 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:47:26 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:47:26 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:47:26 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:47:27 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:47:27 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:47:27 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:47:27 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:47:29 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:47:29 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:47:29 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:47:30 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:47:31 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:47:32 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:47:33 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:47:33 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:47:33 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.763 seconds (process running for 13.65)
+2024-12-09 12:47:34 [RMI TCP Connection(2)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:47:34 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:47:34 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-09 12:47:37 [http-nio-8076-exec-7] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 555 ms
+2024-12-09 12:50:37 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:50:37 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 496 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:50:37 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:50:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:50:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 113 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:50:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:50:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:50:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:50:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:50:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:50:40 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3028 ms
+2024-12-09 12:50:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:50:41 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2c0fefac
+2024-12-09 12:50:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:50:41 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:50:42 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:50:42 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:50:42 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:50:42 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:50:42 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:50:42 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:50:42 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:50:42 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:50:42 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:50:42 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:50:42 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:50:42 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:50:42 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:50:42 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:50:42 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:50:43 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:50:43 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:50:44 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:50:44 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:50:45 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:50:46 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:50:46 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:50:47 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:50:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:50:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:50:48 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.261 seconds (process running for 13.179)
+2024-12-09 12:50:49 [RMI TCP Connection(3)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:50:49 [RMI TCP Connection(3)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:50:49 [RMI TCP Connection(3)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-09 12:52:28 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 12:52:28 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 244 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 12:52:28 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 12:52:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 12:52:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 113 ms. Found 5 JPA repository interfaces.
+2024-12-09 12:52:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 12:52:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:52:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 12:52:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 12:52:31 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 12:52:31 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3006 ms
+2024-12-09 12:52:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 12:52:32 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@19d3f6ad
+2024-12-09 12:52:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 12:52:32 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 12:52:33 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:52:33 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 12:52:33 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 12:52:33 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 12:52:33 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 12:52:33 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 12:52:33 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 12:52:33 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 12:52:33 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 12:52:33 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 12:52:33 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 12:52:33 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 12:52:33 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 12:52:33 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 12:52:33 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 12:52:34 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 12:52:34 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 12:52:36 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 12:52:36 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 12:52:36 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 12:52:37 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 12:52:37 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 12:52:39 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 12:52:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 12:52:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 12:52:40 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.445 seconds (process running for 13.368)
+2024-12-09 12:52:40 [RMI TCP Connection(5)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 12:52:40 [RMI TCP Connection(5)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 12:52:40 [RMI TCP Connection(5)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-09 12:56:43 [http-nio-8076-exec-1] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию пользователя
+2024-12-09 12:56:43 [http-nio-8076-exec-1] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации пользователя
+2024-12-09 12:56:59 [http-nio-8076-exec-2] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию работника
+2024-12-09 12:56:59 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации работника
+2024-12-09 12:57:00 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Работник успешно авторизован
+2024-12-09 13:49:03 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 13:49:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-09 13:49:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-09 13:58:54 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-09 13:58:54 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 17.0.13 with PID 8140 (E:\Projects\crazy-task-tracker-api\target\classes started by User in E:\Projects\crazy-task-tracker-api)
+2024-12-09 13:58:54 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-09 13:58:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-09 13:58:56 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 124 ms. Found 5 JPA repository interfaces.
+2024-12-09 13:58:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-09 13:58:57 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-09 13:58:57 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-09 13:58:57 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-09 13:58:57 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-09 13:58:57 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3061 ms
+2024-12-09 13:58:58 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-09 13:58:58 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61836cd9
+2024-12-09 13:58:58 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-09 13:58:58 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-09 13:58:59 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 13:58:59 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-09 13:58:59 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-09 13:58:59 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-09 13:58:59 [main] INFO  liquibase.util - Run:                          0
+2024-12-09 13:58:59 [main] INFO  liquibase.util - Previously run:              18
+2024-12-09 13:58:59 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-09 13:58:59 [main] INFO  liquibase.util - -------------------------------
+2024-12-09 13:58:59 [main] INFO  liquibase.util - Total change sets:           18
+2024-12-09 13:58:59 [main] INFO  liquibase.util - Update summary generated
+2024-12-09 13:58:59 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-09 13:58:59 [main] INFO  liquibase.command - Command execution complete
+2024-12-09 13:58:59 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-09 13:59:00 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-09 13:59:00 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-09 13:59:00 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-09 13:59:00 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-09 13:59:02 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-09 13:59:02 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 13:59:02 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-09 13:59:03 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-09 13:59:04 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-09 13:59:04 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-09 13:59:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-09 13:59:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-09 13:59:06 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 12.472 seconds (process running for 13.378)
+2024-12-09 13:59:06 [RMI TCP Connection(2)-10.128.35.145] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-09 13:59:06 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-09 13:59:06 [RMI TCP Connection(2)-10.128.35.145] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-12-09 14:00:08 [http-nio-8076-exec-2] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию работника
+2024-12-09 14:00:08 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации работника
+2024-12-09 14:00:08 [http-nio-8076-exec-2] INFO  c.i.c.s.s.AuthenticationService - Работник успешно авторизован
+2024-12-09 14:13:19 [http-nio-8076-exec-10] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию работника
+2024-12-09 14:13:19 [http-nio-8076-exec-10] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации работника
+2024-12-09 14:13:19 [http-nio-8076-exec-10] INFO  c.i.c.s.s.AuthenticationService - Работник успешно авторизован
+2024-12-09 14:31:52 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-09 14:31:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-09 14:31:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

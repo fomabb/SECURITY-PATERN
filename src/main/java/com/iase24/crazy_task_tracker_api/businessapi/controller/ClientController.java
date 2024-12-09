@@ -6,6 +6,7 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.response.ClientResetPas
 import com.iase24.crazy_task_tracker_api.businessapi.facade.ClientFacade;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
 import com.iase24.crazy_task_tracker_api.security.dto.response.JwtAuthenticationResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,10 +21,13 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @Validated
 @Tag(name = "Клиентский API", description = "Интерфейс для бизнес логики")
+@SecurityRequirement(name = "bearerAuth")
 public class ClientController {
 
     private final ClientService clientService;
     private final ClientFacade clientFacade;
+
+//===========================Section User===============================================================================
 
     @PostMapping("/reset-password")
     public ResponseEntity<JwtAuthenticationResponse> generateTokenForResetPassword(@RequestBody ResetPasswordClientRequest request) {

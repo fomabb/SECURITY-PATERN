@@ -27,6 +27,18 @@
         <tagDatabase tag="insert-admin"/>
     </changeSet>
 
+    <changeSet id="2024-12-09-create-table-news-ru-09" author="Nikolay Kirilyuk">
+        <tagDatabase tag="news_ru"/>
+    </changeSet>
+
+    <include file="09-create-table-news-ru.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-12-09-create-table-news-en-10" author="Nikolay Kirilyuk">
+        <tagDatabase tag="news_ru"/>
+    </changeSet>
+
+    <include file="10-create-table-news-en.sql" relativeToChangelogFile="true"/>
+
     <include file="static-data-insert/static-data-insert-admin.sql" relativeToChangelogFile="true"/>
 
     <changeSet id="2024-12-01-alter-column-work-email-to-users" author="Nikolay Kirilyuk">
