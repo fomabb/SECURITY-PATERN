@@ -56,7 +56,7 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.CREATED).body(authFacade.signUpEmployeeFacade(request));
     }
 
-    @Operation(summary = "Авторизация пользователя")
+    @Operation(summary = "Авторизация работника")
     @PostMapping("/sign-in/employee")
     public JwtAuthenticationResponse signInEmployee(@RequestBody @Valid SignInEmployeeRequest request) {
         log.info("Получен запрос на авторизацию работника");
