@@ -8,6 +8,7 @@ import com.iase24.crazy_task_tracker_api.entity.ArchiveDeletedUser;
 import com.iase24.crazy_task_tracker_api.adminapi.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +26,7 @@ import java.util.UUID;
 @Slf4j
 @Validated
 @Tag(name = "Администраторский API", description = "Интерфейс для бизнес логики")
+@SecurityRequirement(name = "bearerAuth")
 public class AdminController {
 
     private final UserFacade userFacade;
