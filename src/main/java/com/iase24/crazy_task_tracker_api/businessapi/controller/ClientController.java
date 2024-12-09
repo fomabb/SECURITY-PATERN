@@ -25,6 +25,8 @@ public class ClientController {
     private final ClientService clientService;
     private final ClientFacade clientFacade;
 
+//===========================Section User===============================================================================
+
     @PostMapping("/reset-password")
     public ResponseEntity<JwtAuthenticationResponse> generateTokenForResetPassword(@RequestBody ResetPasswordClientRequest request) {
         log.info("Получен запрос на генерацию токена, для обновления пароля");
