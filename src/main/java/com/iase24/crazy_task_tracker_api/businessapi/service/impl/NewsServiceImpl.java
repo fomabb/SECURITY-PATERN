@@ -3,6 +3,7 @@ package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsEnRepository;
 import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsRuRepository;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
@@ -85,11 +86,22 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     @Transactional
-    public News testCreateNews(News news) {
-        return newsRepository.save(news);
+    public NewsTranslateCreateDataResponse testCreateNews(News request) {
+        News news = new News();
+        News savedNews = newsRepository.save(news);
+        for (NewsTranslation translation : request.getTranslations()) {
+            translationRepository.save(NewsTranslation.builder()
+                    .news(savedNews)
+                    .language(translation.getLanguage())
+                    .title(translation.getTitle())
+                    .info(translation.getInfo())
+                    .build());
+        }
+        return new NewsTranslateCreateDataResponse(news.getId(), news.getDate());
     }
 
     @Override
+    @Transactional
     public NewsTranslation addTranslation(Long newsId, NewsTranslation translation) {
         translation.setNews(newsRepository.findById(newsId).orElseThrow(() -> new RuntimeException("News not found")));
         return translationRepository.save(translation);

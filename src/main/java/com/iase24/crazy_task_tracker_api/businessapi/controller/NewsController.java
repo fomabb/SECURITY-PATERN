@@ -3,6 +3,7 @@ package com.iase24.crazy_task_tracker_api.businessapi.controller;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
 import com.iase24.crazy_task_tracker_api.dto.exception.CommonExceptionResponse;
 import com.iase24.crazy_task_tracker_api.entity.News;
@@ -100,12 +101,12 @@ public class NewsController {
         return ResponseEntity.ok(newsService.getNewsById(lang, id));
     }
 
-    @GetMapping("/{lang}/all-test")
+    @GetMapping("/{lang}/all-news")
     public ResponseEntity<List<NewsDataResponse>> testGetAllNews(@PathVariable("lang") String lang) {
         return ResponseEntity.ok(newsService.testGetAllNews(lang));
     }
 
-    @GetMapping("/{lang}/test/{id}")
+    @GetMapping("/{lang}/new-news/{id}")
     public ResponseEntity<NewsDataResponse> testGetById(
             @PathVariable("lang") String lang,
             @PathVariable("id") Long newsId
@@ -113,8 +114,8 @@ public class NewsController {
         return ResponseEntity.ok(newsService.testGetById(newsId, lang));
     }
 
-    @PostMapping("/test")
-    public ResponseEntity<News> testCreateNews(@RequestBody News news) {
+        @PostMapping("/create-news")
+    public ResponseEntity<NewsTranslateCreateDataResponse> testCreateNews(@RequestBody News news) {
         return ResponseEntity.ok(newsService.testCreateNews(news));
     }
 
