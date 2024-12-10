@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2024-12-10-create-table-news-11" author="Nikolay Kirilyuk">
+        <tagDatabase tag="security_service_db/postgres"/>
+    </changeSet>
+
+    <include file="11-create-table-news.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-12-10-create-table-news-translations-12" author="Nikolay Kirilyuk">
+        <tagDatabase tag="security_service_db/postgres"/>
+    </changeSet>
+
+    <include file="12-create-table-news-news_translations.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-12-10-insert-news-translate-static-data" author="Nikolay Kirilyuk">
+        <tagDatabase tag="security_service_db/postgres"/>
+    </changeSet>
+
+    <include file="static-data-insert/static-data-insert-into-news-translate.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
