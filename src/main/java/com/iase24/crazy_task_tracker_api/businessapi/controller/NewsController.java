@@ -5,6 +5,8 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateData
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
 import com.iase24.crazy_task_tracker_api.dto.exception.CommonExceptionResponse;
+import com.iase24.crazy_task_tracker_api.entity.News;
+import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -92,7 +94,34 @@ public class NewsController {
                             })
             })
     @GetMapping("/{lang}/{id}")
-    public ResponseEntity<NewsDataResponse> getNewsById(@PathVariable("lang") String lang, @PathVariable("id") Long id) {
+    public ResponseEntity<NewsDataResponse> getNewsById(
+            @PathVariable("lang") String lang,
+            @PathVariable("id") Long id) {
         return ResponseEntity.ok(newsService.getNewsById(lang, id));
+    }
+
+    @GetMapping("/{lang}/all-test")
+    public ResponseEntity<List<NewsDataResponse>> testGetAllNews(@PathVariable("lang") String lang) {
+        return ResponseEntity.ok(newsService.testGetAllNews(lang));
+    }
+
+    @GetMapping("/{lang}/test/{id}")
+    public ResponseEntity<NewsDataResponse> testGetById(
+            @PathVariable("lang") String lang,
+            @PathVariable("id") Long newsId
+    ) {
+        return ResponseEntity.ok(newsService.testGetById(newsId, lang));
+    }
+
+    @PostMapping("/test")
+    public ResponseEntity<News> testCreateNews(@RequestBody News news) {
+        return ResponseEntity.ok(newsService.testCreateNews(news));
+    }
+
+    @PostMapping("/{newsId}/translation")
+    public ResponseEntity<NewsTranslation> addTranslation(@PathVariable("newsId") Long newsId,
+                                                          @RequestBody NewsTranslation translation) {
+        NewsTranslation addedTranslation = newsService.addTranslation(newsId, translation);
+        return ResponseEntity.ok(addedTranslation);
     }
 }
