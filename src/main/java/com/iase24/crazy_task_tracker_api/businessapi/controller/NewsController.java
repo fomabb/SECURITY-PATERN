@@ -1,6 +1,8 @@
 package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
+import com.iase24.crazy_task_tracker_api.businessapi.dto.request.AddNewLangRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
@@ -114,7 +116,7 @@ public class NewsController {
         return ResponseEntity.ok(newsService.newNewsGetById(newsId, lang));
     }
 
-        @PostMapping("/create-news")
+    @PostMapping("/create-news")
     public ResponseEntity<NewsTranslateCreateDataResponse> newCreateNews(@RequestBody News news) {
         return ResponseEntity.ok(newsService.newCreateNews(news));
     }
@@ -124,5 +126,11 @@ public class NewsController {
                                                           @RequestBody NewsTranslation translation) {
         NewsTranslation addedTranslation = newsService.addTranslation(newsId, translation);
         return ResponseEntity.ok(addedTranslation);
+    }
+
+    @PostMapping("/add-language-to-news")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<AddNewLanguageResponse> addNewLanguageToNews() {
+        return ResponseEntity.status(HttpStatus.CREATED).body(newsService.addNewLanguageToNews());
     }
 }
