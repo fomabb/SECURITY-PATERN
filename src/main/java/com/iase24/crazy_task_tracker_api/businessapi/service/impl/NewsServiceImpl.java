@@ -77,16 +77,16 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public List<NewsDataResponse> testGetAllNews(String lang) {
+    public List<NewsDataResponse> newGetAllNews(String lang) {
         return translationRepository.findNewsTranslationByLanguage(lang)
-                .stream().map(translation ->
-                        new NewsDataResponse(translation.getNews().getId(), translation.getTitle(), translation.getInfo()))
-                .toList();
+                .stream().map(translation -> new NewsDataResponse(
+                        translation.getNews().getId(), translation.getTitle(), translation.getInfo()
+                )).toList();
     }
 
     @Override
     @Transactional
-    public NewsTranslateCreateDataResponse testCreateNews(News request) {
+    public NewsTranslateCreateDataResponse newCreateNews(News request) {
         News news = new News();
         News savedNews = newsRepository.save(news);
         for (NewsTranslation translation : request.getTranslations()) {
@@ -108,10 +108,11 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public NewsDataResponse testGetById(Long newsId, String lang) {
+    public NewsDataResponse newNewsGetById(Long newsId, String lang) {
         return translationRepository.findByNewsIdAndLanguage(newsId, lang)
                 .map(translation ->
                         new NewsDataResponse(translation.getNews().getId(), translation.getTitle(), translation.getInfo()))
-                .orElseThrow(() -> new EntityNotFoundException(""));
+                .orElseThrow(() -> new EntityNotFoundException("News, with ID: %s or language: %s, not found"
+                        .formatted(newsId, lang)));
     }
 }

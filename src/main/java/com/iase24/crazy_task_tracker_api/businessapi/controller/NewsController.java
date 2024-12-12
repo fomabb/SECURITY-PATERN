@@ -102,21 +102,21 @@ public class NewsController {
     }
 
     @GetMapping("/{lang}/all-news")
-    public ResponseEntity<List<NewsDataResponse>> testGetAllNews(@PathVariable("lang") String lang) {
-        return ResponseEntity.ok(newsService.testGetAllNews(lang));
+    public ResponseEntity<List<NewsDataResponse>> newGetAllNews(@PathVariable("lang") String lang) {
+        return ResponseEntity.ok(newsService.newGetAllNews(lang));
     }
 
     @GetMapping("/{lang}/new-news/{id}")
-    public ResponseEntity<NewsDataResponse> testGetById(
+    public ResponseEntity<NewsDataResponse> newNewsGetById(
             @PathVariable("lang") String lang,
             @PathVariable("id") Long newsId
     ) {
-        return ResponseEntity.ok(newsService.testGetById(newsId, lang));
+        return ResponseEntity.ok(newsService.newNewsGetById(newsId, lang));
     }
 
         @PostMapping("/create-news")
-    public ResponseEntity<NewsTranslateCreateDataResponse> testCreateNews(@RequestBody News news) {
-        return ResponseEntity.ok(newsService.testCreateNews(news));
+    public ResponseEntity<NewsTranslateCreateDataResponse> newCreateNews(@RequestBody News news) {
+        return ResponseEntity.ok(newsService.newCreateNews(news));
     }
 
     @PostMapping("/{newsId}/translation")

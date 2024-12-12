@@ -18,11 +18,11 @@ public interface NewsService {
 
     NewsDataResponse getNewsById(String lang, Long id);
 
-    List<NewsDataResponse> testGetAllNews(String lang);
+    List<NewsDataResponse> newGetAllNews(String lang);
 
-    NewsTranslateCreateDataResponse testCreateNews(News news);
+    NewsTranslateCreateDataResponse newCreateNews(News news);
 
     NewsTranslation addTranslation(Long newsId, NewsTranslation translation);
 
-    NewsDataResponse testGetById(Long newsId, String lang);
+    NewsDataResponse newNewsGetById(Long newsId, String lang);
 }
