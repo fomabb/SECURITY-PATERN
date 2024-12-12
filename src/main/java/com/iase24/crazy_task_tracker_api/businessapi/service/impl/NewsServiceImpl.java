@@ -1,19 +1,19 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
 
+import com.iase24.crazy_task_tracker_api.businessapi.dto.request.AddNewLangRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsEnRepository;
+import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsRepository;
 import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsRuRepository;
+import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsTranslationRepository;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
-import com.iase24.crazy_task_tracker_api.entity.News;
-import com.iase24.crazy_task_tracker_api.entity.NewsEn;
-import com.iase24.crazy_task_tracker_api.entity.NewsRu;
-import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
+import com.iase24.crazy_task_tracker_api.entity.*;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.BusinessException;
-import com.iase24.crazy_task_tracker_api.repository.NewsRepository;
-import com.iase24.crazy_task_tracker_api.repository.NewsTranslationRepository;
+import com.iase24.crazy_task_tracker_api.repository.ParsDataLanguageRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -77,16 +77,16 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public List<NewsDataResponse> testGetAllNews(String lang) {
+    public List<NewsDataResponse> newGetAllNews(String lang) {
         return translationRepository.findNewsTranslationByLanguage(lang)
-                .stream().map(translation ->
-                        new NewsDataResponse(translation.getNews().getId(), translation.getTitle(), translation.getInfo()))
-                .toList();
+                .stream().map(translation -> new NewsDataResponse(
+                        translation.getNews().getId(), translation.getTitle(), translation.getInfo()
+                )).toList();
     }
 
     @Override
     @Transactional
-    public NewsTranslateCreateDataResponse testCreateNews(News request) {
+    public NewsTranslateCreateDataResponse newCreateNews(News request) {
         News news = new News();
         News savedNews = newsRepository.save(news);
         for (NewsTranslation translation : request.getTranslations()) {
@@ -103,15 +103,24 @@ public class NewsServiceImpl implements NewsService {
     @Override
     @Transactional
     public NewsTranslation addTranslation(Long newsId, NewsTranslation translation) {
-        translation.setNews(newsRepository.findById(newsId).orElseThrow(() -> new RuntimeException("News not found")));
+        translation.setNews(newsRepository.findById(newsId).orElseThrow(() -> new EntityNotFoundException(
+                "News with ID: %s not found".formatted(newsId))));
         return translationRepository.save(translation);
     }
 
     @Override
-    public NewsDataResponse testGetById(Long newsId, String lang) {
+    public NewsDataResponse newNewsGetById(Long newsId, String lang) {
         return translationRepository.findByNewsIdAndLanguage(newsId, lang)
-                .map(translation ->
-                        new NewsDataResponse(translation.getNews().getId(), translation.getTitle(), translation.getInfo()))
-                .orElseThrow(() -> new EntityNotFoundException(""));
+                .map(translation -> new NewsDataResponse(
+                        translation.getNews().getId(), translation.getTitle(), translation.getInfo()
+                )).orElseThrow(() -> new EntityNotFoundException(
+                        "News, with ID: %s or language: %s, not found".formatted(newsId, lang)));
+    }
+
+    @Override
+    @Transactional
+    public AddNewLanguageResponse addNewLanguageToNews() {
+       translationRepository.insertNewLanguageToNews();
+       return new AddNewLanguageResponse();
     }
 }

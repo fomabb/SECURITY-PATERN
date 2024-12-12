@@ -1,6 +1,8 @@
 package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
+import com.iase24.crazy_task_tracker_api.businessapi.dto.request.AddNewLangRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
@@ -102,21 +104,21 @@ public class NewsController {
     }
 
     @GetMapping("/{lang}/all-news")
-    public ResponseEntity<List<NewsDataResponse>> testGetAllNews(@PathVariable("lang") String lang) {
-        return ResponseEntity.ok(newsService.testGetAllNews(lang));
+    public ResponseEntity<List<NewsDataResponse>> newGetAllNews(@PathVariable("lang") String lang) {
+        return ResponseEntity.ok(newsService.newGetAllNews(lang));
     }
 
     @GetMapping("/{lang}/new-news/{id}")
-    public ResponseEntity<NewsDataResponse> testGetById(
+    public ResponseEntity<NewsDataResponse> newNewsGetById(
             @PathVariable("lang") String lang,
             @PathVariable("id") Long newsId
     ) {
-        return ResponseEntity.ok(newsService.testGetById(newsId, lang));
+        return ResponseEntity.ok(newsService.newNewsGetById(newsId, lang));
     }
 
-        @PostMapping("/create-news")
-    public ResponseEntity<NewsTranslateCreateDataResponse> testCreateNews(@RequestBody News news) {
-        return ResponseEntity.ok(newsService.testCreateNews(news));
+    @PostMapping("/create-news")
+    public ResponseEntity<NewsTranslateCreateDataResponse> newCreateNews(@RequestBody News news) {
+        return ResponseEntity.ok(newsService.newCreateNews(news));
     }
 
     @PostMapping("/{newsId}/translation")
@@ -124,5 +126,11 @@ public class NewsController {
                                                           @RequestBody NewsTranslation translation) {
         NewsTranslation addedTranslation = newsService.addTranslation(newsId, translation);
         return ResponseEntity.ok(addedTranslation);
+    }
+
+    @PostMapping("/add-language-to-news")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<AddNewLanguageResponse> addNewLanguageToNews() {
+        return ResponseEntity.status(HttpStatus.CREATED).body(newsService.addNewLanguageToNews());
     }
 }

@@ -1,6 +1,8 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service;
 
+import com.iase24.crazy_task_tracker_api.businessapi.dto.request.AddNewLangRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
@@ -18,11 +20,13 @@ public interface NewsService {
 
     NewsDataResponse getNewsById(String lang, Long id);
 
-    List<NewsDataResponse> testGetAllNews(String lang);
+    List<NewsDataResponse> newGetAllNews(String lang);
 
-    NewsTranslateCreateDataResponse testCreateNews(News news);
+    NewsTranslateCreateDataResponse newCreateNews(News news);
 
     NewsTranslation addTranslation(Long newsId, NewsTranslation translation);
 
-    NewsDataResponse testGetById(Long newsId, String lang);
+    NewsDataResponse newNewsGetById(Long newsId, String lang);
+
+    AddNewLanguageResponse addNewLanguageToNews();
 }
