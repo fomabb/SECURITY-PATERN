@@ -17,10 +17,24 @@
 
     <include file="12-create-table-news-news_translations.sql" relativeToChangelogFile="true"/>
 
+    <changeSet id="2024-12-12-create-table-pars_language_data-13" author="Nikolay Kirilyuk">
+        <tagDatabase tag="security_service_db/postgres"/>
+    </changeSet>
+
+    <include file="13-parsing-table-new-data-for-new-language.sql" relativeToChangelogFile="true"/>
+
+    <!--=========================Static=============================================================================-->
+
     <changeSet id="2024-12-10-insert-news-translate-static-data" author="Nikolay Kirilyuk">
         <tagDatabase tag="security_service_db/postgres"/>
     </changeSet>
 
     <include file="static-data-insert/static-data-insert-into-news-translate.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-12-12-insert-into-pars-language-static-data" author="Nikolay Kirilyuk">
+        <tagDatabase tag="security_service_db/postgres/pars_language_data"/>
+    </changeSet>
+
+    <include file="static-data-insert/static-data-insert-pars-language.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

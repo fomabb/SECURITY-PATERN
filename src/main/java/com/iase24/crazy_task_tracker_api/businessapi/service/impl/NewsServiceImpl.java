@@ -103,16 +103,17 @@ public class NewsServiceImpl implements NewsService {
     @Override
     @Transactional
     public NewsTranslation addTranslation(Long newsId, NewsTranslation translation) {
-        translation.setNews(newsRepository.findById(newsId).orElseThrow(() -> new RuntimeException("News not found")));
+        translation.setNews(newsRepository.findById(newsId).orElseThrow(() -> new EntityNotFoundException(
+                "News with ID: %s not found".formatted(newsId))));
         return translationRepository.save(translation);
     }
 
     @Override
     public NewsDataResponse newNewsGetById(Long newsId, String lang) {
         return translationRepository.findByNewsIdAndLanguage(newsId, lang)
-                .map(translation ->
-                        new NewsDataResponse(translation.getNews().getId(), translation.getTitle(), translation.getInfo()))
-                .orElseThrow(() -> new EntityNotFoundException("News, with ID: %s or language: %s, not found"
-                        .formatted(newsId, lang)));
+                .map(translation -> new NewsDataResponse(
+                        translation.getNews().getId(), translation.getTitle(), translation.getInfo()
+                )).orElseThrow(() -> new EntityNotFoundException(
+                        "News, with ID: %s or language: %s, not found".formatted(newsId, lang)));
     }
 }
