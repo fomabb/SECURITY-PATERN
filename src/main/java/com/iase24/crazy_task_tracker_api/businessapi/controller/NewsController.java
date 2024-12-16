@@ -146,14 +146,14 @@ public class NewsController {
         return ResponseEntity.ok(newsService.getNewsByIdWithLikes(lang, newsId));
     }
 
-    @PostMapping("/{newsId}/like")
+    @PostMapping("/{lang}/{newsId}/like")
     public ResponseEntity<CountLikesResponse> likeNews(
+            @PathVariable("lang") String lang,
             @PathVariable("newsId") Long newsId,
             @RequestHeader("X-User-Id") UUID userId
     ) {
         log.info("Поступил запрос на добавление лайка по ID: {} новости и по ID: {} пользователя", newsId, userId);
         newsService.addLike(newsId, userId);
-        int countLikes = newsService.countAllLikesByNewsId(newsId);
-        return ResponseEntity.ok(CountLikesResponse.builder().newsId(newsId).countLikes(countLikes).build());
+        return ResponseEntity.ok(newsService.getContentWithLikeForClick(lang, newsId));
     }
 }

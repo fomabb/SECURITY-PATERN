@@ -193,4 +193,17 @@ public class NewsServiceImpl implements NewsService {
                 .orElseThrow(() -> new EntityNotFoundException(
                         "News, with ID: %s or language: %s, not found".formatted(newsId, lang)));
     }
+
+    @Override
+    public CountLikesResponse getContentWithLikeForClick(String  lang, Long newsId) {
+        return translationRepository.findByNewsIdAndLanguage(newsId, lang)
+                .map(newsTranslation -> CountLikesResponse.builder()
+                        .newsId(newsTranslation.getNews().getId())
+                        .title(newsTranslation.getTitle())
+                        .info(newsTranslation.getInfo())
+                        .countLikes(countAllLikesByNewsId(newsTranslation.getNews().getId()))
+                        .build())
+                .orElseThrow(() -> new EntityNotFoundException(
+                        "News, with ID: %s or language: %s, not found".formatted(newsId, lang)));
+    }
 }

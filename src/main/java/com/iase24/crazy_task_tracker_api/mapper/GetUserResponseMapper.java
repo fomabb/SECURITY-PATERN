@@ -1,6 +1,8 @@
 package com.iase24.crazy_task_tracker_api.mapper;
 
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.CountLikesResponse;
 import com.iase24.crazy_task_tracker_api.dto.response.GetUserResponse;
+import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
 import com.iase24.crazy_task_tracker_api.security.entity.User;
 import com.iase24.crazy_task_tracker_api.security.entity.numentity.Role;
 import org.springframework.stereotype.Component;
@@ -31,5 +33,14 @@ public class GetUserResponseMapper {
                     .build();
         }
         return getUserResponse;
+    }
+
+    public CountLikesResponse countLikesResponse(NewsTranslation newsTranslation) {
+        return CountLikesResponse.builder()
+                .newsId(newsTranslation.getNews().getId())
+                .title(newsTranslation.getTitle())
+                .info(newsTranslation.getInfo())
+                .countLikes(Math.toIntExact(newsTranslation.getNews().getId()))
+                .build();
     }
 }
