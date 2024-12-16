@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "likes")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

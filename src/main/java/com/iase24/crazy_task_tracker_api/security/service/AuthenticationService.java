@@ -16,6 +16,9 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -42,6 +45,7 @@ public class AuthenticationService {
                 .username(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.ROLE_USER)
+                .dateCreateUser(Timestamp.valueOf(LocalDateTime.now()))
                 .build();
         log.info("Пользователь сохранен в базу данных");
         userService.create(user);
@@ -103,6 +107,7 @@ public class AuthenticationService {
                 .username(request.getLogin())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.ROLE_EMPLOYEE)
+                .dateCreateUser(Timestamp.valueOf(LocalDateTime.now()))
                 .build();
         log.info("Работник сохранен в базу данных");
         userService.create(user);

@@ -1,19 +1,13 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
 
-import com.iase24.crazy_task_tracker_api.businessapi.dto.request.AddNewLangRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsEnRepository;
-import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsRepository;
-import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsRuRepository;
-import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsTranslationRepository;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
+import com.iase24.crazy_task_tracker_api.businessapi.repository.*;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
 import com.iase24.crazy_task_tracker_api.entity.*;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.BusinessException;
-import com.iase24.crazy_task_tracker_api.repository.ParsDataLanguageRepository;
+import com.iase24.crazy_task_tracker_api.security.entity.User;
+import com.iase24.crazy_task_tracker_api.security.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -33,6 +28,8 @@ public class NewsServiceImpl implements NewsService {
     private final NewsEnRepository enRepository;
     private final NewsRepository newsRepository;
     private final NewsTranslationRepository translationRepository;
+    private final UserRepository userRepository;
+    private final LikeRepository likeRepository;
 
     @Override
     @Transactional
@@ -120,7 +117,80 @@ public class NewsServiceImpl implements NewsService {
     @Override
     @Transactional
     public AddNewLanguageResponse addNewLanguageToNews() {
-       translationRepository.insertNewLanguageToNews();
-       return new AddNewLanguageResponse();
+        translationRepository.insertNewLanguageToNews();
+        return new AddNewLanguageResponse();
+    }
+
+//===========================Section Post and like======================================================================
+
+    @Override
+    @Transactional
+    public void addLike(Long newsId, UUID userId) {
+        log.info("Начало поиска новости по ID: {}", newsId);
+        News news = newsRepository.findById(newsId)
+                .orElseThrow(() -> {
+                    log.warn("Ошибка поиска новости по ID: {}", newsId);
+                    return new EntityNotFoundException("News with ID: %s not found".formatted(newsId));
+                });
+        log.info("Начало поиска пользователя по ID: {}", userId);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> {
+                    log.warn("Ошибка поиска пользователя по ID: {}", userId);
+                    return new EntityNotFoundException("User with ID: %s not found".formatted(userId));
+                });
+        Like like = Like.builder().news(news).user(user).build();
+        if (likeRepository.findByNewsAndUser(news, user).isPresent()) {
+            log.warn("Пользователь уже поставил лайк под этой новостью");
+            removeLike(newsId, userId);
+        } else {
+            log.info("Лайк сохранен в бзу данных");
+            likeRepository.save(like);
+        }
+    }
+
+    private void removeLike(Long newsId, UUID userId) {
+        log.info("Начало поиска новости по ID: {} для проверки лайка", newsId);
+        News news = newsRepository.findById(newsId)
+                .orElseThrow(() -> {
+                    log.warn("Ошибка поиска новости по ID: {} для проверки лайка", newsId);
+                    return new EntityNotFoundException("News with ID: %s not found".formatted(newsId));
+                });
+        log.info("Начало поиска пользователя по ID: {} для проверки лайка", userId);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> {
+                    log.warn("Ошибка поиска пользователя по ID: {} для проверки лайка", userId);
+                    return new EntityNotFoundException("User with ID: %s not found".formatted(userId));
+                });
+        Like like = likeRepository.findByNewsAndUser(news, user)
+                .orElseThrow(() -> new EntityNotFoundException("Like not found"));
+        likeRepository.delete(like);
+    }
+
+    @Override
+    public int countAllLikesByNewsId(Long newsId) {
+        return likeRepository.countLikesByNewsId(newsId);
+    }
+
+    @Override
+    public List<CountLikesResponse> getAllNewsWithLikes(String lang) {
+        return translationRepository.findNewsTranslationByLanguage(lang).stream().map(news -> CountLikesResponse.builder()
+                .newsId(news.getNews().getId())
+                .title(news.getTitle())
+                .info(news.getInfo())
+                .countLikes(countAllLikesByNewsId(news.getNews().getId()))
+                .build()).toList();
+    }
+
+    @Override
+    public CountLikesResponse getNewsByIdWithLikes(String lang, Long newsId) {
+        return translationRepository.findByNewsIdAndLanguage(newsId, lang)
+                .map(newsTranslation -> CountLikesResponse.builder()
+                        .newsId(newsTranslation.getNews().getId())
+                        .title(newsTranslation.getTitle())
+                        .info(newsTranslation.getInfo())
+                        .countLikes(countAllLikesByNewsId(newsTranslation.getNews().getId()))
+                        .build())
+                .orElseThrow(() -> new EntityNotFoundException(
+                        "News, with ID: %s or language: %s, not found".formatted(newsId, lang)));
     }
 }

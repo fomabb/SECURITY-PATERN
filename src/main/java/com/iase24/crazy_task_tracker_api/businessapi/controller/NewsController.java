@@ -1,11 +1,7 @@
 package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
-import com.iase24.crazy_task_tracker_api.businessapi.dto.request.AddNewLangRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
 import com.iase24.crazy_task_tracker_api.dto.exception.CommonExceptionResponse;
 import com.iase24.crazy_task_tracker_api.entity.News;
@@ -27,6 +23,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/news")
@@ -132,5 +129,31 @@ public class NewsController {
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<AddNewLanguageResponse> addNewLanguageToNews() {
         return ResponseEntity.status(HttpStatus.CREATED).body(newsService.addNewLanguageToNews());
+    }
+
+//===========================Section Post and like======================================================================
+
+    @GetMapping("/{lang}/show-all-likes")
+    public ResponseEntity<List<CountLikesResponse>> getAllNewsWithLikes(@PathVariable("lang") String lang) {
+        List<CountLikesResponse> countLikesResponses = newsService.getAllNewsWithLikes(lang);
+        return ResponseEntity.ok(countLikesResponses);
+    }
+
+    @GetMapping("/{lang}/show-like/by/{newsId}")
+    public ResponseEntity<CountLikesResponse> getLikesByNewsId(
+            @PathVariable("lang") String lang,
+            @PathVariable("newsId") Long newsId) {
+        return ResponseEntity.ok(newsService.getNewsByIdWithLikes(lang, newsId));
+    }
+
+    @PostMapping("/{newsId}/like")
+    public ResponseEntity<CountLikesResponse> likeNews(
+            @PathVariable("newsId") Long newsId,
+            @RequestHeader("X-User-Id") UUID userId
+    ) {
+        log.info("Поступил запрос на добавление лайка по ID: {} новости и по ID: {} пользователя", newsId, userId);
+        newsService.addLike(newsId, userId);
+        int countLikes = newsService.countAllLikesByNewsId(newsId);
+        return ResponseEntity.ok(CountLikesResponse.builder().newsId(newsId).countLikes(countLikes).build());
     }
 }
