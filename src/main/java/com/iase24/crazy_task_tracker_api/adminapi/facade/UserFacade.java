@@ -36,10 +36,10 @@ public class UserFacade {
         log.info("Пользователь по имени {}, с ID: {}", userId.getUsername(), userId.getId());
         if (userId.getRole().equals(Role.ROLE_ADMIN)) {
             return new GetUserResponse(
-                    userId.getId(), userId.getFirstName(), userId.getWorkEmail(), userId.getPassword(), userId.getRole().toString());
+                    userId.getId(), userId.getFirstName(), userId.getWorkEmail(), userId.getPassword(), userId.getRole().toString(), userId.getDateCreateUser().toLocalDateTime());
         } else {
             return new GetUserResponse(
-                    userId.getId(), userId.getFirstName(), userId.getUsername(), userId.getPassword(), userId.getRole().toString());
+                    userId.getId(), userId.getFirstName(), userId.getUsername(), userId.getPassword(), userId.getRole().toString(), userId.getDateCreateUser().toLocalDateTime());
         }
     }
 

@@ -1,16 +1,14 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service;
 
-import com.iase24.crazy_task_tracker_api.businessapi.dto.request.AddNewLangRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
 import com.iase24.crazy_task_tracker_api.entity.News;
 import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
 import jakarta.validation.Valid;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 public interface NewsService {
 
@@ -29,4 +27,12 @@ public interface NewsService {
     NewsDataResponse newNewsGetById(Long newsId, String lang);
 
     AddNewLanguageResponse addNewLanguageToNews();
+
+    void addLike(Long newsId, UUID userId);
+
+    int countAllLikesByNewsId(Long newsId);
+
+    List<CountLikesResponse> getAllNewsWithLikes(String lang);
+
+    CountLikesResponse getNewsByIdWithLikes(String lang, Long newsId);
 }

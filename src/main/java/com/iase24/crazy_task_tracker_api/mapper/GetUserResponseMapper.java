@@ -18,6 +18,7 @@ public class GetUserResponseMapper {
                     .email(user.getUsername())
                     .password(user.getPassword())
                     .role(user.getRole().toString())
+                    .createDateTimeUser(user.getDateCreateUser().toLocalDateTime())
                     .build();
         } else if (user.getRole().equals(Role.ROLE_EMPLOYEE)) {
             getUserResponse = GetUserResponse.builder()
@@ -26,9 +27,8 @@ public class GetUserResponseMapper {
                     .email(user.getWorkEmail())
                     .password(user.getPassword())
                     .role(user.getRole().toString())
+                    .createDateTimeUser(user.getDateCreateUser().toLocalDateTime())
                     .build();
-        } else if (user.getRole().equals(Role.ROLE_ADMIN)) {
-
         }
         return getUserResponse;
     }

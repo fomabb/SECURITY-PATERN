@@ -23,6 +23,18 @@
 
     <include file="13-parsing-table-new-data-for-new-language.sql" relativeToChangelogFile="true"/>
 
+    <changeSet id="2024-12-16-create-table-likes-14" author="Nikolay Kirilyuk">
+        <tagDatabase tag="security_service_db/postgres"/>
+    </changeSet>
+
+    <include file="14-create-table-like.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-12-16-create-table-comments-15" author="Nikolay Kirilyuk">
+        <tagDatabase tag="security_service_db/postgres"/>
+    </changeSet>
+
+    <include file="15-create-table-comments.sql" relativeToChangelogFile="true"/>
+
     <!--=========================Static=============================================================================-->
 
     <changeSet id="2024-12-10-insert-news-translate-static-data" author="Nikolay Kirilyuk">
@@ -36,5 +48,11 @@
     </changeSet>
 
     <include file="static-data-insert/static-data-insert-pars-language.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2024-12-16-alter-table-news-column-update_at-static-data" author="Nikolay Kirilyuk">
+        <tagDatabase tag="security_service_db/postgres/news"/>
+    </changeSet>
+
+    <include file="static-data-insert/static-data-alter-table-news-column.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
