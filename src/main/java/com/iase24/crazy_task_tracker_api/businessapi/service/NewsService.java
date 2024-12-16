@@ -35,4 +35,6 @@ public interface NewsService {
     List<CountLikesResponse> getAllNewsWithLikes(String lang);
 
     CountLikesResponse getNewsByIdWithLikes(String lang, Long newsId);
+
+    CountLikesResponse getContentWithLikeForClick(String  lang, Long newsId);
 }
