@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -22,8 +23,16 @@ public class News {
 
     private Timestamp date;
 
+    private Timestamp updateAt;
+
     @OneToMany(mappedBy = "news", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<NewsTranslation> translations;
+
+    @OneToMany(mappedBy = "news", cascade = CascadeType.ALL)
+    private Set<Like> likes = new HashSet<>();
+
+    @OneToMany(mappedBy = "news", cascade = CascadeType.ALL)
+    private Set<Comment> comments = new HashSet<>();
 
     public News() {
         this.date = new Timestamp(System.currentTimeMillis());

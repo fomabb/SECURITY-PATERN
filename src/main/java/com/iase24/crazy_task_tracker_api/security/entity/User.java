@@ -5,11 +5,11 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
@@ -17,7 +17,6 @@ import java.util.UUID;
 @Entity
 @Table(name = "users")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class User implements UserDetails {
@@ -43,8 +42,15 @@ public class User implements UserDetails {
     @Column(name = "role", nullable = false)
     private Role role;
 
+    @Column(name = "date_create_user")
+    private Timestamp dateCreateUser;
+
     @Column(name = "reset_token")
     private String resetToken;
+
+    public User() {
+        this.dateCreateUser = new Timestamp(System.currentTimeMillis());
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
