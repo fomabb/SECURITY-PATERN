@@ -19,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -147,6 +148,7 @@ public class NewsController {
     }
 
     @PostMapping("/{lang}/like")
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     public ResponseEntity<CountLikesResponse> likeNews(
             @PathVariable("lang") String lang,
             @RequestBody LikeByUserIdAndNewsIdRequest request
@@ -154,6 +156,7 @@ public class NewsController {
         log.info("Поступил запрос на добавление лайка по ID: {} новости и по ID: {} пользователя",
                 request.getNewsId(), request.getUserId());
         newsService.addLike(request);
+        log.info("Пользователь получил сведения о добавлении/удалении лайка.");
         return ResponseEntity.ok(newsService.getContentWithLikeForClick(lang, request.getNewsId()));
     }
 }

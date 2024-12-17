@@ -7,10 +7,12 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import org.springframework.security.core.AuthenticationException;
 import java.time.LocalDateTime;
 
 @RestControllerAdvice
@@ -38,6 +40,24 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<Void> handleRuntimeException() {
         return ResponseEntity.internalServerError().build();
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<CommonExceptionResponse> handleAccessDeniedException(AccessDeniedException e) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(buildResponseBody(e.getMessage(), e.getClass().getSimpleName()));
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<CommonExceptionResponse> handleGeneralException(Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(buildResponseBody(e.getMessage(), e.getClass().getSimpleName()));
+    }
+
+    @ExceptionHandler(AuthenticationException.class)
+    public ResponseEntity<CommonExceptionResponse> handleAuthenticationException(AuthenticationException e) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(buildResponseBody(e.getMessage(), e.getClass().getSimpleName()));
     }
 
     private CommonExceptionResponse buildResponseBody(String message, String exceptionClass) {

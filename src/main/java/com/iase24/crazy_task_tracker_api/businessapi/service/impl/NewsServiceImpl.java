@@ -141,7 +141,7 @@ public class NewsServiceImpl implements NewsService {
                 });
         Like like = Like.builder().news(news).user(user).build();
         if (likeRepository.findByNewsAndUser(news, user).isPresent()) {
-            log.warn("Пользователь уже поставил лайк под этой новостью");
+            log.warn("Пользователь уже поставил лайк под этой новостью и он удаляется");
             removeLike(request.getNewsId(), request.getUserId());
         } else {
             log.info("Лайк сохранен в бзу данных");
