@@ -23805,3 +23805,673 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 *===Фильтр RequestValidationFilter уничтожен===*
 2024-12-16 20:21:32 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
 *===Фильтр RequestValidationFilter уничтожен===*
+2024-12-17 13:36:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-17 13:36:35 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 21.0.5 with PID 2564 (E:\Projects\Java\SECURITY-PATERN\target\classes started by User in E:\Projects\Java\SECURITY-PATERN)
+2024-12-17 13:36:35 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-17 13:36:36 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-17 13:36:36 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 137 ms. Found 10 JPA repository interfaces.
+2024-12-17 13:36:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-17 13:36:38 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-17 13:36:38 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-17 13:36:38 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-17 13:36:38 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-17 13:36:38 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3166 ms
+2024-12-17 13:36:38 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-17 13:36:38 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f112f70
+2024-12-17 13:36:38 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-17 13:36:39 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-17 13:36:40 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 13:36:40 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-17 13:36:40 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 13:36:40 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-17 13:36:40 [main] INFO  liquibase.util - Run:                          0
+2024-12-17 13:36:40 [main] INFO  liquibase.util - Previously run:              34
+2024-12-17 13:36:40 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-17 13:36:40 [main] INFO  liquibase.util - -------------------------------
+2024-12-17 13:36:40 [main] INFO  liquibase.util - Total change sets:           34
+2024-12-17 13:36:40 [main] INFO  liquibase.util - Update summary generated
+2024-12-17 13:36:40 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-17 13:36:40 [main] INFO  liquibase.command - Command execution complete
+2024-12-17 13:36:40 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-17 13:36:40 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-17 13:36:40 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-17 13:36:41 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-17 13:36:41 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-17 13:36:43 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-17 13:36:43 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 13:36:43 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-17 13:36:44 [main] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Инициализация RequestValidationFilter===*
+2024-12-17 13:36:44 [main] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Инициализация RequestValidationFilter===*
+2024-12-17 13:36:45 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-17 13:36:45 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-17 13:36:46 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-17 13:36:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-17 13:36:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-17 13:36:47 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 13.976 seconds (process running for 15.343)
+2024-12-17 13:36:48 [RMI TCP Connection(3)-10.128.35.226] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-17 13:36:48 [RMI TCP Connection(3)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-17 13:36:48 [RMI TCP Connection(3)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-17 13:36:55 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/el/all-news
+2024-12-17 13:36:55 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 13:36:55 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/el/all-news
+2024-12-17 13:36:55 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 13:36:55 [http-nio-8076-exec-1] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: GET
+URI эндпоинта: http://localhost:8076/api/news/el/all-news
+Статус: 200
+Заголовки запроса: {sec-fetch-mode=navigate, sec-fetch-site=none, accept-language=en-AS,en;q=0.9,ru-RU;q=0.8,ru;q=0.7,en-US;q=0.6, cookie=redirect_to=%2Fexplore%3FschemaVersion%3D1%26panes%3D%257B%2522fz9%2522%3A%257B%2522datasource%2522%3A%2522P8E80F9AEF21F6940%2522%2C%2522queries%2522%3A%255B%257B%2522refId%2522%3A%2522A%2522%2C%2522expr%2522%3A%2522%2522%2C%2522queryType%2522%3A%2522range%2522%2C%2522datasource%2522%3A%257B%2522type%2522%3A%2522loki%2522%2C%2522uid%2522%3A%2522P8E80F9AEF21F6940%2522%257D%257D%255D%2C%2522range%2522%3A%257B%2522from%2522%3A%2522now-1h%2522%2C%2522to%2522%3A%2522now%2522%257D%257D%257D%26orgId%3D1; JSESSIONID=50967CA3585E0D7716D30ABB0598E813, purpose=prefetch, sec-fetch-user=?1, accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7, sec-ch-ua="Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8076, upgrade-insecure-requests=1, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, sec-purpose=prefetch;prerender, sec-fetch-dest=document}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 10:36:55 GMT, Content-Type=application/json}
+Время выполнения запроса: 312 мс
+=========================================
+2024-12-17 13:37:00 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/ru/all-news
+2024-12-17 13:37:00 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 13:37:00 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/ru/all-news
+2024-12-17 13:37:00 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 13:37:00 [http-nio-8076-exec-3] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: GET
+URI эндпоинта: http://localhost:8076/api/news/ru/all-news
+Статус: 200
+Заголовки запроса: {sec-fetch-mode=navigate, sec-fetch-site=none, accept-language=en-AS,en;q=0.9,ru-RU;q=0.8,ru;q=0.7,en-US;q=0.6, cookie=redirect_to=%2Fexplore%3FschemaVersion%3D1%26panes%3D%257B%2522fz9%2522%3A%257B%2522datasource%2522%3A%2522P8E80F9AEF21F6940%2522%2C%2522queries%2522%3A%255B%257B%2522refId%2522%3A%2522A%2522%2C%2522expr%2522%3A%2522%2522%2C%2522queryType%2522%3A%2522range%2522%2C%2522datasource%2522%3A%257B%2522type%2522%3A%2522loki%2522%2C%2522uid%2522%3A%2522P8E80F9AEF21F6940%2522%257D%257D%255D%2C%2522range%2522%3A%257B%2522from%2522%3A%2522now-1h%2522%2C%2522to%2522%3A%2522now%2522%257D%257D%257D%26orgId%3D1; JSESSIONID=50967CA3585E0D7716D30ABB0598E813, purpose=prefetch, sec-fetch-user=?1, accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7, sec-ch-ua="Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8076, upgrade-insecure-requests=1, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, sec-purpose=prefetch;prerender, sec-fetch-dest=document}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 10:37:00 GMT, Content-Type=application/json}
+Время выполнения запроса: 21 мс
+=========================================
+2024-12-17 13:37:06 [http-nio-8076-exec-5] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/ru../all-news
+2024-12-17 13:37:06 [http-nio-8076-exec-5] WARN  c.i.starter.config.LoggingFilter - Обнаружен потенциально вредоносный запрос: /api/news/ru../all-news
+2024-12-17 13:37:24 [http-nio-8076-exec-7] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/ru/all-news
+2024-12-17 13:37:24 [http-nio-8076-exec-7] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 13:37:24 [http-nio-8076-exec-7] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/ru/all-news
+2024-12-17 13:37:24 [http-nio-8076-exec-7] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 13:37:24 [http-nio-8076-exec-7] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: GET
+URI эндпоинта: http://localhost:8076/api/news/ru/all-news
+Статус: 200
+Заголовки запроса: {sec-fetch-mode=navigate, sec-fetch-site=none, accept-language=en-AS,en;q=0.9,ru-RU;q=0.8,ru;q=0.7,en-US;q=0.6, cookie=redirect_to=%2Fexplore%3FschemaVersion%3D1%26panes%3D%257B%2522fz9%2522%3A%257B%2522datasource%2522%3A%2522P8E80F9AEF21F6940%2522%2C%2522queries%2522%3A%255B%257B%2522refId%2522%3A%2522A%2522%2C%2522expr%2522%3A%2522%2522%2C%2522queryType%2522%3A%2522range%2522%2C%2522datasource%2522%3A%257B%2522type%2522%3A%2522loki%2522%2C%2522uid%2522%3A%2522P8E80F9AEF21F6940%2522%257D%257D%255D%2C%2522range%2522%3A%257B%2522from%2522%3A%2522now-1h%2522%2C%2522to%2522%3A%2522now%2522%257D%257D%257D%26orgId%3D1; JSESSIONID=50967CA3585E0D7716D30ABB0598E813, purpose=prefetch, sec-fetch-user=?1, accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7, sec-ch-ua="Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8076, upgrade-insecure-requests=1, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, sec-purpose=prefetch;prerender, sec-fetch-dest=document}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 10:37:24 GMT, Content-Type=application/json}
+Время выполнения запроса: 20 мс
+=========================================
+2024-12-17 13:37:44 [http-nio-8076-exec-9] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/de/all-news
+2024-12-17 13:37:44 [http-nio-8076-exec-9] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 13:37:44 [http-nio-8076-exec-9] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/de/all-news
+2024-12-17 13:37:44 [http-nio-8076-exec-9] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 13:37:45 [http-nio-8076-exec-9] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: GET
+URI эндпоинта: http://localhost:8076/api/news/de/all-news
+Статус: 200
+Заголовки запроса: {sec-fetch-mode=navigate, sec-fetch-site=none, accept-language=en-AS,en;q=0.9,ru-RU;q=0.8,ru;q=0.7,en-US;q=0.6, cookie=redirect_to=%2Fexplore%3FschemaVersion%3D1%26panes%3D%257B%2522fz9%2522%3A%257B%2522datasource%2522%3A%2522P8E80F9AEF21F6940%2522%2C%2522queries%2522%3A%255B%257B%2522refId%2522%3A%2522A%2522%2C%2522expr%2522%3A%2522%2522%2C%2522queryType%2522%3A%2522range%2522%2C%2522datasource%2522%3A%257B%2522type%2522%3A%2522loki%2522%2C%2522uid%2522%3A%2522P8E80F9AEF21F6940%2522%257D%257D%255D%2C%2522range%2522%3A%257B%2522from%2522%3A%2522now-1h%2522%2C%2522to%2522%3A%2522now%2522%257D%257D%257D%26orgId%3D1; JSESSIONID=50967CA3585E0D7716D30ABB0598E813, purpose=prefetch, sec-fetch-user=?1, accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7, sec-ch-ua="Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8076, upgrade-insecure-requests=1, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, sec-purpose=prefetch;prerender, sec-fetch-dest=document}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 10:37:45 GMT, Content-Type=application/json}
+Время выполнения запроса: 20 мс
+=========================================
+2024-12-17 13:37:48 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/el/all-news
+2024-12-17 13:37:48 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 13:37:48 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=GET, URL=/api/news/el/all-news
+2024-12-17 13:37:48 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 13:37:48 [http-nio-8076-exec-1] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: GET
+URI эндпоинта: http://localhost:8076/api/news/el/all-news
+Статус: 200
+Заголовки запроса: {sec-fetch-mode=navigate, sec-fetch-site=none, accept-language=en-AS,en;q=0.9,ru-RU;q=0.8,ru;q=0.7,en-US;q=0.6, cookie=redirect_to=%2Fexplore%3FschemaVersion%3D1%26panes%3D%257B%2522fz9%2522%3A%257B%2522datasource%2522%3A%2522P8E80F9AEF21F6940%2522%2C%2522queries%2522%3A%255B%257B%2522refId%2522%3A%2522A%2522%2C%2522expr%2522%3A%2522%2522%2C%2522queryType%2522%3A%2522range%2522%2C%2522datasource%2522%3A%257B%2522type%2522%3A%2522loki%2522%2C%2522uid%2522%3A%2522P8E80F9AEF21F6940%2522%257D%257D%255D%2C%2522range%2522%3A%257B%2522from%2522%3A%2522now-1h%2522%2C%2522to%2522%3A%2522now%2522%257D%257D%257D%26orgId%3D1; JSESSIONID=50967CA3585E0D7716D30ABB0598E813, purpose=prefetch, sec-fetch-user=?1, accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7, sec-ch-ua="Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24", sec-ch-ua-mobile=?0, sec-ch-ua-platform="Windows", host=localhost:8076, upgrade-insecure-requests=1, connection=keep-alive, accept-encoding=gzip, deflate, br, zstd, user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36, sec-purpose=prefetch;prerender, sec-fetch-dest=document}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 10:37:48 GMT, Content-Type=application/json}
+Время выполнения запроса: 19 мс
+=========================================
+2024-12-17 13:38:22 [http-nio-8076-exec-4] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=OPTIONS, URL=/api/news/el/3/like
+2024-12-17 13:38:22 [http-nio-8076-exec-4] WARN  c.i.starter.config.LoggingFilter - Недопустимый HTTP-метод: OPTIONS
+2024-12-17 13:38:40 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 13:38:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-17 13:38:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-17 13:38:40 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Фильтр RequestValidationFilter уничтожен===*
+2024-12-17 13:38:40 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Фильтр RequestValidationFilter уничтожен===*
+2024-12-17 13:38:44 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-17 13:38:44 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 21.0.5 with PID 8352 (E:\Projects\Java\SECURITY-PATERN\target\classes started by User in E:\Projects\Java\SECURITY-PATERN)
+2024-12-17 13:38:44 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-17 13:38:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-17 13:38:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 136 ms. Found 10 JPA repository interfaces.
+2024-12-17 13:38:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-17 13:38:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-17 13:38:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-17 13:38:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-17 13:38:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-17 13:38:47 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3366 ms
+2024-12-17 13:38:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-17 13:38:48 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@103e7c7c
+2024-12-17 13:38:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-17 13:38:48 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-17 13:38:49 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 13:38:49 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-17 13:38:49 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 13:38:49 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-17 13:38:49 [main] INFO  liquibase.util - Run:                          0
+2024-12-17 13:38:49 [main] INFO  liquibase.util - Previously run:              34
+2024-12-17 13:38:49 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-17 13:38:49 [main] INFO  liquibase.util - -------------------------------
+2024-12-17 13:38:49 [main] INFO  liquibase.util - Total change sets:           34
+2024-12-17 13:38:49 [main] INFO  liquibase.util - Update summary generated
+2024-12-17 13:38:49 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-17 13:38:49 [main] INFO  liquibase.command - Command execution complete
+2024-12-17 13:38:49 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-17 13:38:50 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-17 13:38:50 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-17 13:38:50 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-17 13:38:50 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-17 13:38:52 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-17 13:38:52 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 13:38:53 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-17 13:38:54 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-17 13:38:54 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-17 13:38:55 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-17 13:38:58 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-17 13:38:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-17 13:38:58 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 14.662 seconds (process running for 15.76)
+2024-12-17 13:38:58 [RMI TCP Connection(3)-10.128.35.226] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-17 13:38:58 [RMI TCP Connection(3)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-17 13:38:58 [RMI TCP Connection(3)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-17 13:39:10 [http-nio-8076-exec-2] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:39:10 [http-nio-8076-exec-2] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:39:10 [http-nio-8076-exec-2] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:39:10 [http-nio-8076-exec-2] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-17 13:39:10 [http-nio-8076-exec-2] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-17 13:39:10 [http-nio-8076-exec-2] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-17 13:39:14 [http-nio-8076-exec-3] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:39:14 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:39:14 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:39:14 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-17 13:39:15 [http-nio-8076-exec-4] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:39:15 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:39:15 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:39:15 [http-nio-8076-exec-4] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-17 13:39:15 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-17 13:39:15 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-17 13:39:17 [http-nio-8076-exec-5] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:39:17 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:39:17 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:39:17 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-17 13:39:18 [http-nio-8076-exec-6] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:39:18 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:39:18 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:39:18 [http-nio-8076-exec-6] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-17 13:39:18 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-17 13:39:18 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-17 13:39:33 [http-nio-8076-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+io.jsonwebtoken.ExpiredJwtException: JWT expired 1224664134 milliseconds ago at 2024-12-03T06:28:29.000Z. Current time: 2024-12-17T10:39:33.134Z. Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:682)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:362)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94)
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36)
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:821)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:797)
+	at com.iase24.crazy_task_tracker_api.security.service.JwtServiceSecurity.extractAllClaims(JwtServiceSecurity.java:121)
+	at com.iase24.crazy_task_tracker_api.security.service.JwtServiceSecurity.extractClaim(JwtServiceSecurity.java:72)
+	at com.iase24.crazy_task_tracker_api.security.service.JwtServiceSecurity.extractUserEmail(JwtServiceSecurity.java:32)
+	at com.iase24.crazy_task_tracker_api.security.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:47)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-17 13:39:36 [http-nio-8076-exec-8] INFO  c.i.c.s.controller.AuthController - Получен запрос на авторизацию работника
+2024-12-17 13:39:36 [http-nio-8076-exec-8] INFO  c.i.c.s.s.AuthenticationService - Попытка авторизации работника
+2024-12-17 13:39:37 [http-nio-8076-exec-8] INFO  c.i.c.s.s.AuthenticationService - Работник успешно авторизован
+2024-12-17 13:40:05 [http-nio-8076-exec-10] INFO  c.i.c.a.controller.AdminController - Запрос на получение списка удаленных пользователей из архива
+2024-12-17 13:43:03 [http-nio-8076-exec-9] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:43:03 [http-nio-8076-exec-9] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:43:03 [http-nio-8076-exec-9] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:43:03 [http-nio-8076-exec-9] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-17 13:43:12 [http-nio-8076-exec-3] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:43:12 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:43:12 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:43:12 [http-nio-8076-exec-3] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-17 13:43:12 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-17 13:43:12 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-17 13:43:14 [http-nio-8076-exec-2] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:43:14 [http-nio-8076-exec-2] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:43:14 [http-nio-8076-exec-2] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:43:14 [http-nio-8076-exec-2] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-17 13:43:16 [http-nio-8076-exec-4] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:43:16 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:43:16 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:43:16 [http-nio-8076-exec-4] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-17 13:43:16 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-17 13:43:16 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-17 13:43:23 [http-nio-8076-exec-5] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:43:23 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:43:23 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:43:23 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-17 13:43:45 [http-nio-8076-exec-6] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:43:45 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:43:45 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:43:45 [http-nio-8076-exec-6] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-17 13:43:45 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-17 13:43:45 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-17 13:43:53 [http-nio-8076-exec-9] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 13:43:53 [http-nio-8076-exec-9] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 13:43:53 [http-nio-8076-exec-9] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 13:43:53 [http-nio-8076-exec-9] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-17 13:51:55 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 13:51:55 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-17 13:51:55 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-17 14:01:03 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-17 14:01:03 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 21.0.5 with PID 7028 (E:\Projects\Java\SECURITY-PATERN\target\classes started by User in E:\Projects\Java\SECURITY-PATERN)
+2024-12-17 14:01:03 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-17 14:01:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-17 14:01:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 133 ms. Found 10 JPA repository interfaces.
+2024-12-17 14:01:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-17 14:01:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-17 14:01:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-17 14:01:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-17 14:01:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-17 14:01:06 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3144 ms
+2024-12-17 14:01:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-17 14:01:07 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27fc0217
+2024-12-17 14:01:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-17 14:01:07 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-17 14:01:08 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 14:01:08 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-17 14:01:08 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 14:01:08 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-17 14:01:08 [main] INFO  liquibase.util - Run:                          0
+2024-12-17 14:01:08 [main] INFO  liquibase.util - Previously run:              34
+2024-12-17 14:01:08 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-17 14:01:08 [main] INFO  liquibase.util - -------------------------------
+2024-12-17 14:01:08 [main] INFO  liquibase.util - Total change sets:           34
+2024-12-17 14:01:08 [main] INFO  liquibase.util - Update summary generated
+2024-12-17 14:01:08 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-17 14:01:08 [main] INFO  liquibase.command - Command execution complete
+2024-12-17 14:01:08 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-17 14:01:08 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-17 14:01:08 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-17 14:01:09 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-17 14:01:09 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-17 14:01:11 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-17 14:01:11 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 14:01:11 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-17 14:01:13 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-17 14:01:13 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-17 14:01:14 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-17 14:01:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-17 14:01:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-17 14:01:16 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 14.064 seconds (process running for 15.154)
+2024-12-17 14:01:16 [RMI TCP Connection(1)-10.128.35.226] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-17 14:01:16 [RMI TCP Connection(1)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-17 14:01:16 [RMI TCP Connection(1)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-17 14:13:13 [http-nio-8076-exec-3] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 937 ms
+2024-12-17 14:18:59 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 14:31:12 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-17 14:31:12 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 21.0.5 with PID 14892 (E:\Projects\Java\SECURITY-PATERN\target\classes started by User in E:\Projects\Java\SECURITY-PATERN)
+2024-12-17 14:31:12 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-17 14:31:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-17 14:31:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 130 ms. Found 10 JPA repository interfaces.
+2024-12-17 14:31:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-17 14:31:15 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-17 14:31:15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-17 14:31:15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-17 14:31:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-17 14:31:16 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3175 ms
+2024-12-17 14:31:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-17 14:31:16 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5fb514c2
+2024-12-17 14:31:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-17 14:31:17 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-17 14:31:17 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 14:31:18 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-17 14:31:18 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 14:31:18 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-17 14:31:18 [main] INFO  liquibase.util - Run:                          0
+2024-12-17 14:31:18 [main] INFO  liquibase.util - Previously run:              34
+2024-12-17 14:31:18 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-17 14:31:18 [main] INFO  liquibase.util - -------------------------------
+2024-12-17 14:31:18 [main] INFO  liquibase.util - Total change sets:           34
+2024-12-17 14:31:18 [main] INFO  liquibase.util - Update summary generated
+2024-12-17 14:31:18 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-17 14:31:18 [main] INFO  liquibase.command - Command execution complete
+2024-12-17 14:31:18 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-17 14:31:18 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-17 14:31:18 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-17 14:31:18 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-17 14:31:18 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-17 14:31:20 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-17 14:31:20 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 14:31:21 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-17 14:31:22 [main] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Инициализация RequestValidationFilter===*
+2024-12-17 14:31:22 [main] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Инициализация RequestValidationFilter===*
+2024-12-17 14:31:22 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-17 14:31:22 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-17 14:31:24 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-17 14:31:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-17 14:31:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-17 14:31:25 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 13.678 seconds (process running for 14.647)
+2024-12-17 14:31:26 [RMI TCP Connection(2)-10.128.35.226] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-17 14:31:26 [RMI TCP Connection(2)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-17 14:31:26 [RMI TCP Connection(2)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-17 14:33:01 [http-nio-8076-exec-2] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/el/like
+2024-12-17 14:33:01 [http-nio-8076-exec-2] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:33:01 [http-nio-8076-exec-2] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/el/like
+2024-12-17 14:33:01 [http-nio-8076-exec-2] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:33:01 [http-nio-8076-exec-2] WARN  o.s.web.servlet.PageNotFound - Request method 'POST' is not supported
+2024-12-17 14:33:34 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 14:33:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-17 14:33:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-17 14:33:34 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Фильтр RequestValidationFilter уничтожен===*
+2024-12-17 14:33:34 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Фильтр RequestValidationFilter уничтожен===*
+2024-12-17 14:33:45 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-17 14:33:45 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 21.0.5 with PID 7704 (E:\Projects\Java\SECURITY-PATERN\target\classes started by User in E:\Projects\Java\SECURITY-PATERN)
+2024-12-17 14:33:45 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-17 14:33:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-17 14:33:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 144 ms. Found 10 JPA repository interfaces.
+2024-12-17 14:33:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-17 14:33:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-17 14:33:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-17 14:33:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-17 14:33:48 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-17 14:33:48 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3231 ms
+2024-12-17 14:33:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-17 14:33:49 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@42ffbab6
+2024-12-17 14:33:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-17 14:33:49 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-17 14:33:50 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 14:33:50 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-17 14:33:50 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 14:33:50 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-17 14:33:50 [main] INFO  liquibase.util - Run:                          0
+2024-12-17 14:33:50 [main] INFO  liquibase.util - Previously run:              34
+2024-12-17 14:33:50 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-17 14:33:50 [main] INFO  liquibase.util - -------------------------------
+2024-12-17 14:33:50 [main] INFO  liquibase.util - Total change sets:           34
+2024-12-17 14:33:50 [main] INFO  liquibase.util - Update summary generated
+2024-12-17 14:33:50 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-17 14:33:50 [main] INFO  liquibase.command - Command execution complete
+2024-12-17 14:33:50 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-17 14:33:51 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-17 14:33:51 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-17 14:33:51 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-17 14:33:51 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-17 14:33:53 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-17 14:33:53 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 14:33:54 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-17 14:33:54 [main] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Инициализация RequestValidationFilter===*
+2024-12-17 14:33:54 [main] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Инициализация RequestValidationFilter===*
+2024-12-17 14:33:55 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-17 14:33:55 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-17 14:33:56 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-17 14:33:58 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-17 14:33:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-17 14:33:58 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 13.806 seconds (process running for 14.901)
+2024-12-17 14:33:58 [RMI TCP Connection(1)-10.128.35.226] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-17 14:33:58 [RMI TCP Connection(1)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-17 14:33:58 [RMI TCP Connection(1)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-12-17 14:34:03 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/el/like
+2024-12-17 14:34:03 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:34:03 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/el/like
+2024-12-17 14:34:03 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:34:03 [http-nio-8076-exec-1] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 14:34:03 [http-nio-8076-exec-1] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 14:34:03 [http-nio-8076-exec-1] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 14:34:03 [http-nio-8076-exec-1] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-17 14:34:03 [http-nio-8076-exec-1] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-17 14:34:03 [http-nio-8076-exec-1] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-17 14:34:03 [http-nio-8076-exec-1] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: POST
+URI эндпоинта: http://localhost:8076/api/news/el/like
+Статус: 200
+Заголовки запроса: {content-length=78, postman-token=5d980935-f087-467a-8efb-24ba10d05987, host=localhost:8076, content-type=application/json, connection=keep-alive, accept-encoding=gzip, deflate, br, user-agent=PostmanRuntime/7.43.0, accept=*/*}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 11:34:03 GMT, Content-Type=application/json}
+Время выполнения запроса: 468 мс
+=========================================
+2024-12-17 14:34:06 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/el/like
+2024-12-17 14:34:06 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:34:06 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/el/like
+2024-12-17 14:34:06 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:34:06 [http-nio-8076-exec-3] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 14:34:06 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 14:34:06 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 14:34:06 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-17 14:34:06 [http-nio-8076-exec-3] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: POST
+URI эндпоинта: http://localhost:8076/api/news/el/like
+Статус: 200
+Заголовки запроса: {content-length=78, postman-token=31a0c205-4987-418d-8cba-16a8aacbd424, host=localhost:8076, content-type=application/json, connection=keep-alive, accept-encoding=gzip, deflate, br, user-agent=PostmanRuntime/7.43.0, accept=*/*}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 11:34:06 GMT, Content-Type=application/json}
+Время выполнения запроса: 66 мс
+=========================================
+2024-12-17 14:34:55 [http-nio-8076-exec-4] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/el/like
+2024-12-17 14:34:55 [http-nio-8076-exec-4] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:34:55 [http-nio-8076-exec-4] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/el/like
+2024-12-17 14:34:55 [http-nio-8076-exec-4] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:34:55 [http-nio-8076-exec-4] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 14:34:55 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 14:34:55 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 14:34:55 [http-nio-8076-exec-4] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-17 14:34:55 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-17 14:34:55 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-17 14:34:55 [http-nio-8076-exec-4] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: POST
+URI эндпоинта: http://localhost:8076/api/news/el/like
+Статус: 200
+Заголовки запроса: {content-length=78, postman-token=1df14bf6-01b5-4970-b726-b01f89b0d916, host=localhost:8076, content-type=application/json, connection=keep-alive, accept-encoding=gzip, deflate, br, user-agent=PostmanRuntime/7.43.0, accept=*/*}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 11:34:55 GMT, Content-Type=application/json}
+Время выполнения запроса: 42 мс
+=========================================
+2024-12-17 14:34:57 [http-nio-8076-exec-5] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/el/like
+2024-12-17 14:34:57 [http-nio-8076-exec-5] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:34:57 [http-nio-8076-exec-5] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/el/like
+2024-12-17 14:34:57 [http-nio-8076-exec-5] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:34:57 [http-nio-8076-exec-5] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 14:34:57 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 14:34:57 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 14:34:57 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-17 14:34:57 [http-nio-8076-exec-5] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: POST
+URI эндпоинта: http://localhost:8076/api/news/el/like
+Статус: 200
+Заголовки запроса: {content-length=78, postman-token=7128873e-67b8-455d-a1f9-933516a07ccf, host=localhost:8076, content-type=application/json, connection=keep-alive, accept-encoding=gzip, deflate, br, user-agent=PostmanRuntime/7.43.0, accept=*/*}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 11:34:57 GMT, Content-Type=application/json}
+Время выполнения запроса: 34 мс
+=========================================
+2024-12-17 14:35:02 [http-nio-8076-exec-6] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/ru/like
+2024-12-17 14:35:02 [http-nio-8076-exec-6] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:35:02 [http-nio-8076-exec-6] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/ru/like
+2024-12-17 14:35:02 [http-nio-8076-exec-6] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:35:02 [http-nio-8076-exec-6] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 14:35:02 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 14:35:02 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 14:35:02 [http-nio-8076-exec-6] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-17 14:35:02 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-17 14:35:02 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-17 14:35:02 [http-nio-8076-exec-6] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: POST
+URI эндпоинта: http://localhost:8076/api/news/ru/like
+Статус: 200
+Заголовки запроса: {content-length=78, postman-token=c8a81dac-9a74-4024-b0e5-b28dab288340, host=localhost:8076, content-type=application/json, connection=keep-alive, accept-encoding=gzip, deflate, br, user-agent=PostmanRuntime/7.43.0, accept=*/*}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 11:35:02 GMT, Content-Type=application/json}
+Время выполнения запроса: 44 мс
+=========================================
+2024-12-17 14:35:51 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 14:35:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-17 14:35:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-17 14:35:51 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Фильтр RequestValidationFilter уничтожен===*
+2024-12-17 14:35:51 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Фильтр RequestValidationFilter уничтожен===*
+2024-12-17 14:37:12 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-17 14:37:12 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 21.0.5 with PID 3684 (E:\Projects\Java\SECURITY-PATERN\target\classes started by User in E:\Projects\Java\SECURITY-PATERN)
+2024-12-17 14:37:12 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-17 14:37:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-17 14:37:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 172 ms. Found 10 JPA repository interfaces.
+2024-12-17 14:37:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-17 14:37:15 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-17 14:37:15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-17 14:37:15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-17 14:37:15 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-17 14:37:15 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3732 ms
+2024-12-17 14:37:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-17 14:37:16 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f42336c
+2024-12-17 14:37:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-17 14:37:16 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-17 14:37:17 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 14:37:17 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-17 14:37:17 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-17 14:37:17 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-17 14:37:17 [main] INFO  liquibase.util - Run:                          0
+2024-12-17 14:37:17 [main] INFO  liquibase.util - Previously run:              34
+2024-12-17 14:37:17 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-17 14:37:17 [main] INFO  liquibase.util - -------------------------------
+2024-12-17 14:37:17 [main] INFO  liquibase.util - Total change sets:           34
+2024-12-17 14:37:17 [main] INFO  liquibase.util - Update summary generated
+2024-12-17 14:37:17 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-17 14:37:17 [main] INFO  liquibase.command - Command execution complete
+2024-12-17 14:37:17 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-17 14:37:18 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-17 14:37:18 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-17 14:37:18 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-17 14:37:18 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-17 14:37:20 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-17 14:37:20 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 14:37:21 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-17 14:37:22 [main] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Инициализация RequestValidationFilter===*
+2024-12-17 14:37:22 [main] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Инициализация RequestValidationFilter===*
+2024-12-17 14:37:22 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-17 14:37:23 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-17 14:37:24 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-17 14:37:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-17 14:37:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-17 14:37:25 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 14.509 seconds (process running for 15.457)
+2024-12-17 14:37:26 [RMI TCP Connection(3)-10.128.35.226] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-17 14:37:26 [RMI TCP Connection(3)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-17 14:37:26 [RMI TCP Connection(3)-10.128.35.226] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2024-12-17 14:37:33 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/ru/like
+2024-12-17 14:37:33 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:37:33 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/ru/like
+2024-12-17 14:37:33 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:37:33 [http-nio-8076-exec-1] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 14:37:33 [http-nio-8076-exec-1] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 14:37:33 [http-nio-8076-exec-1] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 14:37:34 [http-nio-8076-exec-1] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-17 14:37:34 [http-nio-8076-exec-1] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: POST
+URI эндпоинта: http://localhost:8076/api/news/ru/like
+Статус: 200
+Заголовки запроса: {content-length=78, postman-token=0109a639-ead9-4a03-aaa2-ff31cb39ac2a, host=localhost:8076, content-type=application/json, connection=keep-alive, accept-encoding=gzip, deflate, br, user-agent=PostmanRuntime/7.43.0, accept=*/*}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 11:37:34 GMT, Content-Type=application/json}
+Время выполнения запроса: 495 мс
+=========================================
+2024-12-17 14:37:35 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/ru/like
+2024-12-17 14:37:35 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:37:35 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/ru/like
+2024-12-17 14:37:35 [http-nio-8076-exec-3] INFO  c.i.starter.config.LoggingFilter - Запрос успешно прошел фильтрацию
+2024-12-17 14:37:35 [http-nio-8076-exec-3] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-17 14:37:35 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-17 14:37:35 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-17 14:37:35 [http-nio-8076-exec-3] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-17 14:37:35 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-17 14:37:35 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-17 14:37:35 [http-nio-8076-exec-3] INFO  c.i.s.config.LoggingInterceptor - Лог HTTP 
+=========================================
+Тип запроса: POST
+URI эндпоинта: http://localhost:8076/api/news/ru/like
+Статус: 200
+Заголовки запроса: {content-length=78, postman-token=3529a677-a1db-4605-b508-2427bc9cb68e, host=localhost:8076, content-type=application/json, connection=keep-alive, accept-encoding=gzip, deflate, br, user-agent=PostmanRuntime/7.43.0, accept=*/*}
+Заголовки ответа: {X-Frame-Options=DENY, Transfer-Encoding=chunked, Keep-Alive=timeout=60, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=keep-alive, Vary=Origin, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Tue, 17 Dec 2024 11:37:35 GMT, Content-Type=application/json}
+Время выполнения запроса: 56 мс
+=========================================
+2024-12-17 14:38:51 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-17 14:38:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-17 14:38:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-17 14:38:51 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Фильтр RequestValidationFilter уничтожен===*
+2024-12-17 14:38:51 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Фильтр RequestValidationFilter уничтожен===*
