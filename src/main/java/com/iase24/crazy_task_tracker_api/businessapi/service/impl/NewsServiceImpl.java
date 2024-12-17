@@ -1,6 +1,7 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
 
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
 import com.iase24.crazy_task_tracker_api.businessapi.repository.*;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
@@ -125,45 +126,27 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     @Transactional
-    public void addLike(Long newsId, UUID userId) {
-        log.info("Начало поиска новости по ID: {}", newsId);
-        News news = newsRepository.findById(newsId)
+    public void addLike(LikeByUserIdAndNewsIdRequest request) {
+        log.info("Начало поиска новости по ID: {}", request.getNewsId());
+        News news = newsRepository.findById(request.getNewsId())
                 .orElseThrow(() -> {
-                    log.warn("Ошибка поиска новости по ID: {}", newsId);
-                    return new EntityNotFoundException("News with ID: %s not found".formatted(newsId));
+                    log.warn("Ошибка поиска новости по ID: {}", request.getNewsId());
+                    return new EntityNotFoundException("News with ID: %s not found".formatted(request.getNewsId()));
                 });
-        log.info("Начало поиска пользователя по ID: {}", userId);
-        User user = userRepository.findById(userId)
+        log.info("Начало поиска пользователя по ID: {}", request.getUserId());
+        User user = userRepository.findById(request.getUserId())
                 .orElseThrow(() -> {
-                    log.warn("Ошибка поиска пользователя по ID: {}", userId);
-                    return new EntityNotFoundException("User with ID: %s not found".formatted(userId));
+                    log.warn("Ошибка поиска пользователя по ID: {}", request.getUserId());
+                    return new EntityNotFoundException("User with ID: %s not found".formatted(request.getUserId()));
                 });
         Like like = Like.builder().news(news).user(user).build();
         if (likeRepository.findByNewsAndUser(news, user).isPresent()) {
-            log.warn("Пользователь уже поставил лайк под этой новостью");
-            removeLike(newsId, userId);
+            log.warn("Пользователь уже поставил лайк под этой новостью и он удаляется");
+            removeLike(request.getNewsId(), request.getUserId());
         } else {
             log.info("Лайк сохранен в бзу данных");
             likeRepository.save(like);
         }
-    }
-
-    private void removeLike(Long newsId, UUID userId) {
-        log.info("Начало поиска новости по ID: {} для проверки лайка", newsId);
-        News news = newsRepository.findById(newsId)
-                .orElseThrow(() -> {
-                    log.warn("Ошибка поиска новости по ID: {} для проверки лайка", newsId);
-                    return new EntityNotFoundException("News with ID: %s not found".formatted(newsId));
-                });
-        log.info("Начало поиска пользователя по ID: {} для проверки лайка", userId);
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> {
-                    log.warn("Ошибка поиска пользователя по ID: {} для проверки лайка", userId);
-                    return new EntityNotFoundException("User with ID: %s not found".formatted(userId));
-                });
-        Like like = likeRepository.findByNewsAndUser(news, user)
-                .orElseThrow(() -> new EntityNotFoundException("Like not found"));
-        likeRepository.delete(like);
     }
 
     @Override
@@ -205,5 +188,23 @@ public class NewsServiceImpl implements NewsService {
                         .build())
                 .orElseThrow(() -> new EntityNotFoundException(
                         "News, with ID: %s or language: %s, not found".formatted(newsId, lang)));
+    }
+
+    private void removeLike(Long newsId, UUID userId) {
+        log.info("Начало поиска новости по ID: {} для проверки лайка", newsId);
+        News news = newsRepository.findById(newsId)
+                .orElseThrow(() -> {
+                    log.warn("Ошибка поиска новости по ID: {} для проверки лайка", newsId);
+                    return new EntityNotFoundException("News with ID: %s not found".formatted(newsId));
+                });
+        log.info("Начало поиска пользователя по ID: {} для проверки лайка", userId);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> {
+                    log.warn("Ошибка поиска пользователя по ID: {} для проверки лайка", userId);
+                    return new EntityNotFoundException("User with ID: %s not found".formatted(userId));
+                });
+        Like like = likeRepository.findByNewsAndUser(news, user)
+                .orElseThrow(() -> new EntityNotFoundException("Like not found"));
+        likeRepository.delete(like);
     }
 }

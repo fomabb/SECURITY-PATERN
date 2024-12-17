@@ -1,6 +1,7 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service;
 
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
 import com.iase24.crazy_task_tracker_api.entity.News;
 import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
@@ -28,7 +29,7 @@ public interface NewsService {
 
     AddNewLanguageResponse addNewLanguageToNews();
 
-    void addLike(Long newsId, UUID userId);
+    void addLike(LikeByUserIdAndNewsIdRequest request);
 
     int countAllLikesByNewsId(Long newsId);
 

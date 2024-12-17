@@ -1,6 +1,7 @@
 package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
 import com.iase24.crazy_task_tracker_api.dto.exception.CommonExceptionResponse;
@@ -18,12 +19,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/news")
@@ -146,14 +147,16 @@ public class NewsController {
         return ResponseEntity.ok(newsService.getNewsByIdWithLikes(lang, newsId));
     }
 
-    @PostMapping("/{lang}/{newsId}/like")
+    @PostMapping("/{lang}/like")
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     public ResponseEntity<CountLikesResponse> likeNews(
             @PathVariable("lang") String lang,
-            @PathVariable("newsId") Long newsId,
-            @RequestHeader("X-User-Id") UUID userId
+            @RequestBody LikeByUserIdAndNewsIdRequest request
     ) {
-        log.info("Поступил запрос на добавление лайка по ID: {} новости и по ID: {} пользователя", newsId, userId);
-        newsService.addLike(newsId, userId);
-        return ResponseEntity.ok(newsService.getContentWithLikeForClick(lang, newsId));
+        log.info("Поступил запрос на добавление лайка по ID: {} новости и по ID: {} пользователя",
+                request.getNewsId(), request.getUserId());
+        newsService.addLike(request);
+        log.info("Пользователь получил сведения о добавлении/удалении лайка.");
+        return ResponseEntity.ok(newsService.getContentWithLikeForClick(lang, request.getNewsId()));
     }
 }
