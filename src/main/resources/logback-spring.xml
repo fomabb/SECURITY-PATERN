@@ -45,7 +45,7 @@
     <!-- Настройка ROOT логгера -->
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="LOKI"/>
-        <appender-ref ref="FILE"/>
+<!--        <appender-ref ref="LOKI"/>-->
+<!--        <appender-ref ref="FILE"/>-->
     </root>
 </configuration>

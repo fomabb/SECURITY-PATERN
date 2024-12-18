@@ -3,8 +3,8 @@ package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.ResetPasswordClientRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.UpdatePasswordClientRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.ClientResetPasswordResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.LocationClientResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
-import com.iase24.crazy_task_tracker_api.dto.response.GeoLocationClient;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.BusinessException;
 import com.iase24.crazy_task_tracker_api.security.dto.response.JwtAuthenticationResponse;
 import com.iase24.crazy_task_tracker_api.security.entity.User;
@@ -14,10 +14,16 @@ import com.iase24.crazy_task_tracker_api.security.service.JwtResetPasswordServic
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.MailException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Map;
+import java.util.Objects;
 
 @Service
 @Slf4j
@@ -28,15 +34,28 @@ public class ClientServiceImpl implements ClientService {
     private final UserRepository userRepository;
     private final EmailSenderServiceImpl emailService;
     private final PasswordEncoder passwordEncoder;
-//        private static final String GEO_API_URL = "https://ipinfo.io/json";
-//        private static final String GEO_API_URL = "https://ipstack.com/json";
-    private static final String GEO_API_URL = "https://api.ipify.org?format=json";
+    private static final String GEO_API_URL = "http://ip-api.com/json";
 
     @Override
     public String getGeoLocation(String clientIp) {
         RestTemplate restTemplate = new RestTemplate();
         String url = GEO_API_URL + clientIp;
         return restTemplate.getForObject(url, String.class);
+    }
+
+    @Override
+    public LocationClientResponse getCityByIpClient(String ipAddressClient) {
+        String url = GEO_API_URL + "?ip=" + ipAddressClient;
+        RestTemplate restTemplate = new RestTemplate();
+        try {
+            var response = restTemplate.getForEntity(url, Map.class);
+            if (response.getStatusCode() == HttpStatus.OK && response.getBody() != null) {
+                return locationResponseByClientIp(response);
+            }
+        } catch (RestClientException e) {
+            log.error(e.getMessage());
+        }
+        throw new BusinessException("Unknown city");
     }
 
     @Override
@@ -104,5 +123,18 @@ public class ClientServiceImpl implements ClientService {
         } else {
             throw new EntityNotFoundException("Токен не является валидным");
         }
+    }
+
+    private LocationClientResponse locationResponseByClientIp(ResponseEntity<Map> response) {
+        return LocationClientResponse.builder()
+                .country(Objects.requireNonNull(response.getBody()).get("country").toString())
+                .regionName(response.getBody().get("regionName").toString())
+                .city(response.getBody().get("city").toString())
+                .zip(response.getBody().get("zip").toString())
+                .lat(response.getBody().get("lat").toString())
+                .lon(response.getBody().get("lon").toString())
+                .timezone(response.getBody().get("timezone").toString())
+                .ip(response.getBody().get("query").toString())
+                .build();
     }
 }
