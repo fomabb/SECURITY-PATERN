@@ -10,4 +10,6 @@ public interface ClientService {
     JwtAuthenticationResponse generateTokenForResetPassword(ResetPasswordClientRequest request);
 
     ClientResetPasswordResponse resetPasswordClient(String token, UpdatePasswordClientRequest request);
+
+    String getGeoLocation(String ip);
 }

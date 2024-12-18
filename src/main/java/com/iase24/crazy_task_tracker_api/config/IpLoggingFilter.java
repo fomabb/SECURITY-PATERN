@@ -24,10 +24,8 @@ public class IpLoggingFilter extends OncePerRequestFilter {
 
     public static class IpUtils {
         public static String getClientIP(HttpServletRequest request) {
-            // Получаем IP из заголовка X-Forwarded-For
             String ipAddress = request.getHeader("X-Forwarded-For");
 
-            // Если нет IP в заголовке, берём адрес удалённого клиента
             if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
                 ipAddress = request.getRemoteAddr();
             }
@@ -35,7 +33,6 @@ public class IpLoggingFilter extends OncePerRequestFilter {
             // Логируем заголовки для диагностики
             System.out.println("X-Forwarded-For: " + request.getHeader("X-Forwarded-For"));
             System.out.println("Remote Address: " + request.getRemoteAddr());
-
             return ipAddress;
         }
     }

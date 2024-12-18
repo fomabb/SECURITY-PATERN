@@ -11,11 +11,13 @@ import com.iase24.crazy_task_tracker_api.security.repository.UserRepository;
 import com.iase24.crazy_task_tracker_api.security.service.EmailSenderServiceImpl;
 import com.iase24.crazy_task_tracker_api.security.service.JwtResetPasswordService;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.MailException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 @Slf4j
@@ -26,6 +28,14 @@ public class ClientServiceImpl implements ClientService {
     private final UserRepository userRepository;
     private final EmailSenderServiceImpl emailService;
     private final PasswordEncoder passwordEncoder;
+//    private static final String GEO_API_URL = "http://ip-api.com/json/";
+    private static final String GEO_API_URL = "https://api.ipify.org?format=json";
+
+
+    public String getGeoLocation(String clientIp) {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject(GEO_API_URL + clientIp, String.class);
+    }
 
     @Override
     public JwtAuthenticationResponse generateTokenForResetPassword(ResetPasswordClientRequest request) {
