@@ -8,6 +8,7 @@ import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
 import com.iase24.crazy_task_tracker_api.security.dto.response.JwtAuthenticationResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -42,5 +43,12 @@ public class ClientController {
     ) {
         log.info("Получен запрос на восстановление пароля");
         return ResponseEntity.ok(clientFacade.resetPasswordClient(token, request));
+    }
+
+//===========================Section Client IP===============================================================================
+
+    @GetMapping("/ip")
+    public String getClientIP(HttpServletRequest request) {
+        return request.getRemoteAddr();
     }
 }
