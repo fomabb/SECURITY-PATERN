@@ -14,5 +14,5 @@ public interface LikeRepository extends JpaRepository<Like, Long> {
 
     Optional<Like> findByNewsAndUser(News news, User user);
 
-    int countLikesByNewsId(Long newsId);
+    int countLikesByNewsIdAndReactionTrue(Long newsId);
 }

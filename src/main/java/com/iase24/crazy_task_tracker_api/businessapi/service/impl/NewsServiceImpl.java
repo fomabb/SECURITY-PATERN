@@ -139,11 +139,11 @@ public class NewsServiceImpl implements NewsService {
                     log.warn("Ошибка поиска пользователя по ID: {}", request.getUserId());
                     return new EntityNotFoundException("User with ID: %s not found".formatted(request.getUserId()));
                 });
-        Like like = Like.builder().news(news).user(user).build();
         if (likeRepository.findByNewsAndUser(news, user).isPresent()) {
             log.warn("Пользователь уже поставил лайк под этой новостью и он удаляется");
             removeLike(request.getNewsId(), request.getUserId());
         } else {
+            Like like = Like.builder().news(news).user(user).reaction(true).build();
             log.info("Лайк сохранен в бзу данных");
             likeRepository.save(like);
         }
@@ -151,17 +151,19 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public int countAllLikesByNewsId(Long newsId) {
-        return likeRepository.countLikesByNewsId(newsId);
+        return likeRepository.countLikesByNewsIdAndReactionTrue(newsId);
     }
 
     @Override
     public List<CountLikesResponse> getAllNewsWithLikes(String lang) {
-        return translationRepository.findNewsTranslationByLanguage(lang).stream().map(news -> CountLikesResponse.builder()
-                .newsId(news.getNews().getId())
-                .title(news.getTitle())
-                .info(news.getInfo())
-                .countLikes(countAllLikesByNewsId(news.getNews().getId()))
-                .build()).toList();
+        return translationRepository.findNewsTranslationByLanguage(lang).stream()
+                .map(news -> CountLikesResponse.builder()
+                        .newsId(news.getNews().getId())
+                        .title(news.getTitle())
+                        .info(news.getInfo())
+                        .countLikes(countAllLikesByNewsId(news.getNews().getId()))
+                        .disLike(3)
+                        .build()).toList();
     }
 
     @Override
@@ -178,7 +180,7 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public CountLikesResponse getContentWithLikeForClick(String  lang, Long newsId) {
+    public CountLikesResponse getContentWithLikeForClick(String lang, Long newsId) {
         return translationRepository.findByNewsIdAndLanguage(newsId, lang)
                 .map(newsTranslation -> CountLikesResponse.builder()
                         .newsId(newsTranslation.getNews().getId())
@@ -207,4 +209,6 @@ public class NewsServiceImpl implements NewsService {
                 .orElseThrow(() -> new EntityNotFoundException("Like not found"));
         likeRepository.delete(like);
     }
+
+
 }

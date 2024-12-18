@@ -5,8 +5,6 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.request.UpdatePasswordC
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.ClientResetPasswordResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.facade.ClientFacade;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
-import com.iase24.crazy_task_tracker_api.config.IpLoggingFilter;
-import com.iase24.crazy_task_tracker_api.dto.request.LocationRequest;
 import com.iase24.crazy_task_tracker_api.security.dto.response.JwtAuthenticationResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -18,6 +16,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/client")
@@ -48,11 +48,13 @@ public class ClientController {
         return ResponseEntity.ok(clientFacade.resetPasswordClient(token, request));
     }
 
-
     @GetMapping("/location")
     public String getClientLocation(HttpServletRequest request) {
-        String clientIp = IpLoggingFilter.IpUtils.getClientIP(request);
-        return clientService.getGeoLocation(clientIp);
+//        String clientIp = IpLoggingFilter.IpUtils.getClientIP(request);
+//        return clientService.getGeoLocation(clientIp);
+
+        return Optional.ofNullable(request.getHeader("X-Forwarded-For"))
+                .orElseGet(request::getRemoteAddr);
     }
 
     @GetMapping("/external-ip")
