@@ -55,4 +55,10 @@
 
     <include file="static-data-insert/static-data-alter-table-news-column.sql" relativeToChangelogFile="true"/>
 
+    <changeSet id="2024-12-18-alter-column-reaction-static-data" author="Nikolay Kirilyuk">
+        <tagDatabase tag="security_service_db/postgres/like"/>
+    </changeSet>
+
+    <include file="static-data-insert/static-data-alter-like-column-reaction.sql" relativeToChangelogFile="true"/>
+
 </databaseChangeLog>

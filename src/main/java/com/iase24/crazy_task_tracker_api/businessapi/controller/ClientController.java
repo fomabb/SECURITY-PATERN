@@ -8,12 +8,16 @@ import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
 import com.iase24.crazy_task_tracker_api.security.dto.response.JwtAuthenticationResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/client")
@@ -42,5 +46,20 @@ public class ClientController {
     ) {
         log.info("Получен запрос на восстановление пароля");
         return ResponseEntity.ok(clientFacade.resetPasswordClient(token, request));
+    }
+
+    @GetMapping("/location")
+    public String getClientLocation(HttpServletRequest request) {
+//        String clientIp = IpLoggingFilter.IpUtils.getClientIP(request);
+//        return clientService.getGeoLocation(clientIp);
+
+        return Optional.ofNullable(request.getHeader("X-Forwarded-For"))
+                .orElseGet(request::getRemoteAddr);
+    }
+
+    @GetMapping("/external-ip")
+    public String getExternalIp() {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject("https://api.ipify.org?format=json", String.class);
     }
 }

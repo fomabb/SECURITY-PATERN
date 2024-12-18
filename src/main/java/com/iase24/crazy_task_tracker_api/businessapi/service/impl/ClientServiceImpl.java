@@ -4,6 +4,7 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.request.ResetPasswordCl
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.UpdatePasswordClientRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.ClientResetPasswordResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
+import com.iase24.crazy_task_tracker_api.dto.response.GeoLocationClient;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.BusinessException;
 import com.iase24.crazy_task_tracker_api.security.dto.response.JwtAuthenticationResponse;
 import com.iase24.crazy_task_tracker_api.security.entity.User;
@@ -16,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.MailException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 @Slf4j
@@ -26,6 +28,16 @@ public class ClientServiceImpl implements ClientService {
     private final UserRepository userRepository;
     private final EmailSenderServiceImpl emailService;
     private final PasswordEncoder passwordEncoder;
+//        private static final String GEO_API_URL = "https://ipinfo.io/json";
+//        private static final String GEO_API_URL = "https://ipstack.com/json";
+    private static final String GEO_API_URL = "https://api.ipify.org?format=json";
+
+    @Override
+    public String getGeoLocation(String clientIp) {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = GEO_API_URL + clientIp;
+        return restTemplate.getForObject(url, String.class);
+    }
 
     @Override
     public JwtAuthenticationResponse generateTokenForResetPassword(ResetPasswordClientRequest request) {

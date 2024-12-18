@@ -12,12 +12,15 @@ public class CountLikesResponse {
     @Schema(description = "Идентификационный номер новости", example = "1")
     private Long newsId;
 
-    @Schema(description = "Количество лайков", example = "12")
-    private int countLikes;
-
     @Schema(description = "Тема новости", example = "News is cool")
     private String title;
 
     @Schema(description = "Контент новости", example = "This news real is cool")
     private String info;
+
+    @Schema(description = "Количество лайков", example = "12")
+    private int countLikes;
+
+    @Schema(description = "Количество дизлайков", example = "1")
+    private int disLike;
 }
