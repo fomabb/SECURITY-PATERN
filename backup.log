@@ -23805,6 +23805,791 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 *===Фильтр RequestValidationFilter уничтожен===*
 2024-12-16 20:21:32 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
 *===Фильтр RequestValidationFilter уничтожен===*
+2024-12-16 23:53:19 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-16 23:53:20 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 21.0.3 with PID 10384 (E:\Java\Projects\SECURITY-PATERN\target\classes started by kirab in E:\Java\Projects\SECURITY-PATERN)
+2024-12-16 23:53:20 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-16 23:53:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-16 23:53:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143 ms. Found 10 JPA repository interfaces.
+2024-12-16 23:53:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-16 23:53:24 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.3.0] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2024-12-16 23:53:24 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-16 23:53:24 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-16 23:53:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-16 23:53:24 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-16 23:53:24 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-16 23:53:24 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-16 23:53:24 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4183 ms
+2024-12-16 23:53:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-16 23:53:25 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2a984952
+2024-12-16 23:53:25 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-16 23:53:25 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-16 23:53:26 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+2024-12-16 23:53:26 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-16 23:53:26 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2024-12-16 23:53:26 [main] INFO  liquibase.command - Using deploymentId: 4382406801
+2024-12-16 23:53:26 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-16 23:53:26 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-11-30-crate-table-users-06::Nikolay Kirilyuk
+2024-12-16 23:53:26 [main] INFO  liquibase.changelog - Tag 'create-table-users' applied to database
+2024-12-16 23:53:26 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-11-30-crate-table-users-06::Nikolay Kirilyuk ran successfully in 3ms
+2024-12-16 23:53:26 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/06-create-table-users.sql::raw::includeAll
+2024-12-16 23:53:26 [main] ERROR liquibase.changelog - ChangeSet db/changelog/v.1.0.1/06-create-table-users.sql::raw::includeAll encountered an exception.
+liquibase.exception.DatabaseException: ОШИБКА: отношение "users" уже существует [Failed SQL: (0) CREATE TABLE users
+(
+    id               uuid PRIMARY KEY,
+    first_name       VARCHAR(50)  not null,
+    username         varchar(100) not null,
+    password         VARCHAR(255) not null,
+    role             varchar(20)  not null,
+    date_create_user timestamp(6)
+);
+
+comment on table users is 'Таблица пользователей';
+comment on column users.first_name is 'Имя пользователя';
+comment on column users.username is 'Поля для логина пользователя email/login';
+comment on column users.password is 'Поле для пароля пользователя';
+comment on column users.role is 'Поле для роли пользователя admin/client/employee';
+comment on column users.date_create_user is 'Дата и время создания пользователя']
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:473)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:80)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:182)
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1176)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:764)
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:133)
+	at liquibase.Scope.lambda$child$0(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.Scope.child(Scope.java:189)
+	at liquibase.Scope.child(Scope.java:168)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:122)
+	at liquibase.Scope.lambda$child$0(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.Scope.child(Scope.java:189)
+	at liquibase.Scope.child(Scope.java:168)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Scope.child(Scope.java:260)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89)
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:112)
+	at liquibase.Scope.lambda$child$0(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.Scope.child(Scope.java:189)
+	at liquibase.Scope.child(Scope.java:168)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:110)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:245)
+	at liquibase.Scope.lambda$child$0(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.Scope.child(Scope.java:189)
+	at liquibase.Scope.child(Scope.java:168)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1436)
+	at liquibase.Liquibase.update(Liquibase.java:234)
+	at liquibase.Liquibase.update(Liquibase.java:212)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:297)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:249)
+	at liquibase.Scope.lambda$child$0(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.Scope.child(Scope.java:189)
+	at liquibase.Scope.child(Scope.java:168)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:242)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:682)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1705)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1454)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:516)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.iase24.crazy_task_tracker_api.CrazyTaskTrackerApiApplication.main(CrazyTaskTrackerApiApplication.java:10)
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: отношение "users" уже существует
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:341)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:317)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:312)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:467)
+	... 149 common frames omitted
+2024-12-16 23:53:26 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-16 23:53:26 [main] INFO  liquibase.util - Run:                          1
+2024-12-16 23:53:26 [main] INFO  liquibase.util - Previously run:               0
+2024-12-16 23:53:26 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-16 23:53:26 [main] INFO  liquibase.util - -------------------------------
+2024-12-16 23:53:26 [main] INFO  liquibase.util - Total change sets:            1
+2024-12-16 23:53:26 [main] INFO  liquibase.util - Update summary generated
+2024-12-16 23:53:26 [main] INFO  liquibase.command - Update command encountered an exception.
+2024-12-16 23:53:26 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-16 23:53:26 [main] INFO  liquibase.command - Logging exception.
+2024-12-16 23:53:26 [main] INFO  liquibase.ui - ERROR: Exception Details
+2024-12-16 23:53:26 [main] INFO  liquibase.ui - ERROR: Exception Primary Class:  PSQLException
+2024-12-16 23:53:26 [main] INFO  liquibase.ui - ERROR: Exception Primary Reason:  ОШИБКА: отношение "users" уже существует
+2024-12-16 23:53:26 [main] INFO  liquibase.ui - ERROR: Exception Primary Source:  PostgreSQL 16.2
+2024-12-16 23:53:26 [main] INFO  liquibase.command - Command execution complete
+2024-12-16 23:53:26 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in file [E:\Java\Projects\SECURITY-PATERN\target\classes\com\iase24\crazy_task_tracker_api\security\config\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userServiceSecurity' defined in file [E:\Java\Projects\SECURITY-PATERN\target\classes\com\iase24\crazy_task_tracker_api\security\service\UserServiceSecurity.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.iase24.crazy_task_tracker_api.security.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2024-12-16 23:53:27 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-12-16 23:53:27 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-16 23:53:27 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 connection adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
+ java.base/java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:460)
+ java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1069)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-16 23:53:27 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2024-12-16 23:53:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-16 23:53:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-16 23:53:27 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-16 23:53:27 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.iase24.crazy_task_tracker_api.CrazyTaskTrackerApiApplication.main(CrazyTaskTrackerApiApplication.java:10)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:516)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter' defined in file [E:\Java\Projects\SECURITY-PATERN\target\classes\com\iase24\crazy_task_tracker_api\security\config\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userServiceSecurity' defined in file [E:\Java\Projects\SECURITY-PATERN\target\classes\com\iase24\crazy_task_tracker_api\security\service\UserServiceSecurity.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.iase24.crazy_task_tracker_api.security.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceSecurity' defined in file [E:\Java\Projects\SECURITY-PATERN\target\classes\com\iase24\crazy_task_tracker_api\security\service\UserServiceSecurity.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.iase24.crazy_task_tracker_api.security.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.iase24.crazy_task_tracker_api.security.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1705)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1454)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:682)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v.1.0.1/06-create-table-users.sql::raw::includeAll:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "users" уже существует [Failed SQL: (0) CREATE TABLE users
+(
+    id               uuid PRIMARY KEY,
+    first_name       VARCHAR(50)  not null,
+    username         varchar(100) not null,
+    password         VARCHAR(255) not null,
+    role             varchar(20)  not null,
+    date_create_user timestamp(6)
+);
+
+comment on table users is 'Таблица пользователей';
+comment on column users.first_name is 'Имя пользователя';
+comment on column users.username is 'Поля для логина пользователя email/login';
+comment on column users.password is 'Поле для пароля пользователя';
+comment on column users.role is 'Поле для роли пользователя admin/client/employee';
+comment on column users.date_create_user is 'Дата и время создания пользователя']
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 94 common frames omitted
+Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v.1.0.1/06-create-table-users.sql::raw::includeAll:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "users" уже существует [Failed SQL: (0) CREATE TABLE users
+(
+    id               uuid PRIMARY KEY,
+    first_name       VARCHAR(50)  not null,
+    username         varchar(100) not null,
+    password         VARCHAR(255) not null,
+    role             varchar(20)  not null,
+    date_create_user timestamp(6)
+);
+
+comment on table users is 'Таблица пользователей';
+comment on column users.first_name is 'Имя пользователя';
+comment on column users.username is 'Поля для логина пользователя email/login';
+comment on column users.password is 'Поле для пароля пользователя';
+comment on column users.role is 'Поле для роли пользователя admin/client/employee';
+comment on column users.date_create_user is 'Дата и время создания пользователя']
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:259)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 103 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v.1.0.1/06-create-table-users.sql::raw::includeAll:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "users" уже существует [Failed SQL: (0) CREATE TABLE users
+(
+    id               uuid PRIMARY KEY,
+    first_name       VARCHAR(50)  not null,
+    username         varchar(100) not null,
+    password         VARCHAR(255) not null,
+    role             varchar(20)  not null,
+    date_create_user timestamp(6)
+);
+
+comment on table users is 'Таблица пользователей';
+comment on column users.first_name is 'Имя пользователя';
+comment on column users.username is 'Поля для логина пользователя email/login';
+comment on column users.password is 'Поле для пароля пользователя';
+comment on column users.role is 'Поле для роли пользователя admin/client/employee';
+comment on column users.date_create_user is 'Дата и время создания пользователя']
+	at liquibase.command.CommandScope.execute(CommandScope.java:257)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:245)
+	at liquibase.Scope.lambda$child$0(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.Scope.child(Scope.java:189)
+	at liquibase.Scope.child(Scope.java:168)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1436)
+	at liquibase.Liquibase.update(Liquibase.java:234)
+	at liquibase.Liquibase.update(Liquibase.java:212)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:297)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:249)
+	at liquibase.Scope.lambda$child$0(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.Scope.child(Scope.java:189)
+	at liquibase.Scope.child(Scope.java:168)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:242)
+	... 105 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v.1.0.1/06-create-table-users.sql::raw::includeAll:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "users" уже существует [Failed SQL: (0) CREATE TABLE users
+(
+    id               uuid PRIMARY KEY,
+    first_name       VARCHAR(50)  not null,
+    username         varchar(100) not null,
+    password         VARCHAR(255) not null,
+    role             varchar(20)  not null,
+    date_create_user timestamp(6)
+);
+
+comment on table users is 'Таблица пользователей';
+comment on column users.first_name is 'Имя пользователя';
+comment on column users.username is 'Поля для логина пользователя email/login';
+comment on column users.password is 'Поле для пароля пользователя';
+comment on column users.role is 'Поле для роли пользователя admin/client/employee';
+comment on column users.date_create_user is 'Дата и время создания пользователя']
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:151)
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:112)
+	at liquibase.Scope.lambda$child$0(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.Scope.child(Scope.java:189)
+	at liquibase.Scope.child(Scope.java:168)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:110)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	... 121 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/v.1.0.1/06-create-table-users.sql::raw::includeAll:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "users" уже существует [Failed SQL: (0) CREATE TABLE users
+(
+    id               uuid PRIMARY KEY,
+    first_name       VARCHAR(50)  not null,
+    username         varchar(100) not null,
+    password         VARCHAR(255) not null,
+    role             varchar(20)  not null,
+    date_create_user timestamp(6)
+);
+
+comment on table users is 'Таблица пользователей';
+comment on column users.first_name is 'Имя пользователя';
+comment on column users.username is 'Поля для логина пользователя email/login';
+comment on column users.password is 'Поле для пароля пользователя';
+comment on column users.role is 'Поле для роли пользователя admin/client/employee';
+comment on column users.date_create_user is 'Дата и время создания пользователя']
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:808)
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:133)
+	at liquibase.Scope.lambda$child$0(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.Scope.child(Scope.java:189)
+	at liquibase.Scope.child(Scope.java:168)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:122)
+	at liquibase.Scope.lambda$child$0(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.Scope.child(Scope.java:189)
+	at liquibase.Scope.child(Scope.java:168)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Scope.child(Scope.java:260)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89)
+	... 129 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ОШИБКА: отношение "users" уже существует [Failed SQL: (0) CREATE TABLE users
+(
+    id               uuid PRIMARY KEY,
+    first_name       VARCHAR(50)  not null,
+    username         varchar(100) not null,
+    password         VARCHAR(255) not null,
+    role             varchar(20)  not null,
+    date_create_user timestamp(6)
+);
+
+comment on table users is 'Таблица пользователей';
+comment on column users.first_name is 'Имя пользователя';
+comment on column users.username is 'Поля для логина пользователя email/login';
+comment on column users.password is 'Поле для пароля пользователя';
+comment on column users.role is 'Поле для роли пользователя admin/client/employee';
+comment on column users.date_create_user is 'Дата и время создания пользователя']
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:473)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:80)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:182)
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1176)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:764)
+	... 144 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: отношение "users" уже существует
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:341)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:317)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:312)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:467)
+	... 149 common frames omitted
+2024-12-16 23:54:05 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-16 23:54:06 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 21.0.3 with PID 4272 (E:\Java\Projects\SECURITY-PATERN\target\classes started by kirab in E:\Java\Projects\SECURITY-PATERN)
+2024-12-16 23:54:06 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-16 23:54:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-16 23:54:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 124 ms. Found 10 JPA repository interfaces.
+2024-12-16 23:54:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-16 23:54:09 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.3.0] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2024-12-16 23:54:09 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-16 23:54:09 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-16 23:54:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-16 23:54:09 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-16 23:54:09 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-16 23:54:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-16 23:54:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3865 ms
+2024-12-16 23:54:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-16 23:54:10 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d74507c
+2024-12-16 23:54:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-16 23:54:11 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-16 23:54:12 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2024-12-16 23:54:12 [main] INFO  liquibase.command - Using deploymentId: 4382452310
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/06-create-table-users.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/06-create-table-users.sql::raw::includeAll ran successfully in 49ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-11-30-create-table-archive-deleted-user-07 ::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'archive-deleted-user-table' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-11-30-create-table-archive-deleted-user-07 ::Nikolay Kirilyuk ran successfully in 1ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/07-create-table-archive-deleted.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/07-create-table-archive-deleted.sql::raw::includeAll ran successfully in 31ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-11-30-create-index-message-for-table-archive-08::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'index-message' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-11-30-create-index-message-for-table-archive-08::Nikolay Kirilyuk ran successfully in 3ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/08-create-index-message.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/08-create-index-message.sql::raw::includeAll ran successfully in 18ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-11-30-insert-admin-static::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'insert-admin' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-11-30-insert-admin-static::Nikolay Kirilyuk ran successfully in 2ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-09-create-table-news-ru-09::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'news_ru' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-09-create-table-news-ru-09::Nikolay Kirilyuk ran successfully in 2ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/09-create-table-news-ru.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/09-create-table-news-ru.sql::raw::includeAll ran successfully in 24ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-09-create-table-news-en-10::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'news_ru' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-09-create-table-news-en-10::Nikolay Kirilyuk ran successfully in 1ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/10-create-table-news-en.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/10-create-table-news-en.sql::raw::includeAll ran successfully in 21ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/static-data-insert/static-data-insert-admin.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/static-data-insert/static-data-insert-admin.sql::raw::includeAll ran successfully in 5ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-01-alter-column-work-email-to-users::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'alter-column-work-email' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-01-alter-column-work-email-to-users::Nikolay Kirilyuk ran successfully in 1ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/static-data-insert/static-data-insert-column-work_email-to-users.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/static-data-insert/static-data-insert-column-work_email-to-users.sql::raw::includeAll ran successfully in 18ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-01-update-set-work_email-static-data::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'add-work_email-to-admin' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-01-update-set-work_email-static-data::Nikolay Kirilyuk ran successfully in 3ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/static-data-insert/static-data-update-set-work-email.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/static-data-insert/static-data-update-set-work-email.sql::raw::includeAll ran successfully in 5ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-03-add-columns-resetpass-enabled-static-data::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'alter-add-users' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/db.changelog-v.1.0.1-cumulative.xml::2024-12-03-add-columns-resetpass-enabled-static-data::Nikolay Kirilyuk ran successfully in 3ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.1/static-data-insert/static-data-alter-column-resetpass-enabled.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.1/static-data-insert/static-data-alter-column-resetpass-enabled.sql::raw::includeAll ran successfully in 4ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-10-create-table-news-11::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'security_service_db/postgres' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-10-create-table-news-11::Nikolay Kirilyuk ran successfully in 8ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/11-create-table-news.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/11-create-table-news.sql::raw::includeAll ran successfully in 21ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-10-create-table-news-translations-12::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'security_service_db/postgres' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-10-create-table-news-translations-12::Nikolay Kirilyuk ran successfully in 4ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/12-create-table-news-news_translations.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/12-create-table-news-news_translations.sql::raw::includeAll ran successfully in 58ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-12-create-table-pars_language_data-13::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'security_service_db/postgres' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-12-create-table-pars_language_data-13::Nikolay Kirilyuk ran successfully in 1ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/13-parsing-table-new-data-for-new-language.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/13-parsing-table-new-data-for-new-language.sql::raw::includeAll ran successfully in 24ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-16-create-table-likes-14::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'security_service_db/postgres' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-16-create-table-likes-14::Nikolay Kirilyuk ran successfully in 2ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/14-create-table-like.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/14-create-table-like.sql::raw::includeAll ran successfully in 15ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-16-create-table-comments-15::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'security_service_db/postgres' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-16-create-table-comments-15::Nikolay Kirilyuk ran successfully in 1ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/15-create-table-comments.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/15-create-table-comments.sql::raw::includeAll ran successfully in 28ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-10-insert-news-translate-static-data::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'security_service_db/postgres' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-10-insert-news-translate-static-data::Nikolay Kirilyuk ran successfully in 4ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/static-data-insert/static-data-insert-into-news-translate.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/static-data-insert/static-data-insert-into-news-translate.sql::raw::includeAll ran successfully in 26ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-12-insert-into-pars-language-static-data::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'security_service_db/postgres/pars_language_data' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-12-insert-into-pars-language-static-data::Nikolay Kirilyuk ran successfully in 2ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/static-data-insert/static-data-insert-pars-language.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/static-data-insert/static-data-insert-pars-language.sql::raw::includeAll ran successfully in 10ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-16-alter-table-news-column-update_at-static-data::Nikolay Kirilyuk
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Tag 'security_service_db/postgres/news' applied to database
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/db.changelog-v.1.0.2-commutative.xml::2024-12-16-alter-table-news-column-update_at-static-data::Nikolay Kirilyuk ran successfully in 3ms
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v.1.0.2/static-data-insert/static-data-alter-table-news-column.sql::raw::includeAll
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - Custom SQL executed
+2024-12-16 23:54:12 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v.1.0.2/static-data-insert/static-data-alter-table-news-column.sql::raw::includeAll ran successfully in 9ms
+2024-12-16 23:54:12 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-16 23:54:12 [main] INFO  liquibase.util - Run:                         33
+2024-12-16 23:54:12 [main] INFO  liquibase.util - Previously run:               1
+2024-12-16 23:54:12 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-16 23:54:12 [main] INFO  liquibase.util - -------------------------------
+2024-12-16 23:54:12 [main] INFO  liquibase.util - Total change sets:           34
+2024-12-16 23:54:12 [main] INFO  liquibase.util - Update summary generated
+2024-12-16 23:54:12 [main] INFO  liquibase.command - Update command completed successfully.
+2024-12-16 23:54:12 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 50
+2024-12-16 23:54:12 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-16 23:54:12 [main] INFO  liquibase.command - Command execution complete
+2024-12-16 23:54:13 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-16 23:54:13 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-16 23:54:13 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-16 23:54:13 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-16 23:54:14 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-16 23:54:15 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-16 23:54:15 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16 23:54:16 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-16 23:54:17 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-16 23:54:18 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-16 23:54:18 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-16 23:54:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-16 23:54:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-16 23:54:20 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 15.488 seconds (process running for 17.01)
+2024-12-16 23:54:21 [RMI TCP Connection(3)-192.168.56.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-16 23:54:21 [RMI TCP Connection(3)-192.168.56.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-16 23:54:21 [RMI TCP Connection(3)-192.168.56.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-12-16 23:54:33 [RMI TCP Connection(1)-192.168.56.1] WARN  o.s.b.a.health.HealthEndpointSupport - Health contributor org.springframework.boot.actuate.mail.MailHealthIndicator (mail) took 11728ms to respond
+2024-12-16 23:54:55 [http-nio-8076-exec-2] WARN  o.s.web.servlet.PageNotFound - Request method 'POST' is not supported
+2024-12-16 23:55:05 [http-nio-8076-exec-3] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-16 23:55:05 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-16 23:55:05 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-16 23:55:05 [http-nio-8076-exec-3] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-16 23:55:29 [http-nio-8076-exec-4] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-16 23:55:29 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-16 23:55:29 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-16 23:55:29 [http-nio-8076-exec-4] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-16 23:55:29 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-16 23:55:29 [http-nio-8076-exec-4] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-16 23:55:32 [http-nio-8076-exec-5] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-16 23:55:32 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-16 23:55:32 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-16 23:55:32 [http-nio-8076-exec-5] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-16 23:55:33 [http-nio-8076-exec-6] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-16 23:55:33 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-16 23:55:33 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-16 23:55:33 [http-nio-8076-exec-6] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-16 23:55:33 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-16 23:55:33 [http-nio-8076-exec-6] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-16 23:55:34 [http-nio-8076-exec-7] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-16 23:55:34 [http-nio-8076-exec-7] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-16 23:55:34 [http-nio-8076-exec-7] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-16 23:55:34 [http-nio-8076-exec-7] INFO  c.i.c.b.service.impl.NewsServiceImpl - Лайк сохранен в бзу данных
+2024-12-16 23:55:35 [http-nio-8076-exec-8] INFO  c.i.c.b.controller.NewsController - Поступил запрос на добавление лайка по ID: 3 новости и по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 пользователя
+2024-12-16 23:55:35 [http-nio-8076-exec-8] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3
+2024-12-16 23:55:35 [http-nio-8076-exec-8] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049
+2024-12-16 23:55:35 [http-nio-8076-exec-8] WARN  c.i.c.b.service.impl.NewsServiceImpl - Пользователь уже поставил лайк под этой новостью
+2024-12-16 23:55:35 [http-nio-8076-exec-8] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска новости по ID: 3 для проверки лайка
+2024-12-16 23:55:35 [http-nio-8076-exec-8] INFO  c.i.c.b.service.impl.NewsServiceImpl - Начало поиска пользователя по ID: 53ac777f-fa99-4e47-875d-00782a0b8049 для проверки лайка
+2024-12-16 23:56:15 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-16 23:56:16 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 21.0.3 with PID 12388 (E:\Java\Projects\SECURITY-PATERN\target\classes started by kirab in E:\Java\Projects\SECURITY-PATERN)
+2024-12-16 23:56:16 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
+2024-12-16 23:56:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-16 23:56:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 137 ms. Found 10 JPA repository interfaces.
+2024-12-16 23:56:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8076 (http)
+2024-12-16 23:56:20 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.3.0] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2024-12-16 23:56:20 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-16 23:56:20 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-16 23:56:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8076"]
+2024-12-16 23:56:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-16 23:56:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-16 23:56:20 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-16 23:56:20 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4164 ms
+2024-12-16 23:56:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-16 23:56:21 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@39c5a105
+2024-12-16 23:56:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-16 23:56:21 [main] INFO  liquibase.database - Set default schema name to public
+2024-12-16 23:56:22 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-16 23:56:22 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2024-12-16 23:56:22 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-12-16 23:56:22 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-12-16 23:56:22 [main] INFO  liquibase.util - Run:                          0
+2024-12-16 23:56:22 [main] INFO  liquibase.util - Previously run:              34
+2024-12-16 23:56:22 [main] INFO  liquibase.util - Filtered out:                 0
+2024-12-16 23:56:22 [main] INFO  liquibase.util - -------------------------------
+2024-12-16 23:56:22 [main] INFO  liquibase.util - Total change sets:           34
+2024-12-16 23:56:22 [main] INFO  liquibase.util - Update summary generated
+2024-12-16 23:56:22 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-12-16 23:56:22 [main] INFO  liquibase.command - Command execution complete
+2024-12-16 23:56:22 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-16 23:56:23 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-16 23:56:23 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-16 23:56:23 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-16 23:56:23 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-16 23:56:26 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-16 23:56:26 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16 23:56:26 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-16 23:56:27 [main] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Инициализация RequestValidationFilter===*
+2024-12-16 23:56:27 [main] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Инициализация RequestValidationFilter===*
+2024-12-16 23:56:28 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-16 23:56:28 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-16 23:56:31 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-12-16 23:56:32 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8076"]
+2024-12-16 23:56:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8076 (http) with context path '/'
+2024-12-16 23:56:32 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Started CrazyTaskTrackerApiApplication in 17.838 seconds (process running for 19.412)
+2024-12-16 23:56:36 [http-nio-8076-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-16 23:56:36 [http-nio-8076-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-16 23:56:36 [http-nio-8076-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2024-12-16 23:56:36 [http-nio-8076-exec-1] INFO  c.i.starter.config.LoggingFilter - Обработка запроса: метод=POST, URL=/api/news/ru/3/like
+2024-12-16 23:56:36 [http-nio-8076-exec-1] WARN  c.i.starter.config.LoggingFilter - Недопустимый Content-Type: null
+2024-12-16 23:56:46 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16 23:56:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-16 23:56:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-16 23:56:46 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Фильтр RequestValidationFilter уничтожен===*
+2024-12-16 23:56:46 [SpringApplicationShutdownHook] INFO  c.i.starter.config.LoggingFilter - ===========================================
+*===Фильтр RequestValidationFilter уничтожен===*
 2024-12-17 13:36:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
 2024-12-17 13:36:35 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - Starting CrazyTaskTrackerApiApplication using Java 21.0.5 with PID 2564 (E:\Projects\Java\SECURITY-PATERN\target\classes started by User in E:\Projects\Java\SECURITY-PATERN)
 2024-12-17 13:36:35 [main] INFO  c.i.c.CrazyTaskTrackerApiApplication - The following 1 profile is active: "local"
