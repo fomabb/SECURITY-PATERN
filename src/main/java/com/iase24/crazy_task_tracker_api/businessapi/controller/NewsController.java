@@ -6,6 +6,7 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
 import com.iase24.crazy_task_tracker_api.dto.exception.CommonExceptionResponse;
 import com.iase24.crazy_task_tracker_api.entity.News;
+import com.iase24.crazy_task_tracker_api.entity.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
@@ -20,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -158,5 +160,21 @@ public class NewsController {
         newsService.addLike(request);
         log.info("Пользователь получил сведения о добавлении/удалении лайка.");
         return ResponseEntity.ok(newsService.getContentWithLikeForClick(lang, request.getNewsId()));
+    }
+
+//===========================Section Elastic Search=====================================================================
+
+    @GetMapping("/{lang}/search")
+    public ResponseEntity<List<NewsDocumentSearch>> fullTextSearch(
+            @PathVariable("lang") String lang,
+            @RequestParam("query") String query
+    ) {
+        return ResponseEntity.ok(newsService.search(lang, query));
+    }
+
+    @GetMapping("/index-translations")
+    public String indexTranslations() {
+        newsService.indexTranslations();
+        return "Translations indexed successfully.";
     }
 }
