@@ -15,12 +15,12 @@ public class NewsDocumentSearch {
     @Id
     private Long id;
 
-    @Field(type = FieldType.Text, name = "title")
+    @Field(type = FieldType.Text, name = "title", analyzer = "standard")
     private String title;
 
-    @Field(type = FieldType.Text, name = "info")
+    @Field(type = FieldType.Text, name = "info", analyzer = "standard")
     private String info;
 
-    @Field(type = FieldType.Text, name = "language")
+    @Field(type = FieldType.Text, name = "language", analyzer = "standard")
     private String language;
 }

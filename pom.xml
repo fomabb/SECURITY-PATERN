@@ -36,6 +36,8 @@
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
 
+
+
         <!--Custom Starter for filter and interceptor-->
         <dependency>
             <groupId>com.iase24.starter</groupId>

@@ -91,15 +91,15 @@ services:
       - es-network
 
   kibana:
-      image: kibana:8.5.1
-      environment:
-        - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
-        - ELASTICSEARCH_USERNAME=elastic
-        - ELASTICSEARCH_PASSWORD=elastic
-      ports:
-        - "5601:5601"
-      networks:
-        - es-network
+    image: kibana:8.5.1
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=elastic
+    ports:
+      - "5601:5601"
+    networks:
+      - es-network
 
 volumes:
   esdata:

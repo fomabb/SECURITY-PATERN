@@ -2,10 +2,24 @@ package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
 
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
-import com.iase24.crazy_task_tracker_api.businessapi.repository.*;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.CountLikesResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.repository.LikeRepository;
+import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsEnRepository;
+import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsRepository;
+import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsRuRepository;
+import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsSearchRepository;
+import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsTranslationRepository;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
-import com.iase24.crazy_task_tracker_api.entity.*;
+import com.iase24.crazy_task_tracker_api.entity.Like;
+import com.iase24.crazy_task_tracker_api.entity.News;
+import com.iase24.crazy_task_tracker_api.entity.NewsDocumentSearch;
+import com.iase24.crazy_task_tracker_api.entity.NewsEn;
+import com.iase24.crazy_task_tracker_api.entity.NewsRu;
+import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.BusinessException;
 import com.iase24.crazy_task_tracker_api.security.entity.User;
 import com.iase24.crazy_task_tracker_api.security.repository.UserRepository;
@@ -13,9 +27,12 @@ import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchRestClientAutoConfiguration;
+import org.springframework.data.elasticsearch.client.elc.ElasticsearchTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -225,6 +242,8 @@ public class NewsServiceImpl implements NewsService {
     public void indexTranslationsPeriodically() {
         indexTranslations();
     }
+
+    private final ElasticsearchTemplate elasticsearchTemplate;
 
     @Override
     public List<NewsDocumentSearch> search(String lang, String query) {
