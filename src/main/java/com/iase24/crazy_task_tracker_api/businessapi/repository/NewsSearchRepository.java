@@ -1,6 +1,6 @@
 package com.iase24.crazy_task_tracker_api.businessapi.repository;
 
-import com.iase24.crazy_task_tracker_api.entity.NewsDocumentSearch;
+import com.iase24.crazy_task_tracker_api.adminapi.searcher.NewsDocumentSearch;
 import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
