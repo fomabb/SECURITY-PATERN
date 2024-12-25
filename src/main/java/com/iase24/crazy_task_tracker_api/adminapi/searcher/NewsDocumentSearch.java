@@ -15,6 +15,8 @@ public class NewsDocumentSearch {
     @Id
     private Long id;
 
+    private Long news_id;
+
     @Field(type = FieldType.Text, name = "title", analyzer = "standard")
     private String title;
 
