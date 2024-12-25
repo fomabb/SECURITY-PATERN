@@ -19,7 +19,7 @@
                 <readMarkers>true</readMarkers>
             </label>
             <encoder>
-                <pattern>http://localhost:3100/loki/api/v1/push/%d{yyyy-MM-dd HH:mm} [%thread] %-5level %logger{36} - %msg%n</pattern>
+                <pattern>${LOKI_URL_PUSH_LOCAL}/%d{yyyy-MM-dd HH:mm} [%thread] %-5level %logger{36} - %msg%n</pattern>
             </encoder>
         </format>
     </appender>

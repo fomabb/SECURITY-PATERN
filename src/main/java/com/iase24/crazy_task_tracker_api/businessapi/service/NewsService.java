@@ -4,12 +4,11 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLa
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
 import com.iase24.crazy_task_tracker_api.entity.News;
+import com.iase24.crazy_task_tracker_api.adminapi.searcher.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
 import jakarta.validation.Valid;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 public interface NewsService {
 
@@ -38,4 +37,8 @@ public interface NewsService {
     CountLikesResponse getNewsByIdWithLikes(String lang, Long newsId);
 
     CountLikesResponse getContentWithLikeForClick(String  lang, Long newsId);
+
+    List<NewsDocumentSearch> search(String lang, String query);
+
+    void indexTranslations();
 }

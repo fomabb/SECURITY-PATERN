@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.sql.Timestamp;
 import java.util.HashSet;

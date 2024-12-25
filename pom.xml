@@ -30,8 +30,15 @@
         <java.version>21</java.version>
     </properties>
     <dependencies>
+        <!--ElasticSearch-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
 
-        <!--        Custom Starter for filter and interceptor-->
+
+
+        <!--Custom Starter for filter and interceptor-->
         <dependency>
             <groupId>com.iase24.starter</groupId>
             <artifactId>http-logger-spring-boot-starter</artifactId>
