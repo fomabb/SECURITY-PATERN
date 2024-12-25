@@ -239,6 +239,7 @@ public class NewsServiceImpl implements NewsService {
         translations.stream()
                 .map(translation -> NewsDocumentSearch.builder()
                         .id(translation.getId())
+                        .news_id(translation.getNews().getId())
                         .title(translation.getTitle())
                         .info(translation.getInfo())
                         .language(translation.getLanguage())
