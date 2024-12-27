@@ -40,5 +40,7 @@ public interface NewsService {
 
     List<NewsDocumentSearch> search(String lang, String query);
 
+    List<SuggestionsFulltextSearchResponse> suggestionsFulltextSearch(String lang, String query);
+
     void indexTranslations();
 }
