@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Getter
-@Document(indexName = "translations")
+@Document(indexName = "news_transaction")
 @Builder
 public class NewsDocumentSearch {
 
