@@ -19,7 +19,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -236,6 +238,16 @@ public class NewsServiceImpl implements NewsService {
             log.info("Документы по запросу [{}] успешно найдены в количестве: [{}]", query, documents.size());
         }
         return documents;
+    }
+
+    @Override
+    public List<SuggestionsFulltextSearchResponse> suggestionsFulltextSearch(String lang, String query) {
+        List<NewsDocumentSearch> documents = search(lang, query);
+        Set<SuggestionsFulltextSearchResponse> collect = documents.stream()
+                .map(document -> SuggestionsFulltextSearchResponse
+                        .builder().content(document.getTitle() + " | " + document.getInfo()).build())
+                .collect(Collectors.toSet());
+        return collect.stream().toList();
     }
 
     @Override
