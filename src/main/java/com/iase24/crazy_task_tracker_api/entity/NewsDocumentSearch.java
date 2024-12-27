@@ -1,4 +1,4 @@
-package com.iase24.crazy_task_tracker_api.adminapi.searcher;
+package com.iase24.crazy_task_tracker_api.entity;
 
 import jakarta.persistence.Id;
 import lombok.Builder;

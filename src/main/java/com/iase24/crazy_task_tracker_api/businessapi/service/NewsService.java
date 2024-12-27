@@ -4,7 +4,7 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLa
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
 import com.iase24.crazy_task_tracker_api.entity.News;
-import com.iase24.crazy_task_tracker_api.adminapi.searcher.NewsDocumentSearch;
+import com.iase24.crazy_task_tracker_api.entity.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
 import jakarta.validation.Valid;
 
