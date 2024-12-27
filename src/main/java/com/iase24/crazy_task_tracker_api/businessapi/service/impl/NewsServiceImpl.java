@@ -1,6 +1,5 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
 
-import com.iase24.crazy_task_tracker_api.adminapi.searcher.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
@@ -229,7 +228,14 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public List<NewsDocumentSearch> search(String lang, String query) {
-        return elasticSearchRepository.findByLanguageAndTitleContainingOrInfoContaining(lang, query, query);
+        log.info("Попытка произвести запрос полнотекстового поиска с текстом: [{}]. Выбор языка [{}]", query, lang);
+        List<NewsDocumentSearch> documents = elasticSearchRepository.findByLanguageAndTitleContainingOrInfoContaining(lang, query, query);
+        if (documents.isEmpty()) {
+            log.warn("Документы по запросу, [{}], не найдены", query);
+        } else {
+            log.info("Документы по запросу [{}] успешно найдены в количестве: [{}]", query, documents.size());
+        }
+        return documents;
     }
 
     @Override

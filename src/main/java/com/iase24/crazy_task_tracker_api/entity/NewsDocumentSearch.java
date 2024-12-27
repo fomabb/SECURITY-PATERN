@@ -1,4 +1,4 @@
-package com.iase24.crazy_task_tracker_api.adminapi.searcher;
+package com.iase24.crazy_task_tracker_api.entity;
 
 import jakarta.persistence.Id;
 import lombok.Builder;
@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Getter
-@Document(indexName = "translations")
+@Document(indexName = "news_transaction")
 @Builder
 public class NewsDocumentSearch {
 

@@ -36,8 +36,6 @@
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
 
-
-
         <!--Custom Starter for filter and interceptor-->
         <dependency>
             <groupId>com.iase24.starter</groupId>
@@ -85,6 +83,11 @@
             <groupId>com.github.loki4j</groupId>
             <artifactId>loki-logback-appender</artifactId>
             <version>1.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
         </dependency>
 
         <!-- Безопасность -->
