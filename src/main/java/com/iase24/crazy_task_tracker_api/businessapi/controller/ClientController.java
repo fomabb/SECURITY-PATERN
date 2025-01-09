@@ -61,10 +61,12 @@ public class ClientController {
         return restTemplate.getForObject("https://api.ipify.org?format=json", String.class);
     }
 
-    @GetMapping("/find-city")
-    public ResponseEntity<LocationClientResponse> findCity(HttpServletRequest request) {
+    @GetMapping("/{lang}/find-city")
+    public ResponseEntity<LocationClientResponse> findCity(
+            @PathVariable("lang") String lang,
+            HttpServletRequest request) {
         String ipAddressClient = getClientIP(request);
-        LocationClientResponse cityClientLocation = clientService.getCityByIpClient(ipAddressClient);
+        LocationClientResponse cityClientLocation = clientService.getCityByIpClient(lang, ipAddressClient);
         return ResponseEntity.ok(cityClientLocation);
     }
 }

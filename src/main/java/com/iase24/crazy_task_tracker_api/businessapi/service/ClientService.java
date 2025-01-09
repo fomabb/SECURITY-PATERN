@@ -15,5 +15,5 @@ public interface ClientService {
 
     String getGeoLocation(String ip);
 
-    LocationClientResponse getCityByIpClient(String ipAddressClient);
+    LocationClientResponse getCityByIpClient(String lang, String ipAddressClient);
 }

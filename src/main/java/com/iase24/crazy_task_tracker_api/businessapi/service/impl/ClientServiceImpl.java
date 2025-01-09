@@ -34,7 +34,7 @@ public class ClientServiceImpl implements ClientService {
     private final UserRepository userRepository;
     private final EmailSenderServiceImpl emailService;
     private final PasswordEncoder passwordEncoder;
-    private static final String GEO_API_URL = "http://ip-api.com/json";
+    private static final String GEO_API_URL = "http://ip-api.com/json/";
 
     @Override
     public String getGeoLocation(String clientIp) {
@@ -44,8 +44,8 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public LocationClientResponse getCityByIpClient(String ipAddressClient) {
-        String url = GEO_API_URL + "?ip=" + ipAddressClient;
+    public LocationClientResponse getCityByIpClient(String lang, String ipAddressClient) {
+        String url = GEO_API_URL + "?lang=%s&ip=%s".formatted(lang, ipAddressClient);
         RestTemplate restTemplate = new RestTemplate();
         try {
             var response = restTemplate.getForEntity(url, Map.class);
