@@ -1,22 +1,27 @@
 package com.iase24.crazy_task_tracker_api.adminapi.controller;
 
 import com.iase24.crazy_task_tracker_api.adminapi.facade.UserFacade;
+import com.iase24.crazy_task_tracker_api.adminapi.service.UserService;
 import com.iase24.crazy_task_tracker_api.dto.request.UserUUIDRequest;
 import com.iase24.crazy_task_tracker_api.dto.response.DeleteUserResponse;
 import com.iase24.crazy_task_tracker_api.dto.response.GetUserResponse;
 import com.iase24.crazy_task_tracker_api.entity.ArchiveDeletedUser;
-import com.iase24.crazy_task_tracker_api.adminapi.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.UUID;

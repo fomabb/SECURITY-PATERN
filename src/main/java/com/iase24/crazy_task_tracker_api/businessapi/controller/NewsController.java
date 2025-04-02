@@ -2,7 +2,12 @@ package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.CountLikesResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.SuggestionsFulltextSearchResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
 import com.iase24.crazy_task_tracker_api.dto.exception.CommonExceptionResponse;
 import com.iase24.crazy_task_tracker_api.entity.News;
@@ -22,7 +27,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 

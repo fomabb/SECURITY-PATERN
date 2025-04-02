@@ -1,6 +1,5 @@
 package com.iase24.crazy_task_tracker_api.businessapi.dto.request;
 
-import com.iase24.crazy_task_tracker_api.util.annotation.ValidUUID;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
