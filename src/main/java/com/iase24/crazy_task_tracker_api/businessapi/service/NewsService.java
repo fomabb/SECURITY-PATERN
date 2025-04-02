@@ -35,6 +35,8 @@ public interface NewsService {
 
     void addLike(LikeByUserIdAndNewsIdRequest request);
 
+    void disLike(LikeByUserIdAndNewsIdRequest request);
+
     List<CountLikesResponse> getAllNewsWithLikes(String lang);
 
     CountLikesResponse getNewsByIdWithLikes(String lang, Long newsId);

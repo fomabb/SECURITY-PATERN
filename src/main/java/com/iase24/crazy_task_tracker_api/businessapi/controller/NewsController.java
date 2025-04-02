@@ -171,6 +171,16 @@ public class NewsController {
         return ResponseEntity.ok(newsService.getContentWithLikeForClick(lang, request.getNewsId()));
     }
 
+    @PostMapping("/{lang}/dislike")
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    public ResponseEntity<CountLikesResponse> disLikeNews(
+            @PathVariable("lang") String lang,
+            @RequestBody LikeByUserIdAndNewsIdRequest request
+    ) {
+        newsService.disLike(request);
+        return ResponseEntity.ok(newsService.getContentWithLikeForClick(lang, request.getNewsId()));
+    }
+
 //===========================Section Elastic Search=====================================================================
 
     @GetMapping("/{lang}/search")

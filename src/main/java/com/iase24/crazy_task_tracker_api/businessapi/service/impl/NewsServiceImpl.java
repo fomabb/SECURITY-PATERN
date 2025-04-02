@@ -34,6 +34,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -160,13 +161,44 @@ public class NewsServiceImpl implements NewsService {
                     log.warn("Ошибка поиска пользователя по ID: {}", request.getUserId());
                     return new EntityNotFoundException("User with ID: %s not found".formatted(request.getUserId()));
                 });
-        if (likeRepository.findByNewsAndUser(news, user).isPresent()) {
-            log.warn("Пользователь уже поставил лайк под этой новостью и он удаляется");
-            removeLike(request.getNewsId(), request.getUserId());
+        Optional<Like> optionalLike = likeRepository.findByNewsAndUser(news, user);
+
+        if (optionalLike.isPresent()) {
+            Like like = optionalLike.get();
+            if (like.isReaction()) {
+                log.warn("Пользователь уже поставил лайк под этой новостью и он удаляется");
+                removeLike(request.getNewsId(), request.getUserId());
+            } else {
+                like.setReaction(true);
+                likeRepository.save(like);
+            }
         } else {
-            Like like = Like.builder().news(news).user(user).reaction(true).build();
+            Like newLike = Like.builder().news(news).user(user).reaction(true).build();
             log.info("Лайк сохранен в бзу данных");
-            likeRepository.save(like);
+            likeRepository.save(newLike);
+        }
+    }
+
+    @Override
+    @Transactional
+    public void disLike(LikeByUserIdAndNewsIdRequest request) {
+        News news = newsRepository.findById(request.getNewsId())
+                .orElseThrow(() -> new EntityNotFoundException("News with ID: %s not found".formatted(request.getNewsId())));
+        User user = userRepository.findById(request.getUserId())
+                .orElseThrow(() -> new EntityNotFoundException("User with ID: %s not found".formatted(request.getUserId())));
+        Optional<Like> optionalLike = likeRepository.findByNewsAndUser(news, user);
+
+        if (optionalLike.isPresent()) {
+            Like like = optionalLike.get();
+            if (!like.isReaction()) {
+                removeLike(request.getNewsId(), request.getUserId());
+            } else {
+                like.setReaction(false);
+                likeRepository.save(like);
+            }
+        } else {
+            Like newLike = Like.builder().news(news).user(user).reaction(false).build();
+            likeRepository.save(newLike);
         }
     }
 
@@ -190,6 +222,7 @@ public class NewsServiceImpl implements NewsService {
                         .title(newsTranslation.getTitle())
                         .info(newsTranslation.getInfo())
                         .countLikes(countAllLikesByNewsId(newsTranslation.getNews().getId()))
+                        .disLike(countAllDisLikesByNewsId(newsTranslation.getNews().getId()))
                         .build())
                 .orElseThrow(() -> new EntityNotFoundException(
                         "News, with ID: %s or language: %s, not found".formatted(newsId, lang)));
@@ -203,6 +236,7 @@ public class NewsServiceImpl implements NewsService {
                         .title(newsTranslation.getTitle())
                         .info(newsTranslation.getInfo())
                         .countLikes(countAllLikesByNewsId(newsTranslation.getNews().getId()))
+                        .disLike(countAllDisLikesByNewsId(newsTranslation.getNews().getId()))
                         .build())
                 .orElseThrow(() -> new EntityNotFoundException(
                         "News, with ID: %s or language: %s, not found".formatted(newsId, lang)));
