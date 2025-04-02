@@ -1,6 +1,5 @@
 package com.iase24.crazy_task_tracker_api.businessapi.repository;
 
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.CountLikesResponse;
 import com.iase24.crazy_task_tracker_api.entity.Like;
 import com.iase24.crazy_task_tracker_api.entity.News;
 import com.iase24.crazy_task_tracker_api.security.entity.User;
@@ -15,4 +14,6 @@ public interface LikeRepository extends JpaRepository<Like, Long> {
     Optional<Like> findByNewsAndUser(News news, User user);
 
     int countLikesByNewsIdAndReactionTrue(Long newsId);
+
+    int countLikesByNewsIdAndReactionFalse(Long newsId);
 }

@@ -42,7 +42,7 @@ services:
   postgres:
     image: postgres:13.3
     environment:
-      POSTGRES_DB: "postgres"
+      POSTGRES_DB: "security_db"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
     ports:
@@ -79,7 +79,7 @@ services:
       DYNAMIC_CONFIG_ENABLED: true
 
   elasticsearch:
-    image: elasticsearch:8.5.1
+    image: elasticsearch:8.17.4
     environment:
       - discovery.type=single-node
       - ELASTIC_PASSWORD=elastic
@@ -91,7 +91,7 @@ services:
       - es-network
 
   kibana:
-    image: kibana:8.5.1
+    image: kibana:8.17.4
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
       - ELASTICSEARCH_USERNAME=elastic

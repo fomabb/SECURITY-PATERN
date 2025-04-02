@@ -1,10 +1,10 @@
 package com.iase24.crazy_task_tracker_api.adminapi.service.impl;
 
+import com.iase24.crazy_task_tracker_api.adminapi.service.UserService;
 import com.iase24.crazy_task_tracker_api.entity.ArchiveDeletedUser;
 import com.iase24.crazy_task_tracker_api.repository.ArchiveDeletedUserRepository;
-import com.iase24.crazy_task_tracker_api.security.repository.UserRepository;
 import com.iase24.crazy_task_tracker_api.security.entity.User;
-import com.iase24.crazy_task_tracker_api.adminapi.service.UserService;
+import com.iase24.crazy_task_tracker_api.security.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

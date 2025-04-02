@@ -2,7 +2,12 @@ package com.iase24.crazy_task_tracker_api.businessapi.service;
 
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
-import com.iase24.crazy_task_tracker_api.businessapi.dto.response.*;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.CountLikesResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsCreateDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.SuggestionsFulltextSearchResponse;
 import com.iase24.crazy_task_tracker_api.entity.News;
 import com.iase24.crazy_task_tracker_api.entity.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
@@ -30,13 +35,11 @@ public interface NewsService {
 
     void addLike(LikeByUserIdAndNewsIdRequest request);
 
-    int countAllLikesByNewsId(Long newsId);
-
     List<CountLikesResponse> getAllNewsWithLikes(String lang);
 
     CountLikesResponse getNewsByIdWithLikes(String lang, Long newsId);
 
-    CountLikesResponse getContentWithLikeForClick(String  lang, Long newsId);
+    CountLikesResponse getContentWithLikeForClick(String lang, Long newsId);
 
     List<NewsDocumentSearch> search(String lang, String query);
 

@@ -4,7 +4,11 @@ import com.iase24.crazy_task_tracker_api.util.validation.UUIDMaskValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
-import java.lang.annotation.*;
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * Validation of a UUID string like:
