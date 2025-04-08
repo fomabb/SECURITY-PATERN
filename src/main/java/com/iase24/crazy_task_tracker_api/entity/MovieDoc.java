@@ -10,7 +10,6 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Document(indexName = "movies_index")
-//@Setting(settingPath = "/elasticsearch-settings.json")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
