@@ -1,7 +1,7 @@
 package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
+import com.iase24.crazy_task_tracker_api.businessapi.dto.response.MovieResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.service.MovieService;
-import com.iase24.crazy_task_tracker_api.entity.Movie;
 import com.iase24.crazy_task_tracker_api.util.pageable.PageableResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -25,12 +25,12 @@ public class MovieController {
     private final MovieService movieService;
 
     @GetMapping("/search")
-    public ResponseEntity<PageableResponse<Movie>> searchMovies(
+    public ResponseEntity<PageableResponse<MovieResponse>> searchMovies(
             @RequestParam("query") String query,
             @RequestParam("page") int page,
             @RequestParam("size") int size
     ) {
-        return ResponseEntity.ok(movieService.searchMovies(query, PageRequest.of(page, size)));
+        return ResponseEntity.ok(movieService.searchMovies(query, PageRequest.of(page - 1, size)));
     }
 
     @GetMapping("/reindex")

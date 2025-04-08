@@ -1,5 +1,6 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
 
+import com.iase24.crazy_task_tracker_api.businessapi.document.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
@@ -17,7 +18,6 @@ import com.iase24.crazy_task_tracker_api.businessapi.repository.NewsTranslationR
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
 import com.iase24.crazy_task_tracker_api.entity.Like;
 import com.iase24.crazy_task_tracker_api.entity.News;
-import com.iase24.crazy_task_tracker_api.entity.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.entity.NewsEn;
 import com.iase24.crazy_task_tracker_api.entity.NewsRu;
 import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
@@ -260,11 +260,6 @@ public class NewsServiceImpl implements NewsService {
     }
 
 //===========================Section Elastic Search=====================================================================
-
-//    @PostConstruct
-//    public void init() {
-//        reindexTranslations();
-//    }
 
     @Scheduled(fixedRate = 3600000) // Каждые 1 час
     public void reindexTranslationsPeriodically() {

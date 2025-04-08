@@ -1,6 +1,6 @@
 package com.iase24.crazy_task_tracker_api.businessapi.repository;
 
-import com.iase24.crazy_task_tracker_api.entity.MovieDoc;
+import com.iase24.crazy_task_tracker_api.businessapi.document.MovieDoc;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.annotations.Query;

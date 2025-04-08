@@ -1,4 +1,4 @@
-package com.iase24.crazy_task_tracker_api.entity;
+package com.iase24.crazy_task_tracker_api.businessapi.document;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

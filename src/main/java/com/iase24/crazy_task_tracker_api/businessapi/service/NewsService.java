@@ -1,5 +1,6 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service;
 
+import com.iase24.crazy_task_tracker_api.businessapi.document.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
@@ -9,7 +10,6 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsDataRespon
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.NewsTranslateCreateDataResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.SuggestionsFulltextSearchResponse;
 import com.iase24.crazy_task_tracker_api.entity.News;
-import com.iase24.crazy_task_tracker_api.entity.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
 import jakarta.validation.Valid;
 
