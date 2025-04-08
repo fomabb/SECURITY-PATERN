@@ -2,33 +2,32 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.iase24</groupId>
     <artifactId>crazy-task-tracker-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>crazy-task-tracker-api</name>
     <description>crazy-task-tracker-api</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+
     <properties>
         <java.version>21</java.version>
+        <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
     </properties>
+
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>my-repo</id>-->
+<!--            <url>https://github.com/fomabb/STARTER-FILTER-INTERCEPTOR</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
     <dependencies>
         <!--ElasticSearch-->
         <dependency>
@@ -37,11 +36,10 @@
         </dependency>
 
         <!--Custom Starter for filter and interceptor-->
-        <dependency>
-            <groupId>com.iase24.starter</groupId>
-            <artifactId>http-logger-spring-boot-starter</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.iase24.starter</groupId>-->
+<!--            <artifactId>http-logger-spring-boot-starter</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -76,13 +74,11 @@
         <dependency>
             <groupId>org.wso2.orbit.commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.14.0.wso2v1</version>
         </dependency>
 
         <dependency>
             <groupId>com.github.loki4j</groupId>
             <artifactId>loki-logback-appender</artifactId>
-            <version>1.5.1</version>
         </dependency>
 
         <dependency>
@@ -125,7 +121,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
-            <version>3.3.4</version>
         </dependency>
 
         <dependency>
@@ -156,25 +151,67 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>com.github.loki4j</groupId>
+                <artifactId>loki-logback-appender</artifactId>
+                <version>1.5.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
+                <version>3.3.4</version>
+            </dependency>
+
+            <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-api</artifactId>
                 <version>0.12.3</version>
             </dependency>
+
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-impl</artifactId>
                 <version>0.12.3</version>
             </dependency>
+
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-jackson</artifactId>
                 <version>0.12.3</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.wso2.orbit.commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>1.14.0.wso2v1</version>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>com.iase24.starter</groupId>-->
+<!--                <artifactId>http-logger-spring-boot-starter</artifactId>-->
+<!--                <version>1.0.0-SNAPSHOT</version>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
