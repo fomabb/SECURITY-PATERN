@@ -18,6 +18,7 @@ public interface MovieSearchRepository extends ElasticsearchRepository<MovieDoc,
                     "multi_match": {
                       "query": "?0",
                       "fields": ["movie^4", "overview^3"],
+                      "fuzziness": "AUTO",
                       "type": "best_fields",
                       "operator": "or"
                     }
