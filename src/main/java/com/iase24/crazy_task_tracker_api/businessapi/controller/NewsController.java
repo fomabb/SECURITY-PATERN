@@ -1,5 +1,6 @@
 package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
+import com.iase24.crazy_task_tracker_api.businessapi.document.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.CreateNewsTwoLanguageRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.LikeByUserIdAndNewsIdRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.AddNewLanguageResponse;
@@ -11,7 +12,6 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.response.SuggestionsFul
 import com.iase24.crazy_task_tracker_api.businessapi.service.NewsService;
 import com.iase24.crazy_task_tracker_api.dto.exception.CommonExceptionResponse;
 import com.iase24.crazy_task_tracker_api.entity.News;
-import com.iase24.crazy_task_tracker_api.entity.NewsDocumentSearch;
 import com.iase24.crazy_task_tracker_api.entity.NewsTranslation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
@@ -202,9 +202,9 @@ public class NewsController {
         return ResponseEntity.ok(newsService.suggestionsFulltextSearch(lang, query));
     }
 
-    @GetMapping("/index-translations")
-    public String indexTranslations() {
-        newsService.indexTranslations();
+    @GetMapping("/reindex")
+    public String reindexTranslations() {
+        newsService.reindexTranslations();
         return "Translations indexed successfully.";
     }
 }

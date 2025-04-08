@@ -1,8 +1,8 @@
-package com.iase24.crazy_task_tracker_api.entity;
+package com.iase24.crazy_task_tracker_api.businessapi.document;
 
-import jakarta.persistence.Id;
 import lombok.Builder;
 import lombok.Getter;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
