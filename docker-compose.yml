@@ -1,6 +1,9 @@
 networks:
   loki:
   es-network:
+  redis_network:
+    driver: bridge
+
 services:
   loki:
     image: grafana/loki:2.9.0
@@ -47,6 +50,17 @@ services:
       POSTGRES_PASSWORD: "postgres"
     ports:
       - "5432:5432"
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"  # Проброс порта Redis
+    volumes:
+      - redis_data:/data  # Сохранение данных Redis между перезапусками
+    networks:
+      - redis_network
+    restart: always  # Перезапускать контейнер, если он упадет
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.4
@@ -103,3 +117,5 @@ services:
 
 volumes:
   esdata:
+  redis_data:
+    driver: local
