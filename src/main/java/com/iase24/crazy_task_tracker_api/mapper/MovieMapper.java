@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface MovieMapper {
 
-    List<MovieResponse> movieEntityToMovieResponseDto(List<Movie> movies);
+    MovieResponse movieEntityToMovieResponseDto(Movie movie);
+
+    List<MovieResponse> movieListEntityToMovieListResponseDto(List<Movie> movies);
 }

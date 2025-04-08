@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +27,12 @@ public class MovieController {
 
     private final MovieService movieService;
 
+    @GetMapping("/reindex")
+    public List<String> reindexAllMovies() {
+        movieService.reindexMovies();
+        return List.of("Reindex all movie successfully.");
+    }
+
     @GetMapping("/search")
     public ResponseEntity<PageableResponse<MovieResponse>> searchMovies(
             @RequestParam("query") String query,
@@ -35,9 +42,26 @@ public class MovieController {
         return ResponseEntity.ok(movieService.searchMovies(query, PageRequest.of(page - 1, size)));
     }
 
-    @GetMapping("/reindex")
-    public List<String> reindexAllMovies() {
-        movieService.reindexMovies();
-        return List.of("Reindex all movie successfully.");
+    @GetMapping("/{id}")
+    public ResponseEntity<MovieResponse> getMovieById(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(movieService.getCachedMovies(id));
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<PageableResponse<MovieResponse>> getAllMovies(
+            @RequestParam("page") int page,
+            @RequestParam("size") int size
+    ) {
+        return ResponseEntity.ok(movieService.getAllMovies(PageRequest.of(page - 1, size)));
+    }
+
+    @GetMapping("/trending")
+    public ResponseEntity<MovieResponse> getRandomMovies() {
+        return ResponseEntity.ok(movieService.getRandomMovie());
+    }
+
+    @GetMapping("/six-trending")
+    public ResponseEntity<List<MovieResponse>> getSixTrending() {
+        return ResponseEntity.ok(movieService.getSixTrending());
     }
 }

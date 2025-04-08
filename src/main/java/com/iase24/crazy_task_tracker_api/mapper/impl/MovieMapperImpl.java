@@ -11,24 +11,27 @@ import java.util.List;
 @Component
 public class MovieMapperImpl implements MovieMapper {
     @Override
-    public List<MovieResponse> movieEntityToMovieResponseDto(List<Movie> movies) {
+    public MovieResponse movieEntityToMovieResponseDto(Movie movie) {
+        return MovieResponse.builder()
+                .id(movie.getId())
+                .rating(movie.getRating())
+                .movie(movie.getMovie())
+                .year(movie.getYear())
+                .country(movie.getCountry())
+                .ratingBall(movie.getRatingBall())
+                .overview(movie.getOverview())
+                .director(movie.getDirector())
+                .screenwriter(movie.getScreenwriter())
+                .actors(movie.getActors())
+                .urlLogo(movie.getUrlLogo())
+                .build();
+    }
+
+    @Override
+    public List<MovieResponse> movieListEntityToMovieListResponseDto(List<Movie> movies) {
         if (movies.isEmpty()) {
             return Collections.emptyList();
         }
-        return movies.stream().map(
-                movie -> MovieResponse.builder()
-                        .id(movie.getId())
-                        .rating(movie.getRating())
-                        .movie(movie.getMovie())
-                        .year(movie.getYear())
-                        .country(movie.getCountry())
-                        .ratingBall(movie.getRatingBall())
-                        .overview(movie.getOverview())
-                        .director(movie.getDirector())
-                        .screenwriter(movie.getScreenwriter())
-                        .actors(movie.getActors())
-                        .urlLogo(movie.getUrlLogo())
-                        .build()
-        ).toList();
+        return movies.stream().map(this::movieEntityToMovieResponseDto).toList();
     }
 }
