@@ -202,9 +202,9 @@ public class NewsController {
         return ResponseEntity.ok(newsService.suggestionsFulltextSearch(lang, query));
     }
 
-    @GetMapping("/index-translations")
-    public String indexTranslations() {
-        newsService.indexTranslations();
+    @GetMapping("/reindex")
+    public String reindexTranslations() {
+        newsService.reindexTranslations();
         return "Translations indexed successfully.";
     }
 }

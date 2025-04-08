@@ -47,5 +47,5 @@ public interface NewsService {
 
     List<SuggestionsFulltextSearchResponse> suggestionsFulltextSearch(String lang, String query);
 
-    void indexTranslations();
+    void reindexTranslations();
 }
