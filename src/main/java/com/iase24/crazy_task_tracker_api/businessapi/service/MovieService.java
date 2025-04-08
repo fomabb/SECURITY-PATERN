@@ -21,4 +21,6 @@ public interface MovieService {
     PageableResponse<MovieResponse> getAllMovies(Pageable pageable);
 
     List<MovieResponse> getSixTrending();
+
+    List<MovieResponse> getCachedSixTrending();
 }

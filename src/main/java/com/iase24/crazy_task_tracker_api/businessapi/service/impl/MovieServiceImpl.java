@@ -1,6 +1,7 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.iase24.crazy_task_tracker_api.businessapi.document.MovieDoc;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.MovieResponse;
@@ -120,5 +121,25 @@ public class MovieServiceImpl implements MovieService {
 
         Collections.shuffle(allMovies);
         return movieMapper.movieListEntityToMovieListResponseDto(new ArrayList<>(allMovies.subList(0, Math.min(6, allMovies.size()))));
+    }
+
+    @Override
+    public List<MovieResponse> getCachedSixTrending() {
+        try (Jedis jedis = jedisPool.getResource()) {
+            String key = "movies_trending";
+            String raw = jedis.get(key);
+            if (raw != null) {
+                return objectMapper.readValue(raw, new TypeReference<>() {
+                });
+            }
+            List<MovieResponse> movies = getSixTrending();
+            if (movies == null) {
+                return Collections.emptyList();
+            }
+            jedis.set(key, objectMapper.writeValueAsString(movies));
+            return movies;
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
