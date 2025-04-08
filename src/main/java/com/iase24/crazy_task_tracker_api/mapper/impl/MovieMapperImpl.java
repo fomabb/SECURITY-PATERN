@@ -23,7 +23,7 @@ public class MovieMapperImpl implements MovieMapper {
                         .year(movie.getYear())
                         .country(movie.getCountry())
                         .ratingBall(movie.getRatingBall())
-                        .overview(movie.getMovie())
+                        .overview(movie.getOverview())
                         .director(movie.getDirector())
                         .screenwriter(movie.getScreenwriter())
                         .actors(movie.getActors())

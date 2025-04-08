@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/movies")
 @RequiredArgsConstructor
@@ -34,8 +36,8 @@ public class MovieController {
     }
 
     @GetMapping("/reindex")
-    public String reindexAllMovies() {
+    public List<String> reindexAllMovies() {
         movieService.reindexMovies();
-        return "Reindex all movie successfully.";
+        return List.of("Reindex all movie successfully.");
     }
 }
