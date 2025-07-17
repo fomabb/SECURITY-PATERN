@@ -2,6 +2,7 @@ package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.MovieResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.service.MovieService;
+import com.iase24.crazy_task_tracker_api.businessapi.service.MovieServiceOperationEs;
 import com.iase24.crazy_task_tracker_api.util.pageable.PageableResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,7 @@ import java.util.List;
 public class MovieController {
 
     private final MovieService movieService;
+    private final MovieServiceOperationEs movieServiceOperationEs;
 
     @GetMapping("/reindex")
     public List<String> reindexAllMovies() {
@@ -35,7 +37,7 @@ public class MovieController {
 
     @GetMapping("/search")
     public ResponseEntity<PageableResponse<MovieResponse>> searchMovies(
-            @RequestParam("query") String query,
+            @RequestParam("q") String query,
             @RequestParam("page") int page,
             @RequestParam("size") int size
     ) {
@@ -63,5 +65,16 @@ public class MovieController {
     @GetMapping("/six-trending")
     public ResponseEntity<List<MovieResponse>> getSixTrending() {
         return ResponseEntity.ok(movieService.getSixTrending());
+    }
+
+    @GetMapping("/native/search")
+    public ResponseEntity<PageableResponse<MovieResponse>> searchNativeQuery(
+            @RequestParam(value = "q", required = false) String query,
+            @RequestParam("page") int page,
+            @RequestParam("size") int size
+
+    ) {
+        PageableResponse<MovieResponse> response = movieServiceOperationEs.searchNativeQuery(query, PageRequest.of(page - 1, size));
+        return ResponseEntity.ok(response);
     }
 }

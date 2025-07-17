@@ -12,6 +12,7 @@ import com.iase24.crazy_task_tracker_api.entity.Movie;
 import com.iase24.crazy_task_tracker_api.mapper.MovieMapper;
 import com.iase24.crazy_task_tracker_api.util.pageable.PageableResponse;
 import com.iase24.crazy_task_tracker_api.util.pageable.PageableResponseUtil;
+import com.iase24.crazy_task_tracker_api.util.response.MovieResponseEs;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,20 +24,17 @@ import redis.clients.jedis.Jedis;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 
 import static com.iase24.crazy_task_tracker_api.config.JedisConfig.jedisPool;
-import static java.util.Comparator.comparingInt;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class MovieServiceImpl implements MovieService {
 
+    private final MovieResponseEs movieResponseEs;
     private final MovieRepository movieRepository;
     private final MovieSearchRepository movieSearchRepository;
     private final PageableResponseUtil pageableResponseUtil;
@@ -52,7 +50,7 @@ public class MovieServiceImpl implements MovieService {
                         movie -> MovieDoc.builder()
                                 .id(movie.getId())
                                 .movie(movie.getMovie())
-                                .overview(movie.getMovie())
+                                .overview(movie.getOverview())
                                 .build()
                 ).toList()
         );
@@ -61,16 +59,7 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public PageableResponse<MovieResponse> searchMovies(String query, Pageable pageable) {
         Page<MovieDoc> searchResult = movieSearchRepository.searchByQuery(query, pageable);
-        Map<Long, Integer> idsMap = new LinkedHashMap<>();
-        List<MovieDoc> movieDocs = searchResult.getContent();
-        for (int i = 0; i < movieDocs.size(); i++) {
-            idsMap.put(movieDocs.get(i).getId(), i);
-        }
-        Set<Long> ids = idsMap.keySet();
-        List<MovieResponse> moviesFromDb =
-                movieMapper.movieListEntityToMovieListResponseDto(
-                        movieRepository.findAllById(ids).stream()
-                                .sorted(comparingInt(movie -> idsMap.get(movie.getId()))).toList());
+        List<MovieResponse> moviesFromDb = movieResponseEs.getMovieResponsesFromDocument(searchResult);
         return pageableResponseUtil.buildPageableResponse(moviesFromDb, searchResult, new PageableResponse<>());
     }
 
