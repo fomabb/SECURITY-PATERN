@@ -10,4 +10,6 @@
 
     <include file="v.1.0.3/db.changelog-v.1.0.3-commutative.xml" relativeToChangelogFile="true"/>
 
+    <include file="v.1.0.4/db.changelog-v.1.0.4-commutative.xml" relativeToChangelogFile="true"/>
+
 </databaseChangeLog>
