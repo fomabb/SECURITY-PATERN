@@ -2,9 +2,12 @@ package com.iase24.crazy_task_tracker_api.exceptionhandler;
 
 import com.iase24.crazy_task_tracker_api.dto.exception.CommonExceptionResponse;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.BusinessException;
+import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.ErrorResponse;
+import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.RestException;
 import com.iase24.crazy_task_tracker_api.exceptionhandler.exception.ValidationException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
@@ -15,9 +18,17 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.time.LocalDateTime;
 
+@Slf4j
 @RestControllerAdvice
 @AllArgsConstructor
 public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
+
+    @ExceptionHandler(RestException.class)
+    public ResponseEntity<ErrorResponse> handleAccountException(RestException ex) {
+        log.error("Response error with code: {}, and message: {}", ex.getHttpStatus().name(), ex.getMessage());
+        var errorResponse = new ErrorResponse(ex.getHttpStatus().getReasonPhrase(), ex.getMessage());
+        return ResponseEntity.status(ex.getHttpStatus()).body(errorResponse);
+    }
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<CommonExceptionResponse> handleEntityNotFoundException(EntityNotFoundException e) {
