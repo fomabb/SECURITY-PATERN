@@ -42,14 +42,25 @@ services:
     networks:
       - loki
 
+#  postgres:
+#    image: postgres:16.8-alpine3.20
+#    environment:
+#      POSTGRES_DB: "security_db"
+#      POSTGRES_USER: "postgres"
+#      POSTGRES_PASSWORD: "postgres"
+#    ports:
+#      - "5432:5432"
+
   postgres:
-    image: postgres:16.8-alpine3.20
+    image: postgis/postgis:14-3.5-alpine  # Образ с PostGIS
     environment:
-      POSTGRES_DB: "security_db"
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: security_db
     ports:
-      - "5432:5432"
+      - "5445:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
   redis:
     image: redis:latest
@@ -119,3 +130,4 @@ volumes:
   es_data:
   redis_data:
     driver: local
+  postgres_data:

@@ -37,6 +37,6 @@ public class DeliveryLocation extends AbstractEntity {
     @Column(name = "fill")
     private String fill;
 
-    @Column(name = "polygon") // , columnDefinition = "geometry(Polygon, 4326)
+    @Column(name = "polygon", columnDefinition = "geometry(Polygon, 4326)")
     private Polygon polygon;
 }
