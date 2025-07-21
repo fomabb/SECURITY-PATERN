@@ -52,13 +52,13 @@ public class Shop {
     @Column(nullable = false)
     private double lon;
 
-    @Column(columnDefinition = "geometry(Point, 4325", nullable = false)
+    @Column(columnDefinition = "geometry(Point, 4326", nullable = false)
     private Point position;
 
     private String workingHours;
 
     @PostLoad
     private void postLoad() {
-        this.position = geometryFactory.createPoint(new Coordinate(lon, lat));
+        this.position = geometryFactory.createPoint(new Coordinate(lat, lon));
     }
 }
