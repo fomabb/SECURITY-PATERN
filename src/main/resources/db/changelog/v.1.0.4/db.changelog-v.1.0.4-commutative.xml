@@ -11,4 +11,18 @@
 
     <include file="18-create-table-delivery-location.sql" relativeToChangelogFile="true"/>
 
+    <changeSet id="2025-07-21-create-table-shop" author="Nikolay Kirilyuk">
+        <tagDatabase tag="postgreSQL/security_db"/>
+    </changeSet>
+
+    <include file="19-create-table-shop.sql" relativeToChangelogFile="true"/>
+
+                                <!--STATIC~DATA-->
+
+    <changeSet id="2025-07-21-insert-data-shop" author="Nikolay Kirilyuk">
+        <tagDatabase tag="postgreSQL/security_db"/>
+    </changeSet>
+
+    <include file="static-data/01-insert-shop-data.sql" relativeToChangelogFile="true"/>
+
 </databaseChangeLog>

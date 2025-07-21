@@ -26,9 +26,9 @@ import org.springframework.web.bind.annotation.RestController;
 })
 public class DeliveryController {
 
-    public static final String SAVE_DELIVERY_LOCATION_URL = "/v1/location";
-    public static final String DELIVERY_LOCATION_TERM_URL = "/v1/location-term";
-    public static final String DELIVERY_LOCATION_CHECK_URL = "/v1/location-check";
+    public static final String SAVE_DELIVERY_LOCATION_URL = "/location";
+    public static final String DELIVERY_LOCATION_TERM_URL = "/location-term";
+    public static final String DELIVERY_LOCATION_CHECK_URL = "/location-check";
 
     private final GeoService geoService;
 
