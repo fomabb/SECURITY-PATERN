@@ -22,4 +22,15 @@ public interface ShopRepository extends JpaRepository<Shop, Long> {
                    order by distance
             """, nativeQuery = true)
     List<ShopProjection> findAllShopsOrderedByDistance(@Param("point") Point point);
+
+    @Query(value = """
+            select s.id,
+                   s.name,
+                   s.address,
+                   s.working_hours,
+                   round(cast(st_distancesphere(position, :point) as numeric), 2) as distance, s.lat, s.lon from shop s
+                   where id=:id
+                   order by distance
+            """, nativeQuery = true)
+    ShopProjection findShopByIdOrderByDistance(@Param("id") Long id, @Param("point") Point point);
 }

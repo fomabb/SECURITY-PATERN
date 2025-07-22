@@ -14,4 +14,6 @@ public interface ShopService {
     List<ShopProjection> getAllShopsOrderedByDistance(double lat, double lon);
 
     ShopDto addShop(@Valid ShopAddRequest request);
+
+    ShopProjection getShopDistanceById(Long id, double lat, double lon);
 }

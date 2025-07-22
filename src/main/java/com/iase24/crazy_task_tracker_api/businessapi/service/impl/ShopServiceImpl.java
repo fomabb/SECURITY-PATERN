@@ -6,6 +6,7 @@ import com.iase24.crazy_task_tracker_api.businessapi.projection.ShopProjection;
 import com.iase24.crazy_task_tracker_api.businessapi.repository.ShopRepository;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ShopService;
 import com.iase24.crazy_task_tracker_api.entity.Shop;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
@@ -27,21 +28,6 @@ public class ShopServiceImpl implements ShopService {
     private final ShopRepository shopRepository;
 
     @Override
-    public ShopProjection getClosestShop(double lat, double lon) {
-        Point point = geometryFactory.createPoint(new Coordinate(lat, lon));
-        List<ShopProjection> shops = shopRepository.findAllShopsOrderedByDistance(point);
-
-        return shops.isEmpty() ? null : shops.getFirst();
-    }
-
-    @Override
-    public List<ShopProjection> getAllShopsOrderedByDistance(double lat, double lon) {
-        Point point = geometryFactory.createPoint(new Coordinate(lat, lon));
-
-        return shopRepository.findAllShopsOrderedByDistance(point);
-    }
-
-    @Override
     @Transactional
     public ShopDto addShop(ShopAddRequest request) {
         Shop shop = Shop.builder()
@@ -52,7 +38,7 @@ public class ShopServiceImpl implements ShopService {
                 .lon(request.getLongitude())
                 .build();
 
-        Point point = geometryFactory.createPoint(new Coordinate(request.getLatitude(), request.getLongitude()));
+        Point point = geometryFactory.createPoint(new Coordinate(request.getLongitude(), request.getLatitude()));
         point.setSRID(4326);
         shop.setPosition(point);
 
@@ -64,5 +50,29 @@ public class ShopServiceImpl implements ShopService {
                 .address(saved.getAddress())
                 .workingHours(saved.getWorkingHours())
                 .build();
+    }
+
+    @Override
+    public ShopProjection getClosestShop(double lat, double lon) {
+        Point point = geometryFactory.createPoint(new Coordinate(lon, lat));
+        List<ShopProjection> shops = shopRepository.findAllShopsOrderedByDistance(point);
+
+        return shops.isEmpty() ? null : shops.getFirst();
+    }
+
+    @Override
+    public List<ShopProjection> getAllShopsOrderedByDistance(double lat, double lon) {
+        Point point = geometryFactory.createPoint(new Coordinate(lon, lat));
+
+        return shopRepository.findAllShopsOrderedByDistance(point);
+    }
+
+    @Override
+    public ShopProjection getShopDistanceById(Long id, double lat, double lon) {
+        Shop shopId = shopRepository.findById(id).orElseThrow(
+                () -> new EntityNotFoundException(String.format("Shop with %s id not found", id)));
+        Point point = geometryFactory.createPoint(new Coordinate(lon, lat));
+
+        return shopRepository.findShopByIdOrderByDistance(shopId.getId(), point);
     }
 }

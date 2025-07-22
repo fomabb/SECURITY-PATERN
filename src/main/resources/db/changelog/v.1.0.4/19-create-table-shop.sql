@@ -14,3 +14,5 @@ CREATE TABLE shop
     working_hours VARCHAR,
     position      geometry(POINT, 4326) NOT NULL
 );
+
+CREATE INDEX if not exists position_geom_idx ON shop USING GIST (position);
