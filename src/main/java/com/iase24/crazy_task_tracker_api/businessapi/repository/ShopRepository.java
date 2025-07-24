@@ -33,4 +33,42 @@ public interface ShopRepository extends JpaRepository<Shop, Long> {
                    order by distance
             """, nativeQuery = true)
     ShopProjection findShopByIdOrderByDistance(@Param("id") Long id, @Param("point") Point point);
+
+    @Query(value = """
+            SELECT
+                s.id as id,
+                s.name as name,
+                s.address as address,
+                s.working_hours as workingHours,
+                ST_Y(s.position::geometry) as lat,
+                ST_X(s.position::geometry) as lon,
+                round(cast(st_distancesphere(position, :point) as numeric), 2) as distance, s.lat, s.lon
+            FROM shop s
+            WHERE ST_DWithin(
+                s.position,
+                :point,
+                :maxDistance
+            )
+            ORDER BY distance
+            LIMIT 1
+            """, nativeQuery = true)
+    List<ShopProjection> findClosestShopWithinDistance(
+            @Param("point") Point point,
+            @Param("maxDistance") double maxDistanceMeters
+    );
+
+    @Query(value = """
+            SELECT
+                s.id as id,
+                s.name as name,
+                s.address as address,
+                s.working_hours as workingHours,
+                ST_Y(s.position::geometry) as lat,
+                ST_X(s.position::geometry) as lon,
+                round(cast(st_distancesphere(position, :point) as numeric), 2) as distance, s.lat, s.lon
+            FROM shop s
+            WHERE id=:id
+            ORDER BY distance
+            """, nativeQuery = true)
+    ShopProjection findShopWithinDistanceById(Long id, Point point);
 }

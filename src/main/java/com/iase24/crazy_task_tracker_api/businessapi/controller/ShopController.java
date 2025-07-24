@@ -1,10 +1,12 @@
 package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
 import com.iase24.crazy_task_tracker_api.businessapi.dto.ShopDto;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.ShopRouteInfoDto;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.ShopAddRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.LocationClientResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.projection.ShopProjection;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
+import com.iase24.crazy_task_tracker_api.businessapi.service.OsrmRoutingService.RoutingMode;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ShopService;
 import com.iase24.crazy_task_tracker_api.dto.exception.CommonExceptionResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -15,6 +17,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -213,6 +217,105 @@ public class ShopController {
         ShopProjection shop = shopService.getShopDistanceById(id, lat, lon);
         return shop != null
                 ? ResponseEntity.ok(convertToDto(shop))
+                : ResponseEntity.notFound().build();
+    }
+
+    @Operation(
+            summary = "Найти ближайший объект офиса с маршрутом.",
+            description = """
+                    `
+                    Необходимо вставить свои широту и долготу для определения дистанции до объекта
+                    офиса, а также можно указать параметр mode=DRIVING, WALKING или BICYCLE
+                    `
+                    """,
+            parameters = {
+                    @Parameter(name = "id", required = true, description = "ID объекта офиса", example = "7"),
+                    @Parameter(name = "lat", required = true, description = "Широта по оси Y.", example = "52.198938"),
+                    @Parameter(name = "lon", required = true, description = "Долгота по оси X.", example = "24.038436"),
+                    @Parameter(
+                            name = "mode",
+                            description = "Режим маршрутизации",
+                            example = "DRIVING",
+                            schema = @Schema(
+                                    implementation = RoutingMode.class,
+                                    allowableValues = {"DRIVING", "WALKING", "BICYCLE"}
+                            )
+                    )
+            },
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "`Объект офиса успешно возвращен`",
+                            content = @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = ShopDto.class))
+                    ),
+                    @ApiResponse(responseCode = "404", description = "`Пользователь не найден`",
+                            content = @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = CommonExceptionResponse.class))
+                    ),
+                    @ApiResponse(responseCode = "500", description = "`Ошибка сервера`",
+                            content = @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = CommonExceptionResponse.class))
+                    )
+            }
+    )
+    @GetMapping("/nearest-with-route")
+    public ResponseEntity<ShopRouteInfoDto> getClosestShopWithRoute(
+            @RequestParam @Min(-90) @Max(90) double lat,
+            @RequestParam @Min(-180) @Max(180) double lon,
+            @RequestParam(defaultValue = "DRIVING") RoutingMode mode
+    ) {
+        ShopRouteInfoDto result = shopService.getClosestShopWithRoute(lat, lon, mode);
+        return result != null
+                ? ResponseEntity.ok(result)
+                : ResponseEntity.notFound().build();
+    }
+
+    @Operation(
+            summary = "Найти объект офиса по его ID с маршрутом.",
+            description = """
+                    `
+                    Необходимо вставить ID объекта, а также свои широту и долготу для определения дистанции до объекта
+                    офиса, а также можно указать параметр mode=DRIVING, WALKING или BICYCLE
+                    `
+                    """,
+            parameters = {
+                    @Parameter(name = "id", required = true, description = "ID объекта офиса", example = "7"),
+                    @Parameter(name = "lat", required = true, description = "Широта по оси Y.", example = "52.198938"),
+                    @Parameter(name = "lon", required = true, description = "Долгота по оси X.", example = "24.038436"),
+                    @Parameter(
+                            name = "mode",
+                            description = "Режим маршрутизации",
+                            example = "DRIVING",
+                            schema = @Schema(
+                                    implementation = RoutingMode.class,
+                                    allowableValues = {"DRIVING", "WALKING", "BICYCLE"}
+                            )
+                    )
+            },
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "`Объект офиса успешно возвращен`",
+                            content = @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = ShopDto.class))
+                    ),
+                    @ApiResponse(responseCode = "404", description = "`Пользователь не найден`",
+                            content = @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = CommonExceptionResponse.class))
+                    ),
+                    @ApiResponse(responseCode = "500", description = "`Ошибка сервера`",
+                            content = @Content(mediaType = "application/json",
+                                    schema = @Schema(implementation = CommonExceptionResponse.class))
+                    )
+            }
+    )
+    @GetMapping("/nearest-with-route/{id}")
+    public ResponseEntity<ShopRouteInfoDto> getShopWithRouteById(
+            @PathVariable("id") Long id,
+            @RequestParam @Min(-90) @Max(90) double lat,
+            @RequestParam @Min(-180) @Max(180) double lon,
+            @RequestParam(defaultValue = "DRIVING") RoutingMode mode
+    ) {
+        ShopRouteInfoDto result = shopService.getShopWithRouteById(id, lat, lon, mode);
+        return result != null
+                ? ResponseEntity.ok(result)
                 : ResponseEntity.notFound().build();
     }
 
