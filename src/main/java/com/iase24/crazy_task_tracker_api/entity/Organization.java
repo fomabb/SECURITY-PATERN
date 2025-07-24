@@ -33,6 +33,6 @@ public class Organization {
     @OneToMany(mappedBy = "organization")
     private Set<Employee> employees;
 
-    @OneToMany(mappedBy = "Organization")
+    @OneToMany(mappedBy = "organization")
     private Set<Department> departments;
 }
