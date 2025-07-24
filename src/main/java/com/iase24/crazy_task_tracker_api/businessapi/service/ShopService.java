@@ -8,6 +8,8 @@ import jakarta.validation.Valid;
 
 import java.util.List;
 
+import static com.iase24.crazy_task_tracker_api.businessapi.service.OsrmRoutingService.RoutingMode;
+
 public interface ShopService {
 
     ShopProjection getClosestShop(double lat, double lon);
@@ -18,7 +20,7 @@ public interface ShopService {
 
     ShopProjection getShopDistanceById(Long id, double lat, double lon);
 
-    ShopRouteInfoDto getClosestShopWithRoute(double lat, double lon);
+    ShopRouteInfoDto getClosestShopWithRoute(double lat, double lon, RoutingMode mode);
 
-    ShopRouteInfoDto getShopWithRouteById(Long id, double lat, double lon);
+    ShopRouteInfoDto getShopWithRouteById(Long id, double lat, double lon, RoutingMode mode);
 }

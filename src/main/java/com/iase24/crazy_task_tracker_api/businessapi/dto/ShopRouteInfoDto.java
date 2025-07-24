@@ -12,4 +12,5 @@ public class ShopRouteInfoDto {
     private ShopProjection shop;
     private double routeDistance; // реальное расстояние в метрах
     private double routeDuration; // время в секундах
+    private String routeMode;
 }
