@@ -25,6 +25,8 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Map;
 import java.util.Objects;
 
+import static com.iase24.crazy_task_tracker_api.util.constant.ConstantProject.GEO_API_URL;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -34,11 +36,11 @@ public class ClientServiceImpl implements ClientService {
     private final UserRepository userRepository;
     private final EmailSenderServiceImpl emailService;
     private final PasswordEncoder passwordEncoder;
-    private static final String GEO_API_URL = "http://ip-api.com/json/";
+    private final RestTemplate restTemplate;
+
 
     @Override
     public String getGeoLocation(String clientIp) {
-        RestTemplate restTemplate = new RestTemplate();
         String url = GEO_API_URL + clientIp;
         return restTemplate.getForObject(url, String.class);
     }
@@ -46,7 +48,6 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public LocationClientResponse getCityByIpClient(String lang, String ipAddressClient) {
         String url = GEO_API_URL + "?lang=%s&ip=%s".formatted(lang, ipAddressClient);
-        RestTemplate restTemplate = new RestTemplate();
         try {
             var response = restTemplate.getForEntity(url, Map.class);
             if (response.getStatusCode() == HttpStatus.OK && response.getBody() != null) {

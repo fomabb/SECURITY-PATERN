@@ -1,6 +1,7 @@
 package com.iase24.crazy_task_tracker_api.businessapi.service;
 
 import com.iase24.crazy_task_tracker_api.businessapi.dto.ShopDto;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.ShopRouteInfoDto;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.ShopAddRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.projection.ShopProjection;
 import jakarta.validation.Valid;
@@ -16,4 +17,8 @@ public interface ShopService {
     ShopDto addShop(@Valid ShopAddRequest request);
 
     ShopProjection getShopDistanceById(Long id, double lat, double lon);
+
+    ShopRouteInfoDto getClosestShopWithRoute(double lat, double lon);
+
+    ShopRouteInfoDto getShopWithRouteById(Long id, double lat, double lon);
 }

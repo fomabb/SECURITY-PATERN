@@ -17,4 +17,8 @@ public interface ShopProjection {
 
     @Nullable
     Double getDistance();
+
+    double getLat(); // Широта магазина
+
+    double getLon(); // Долгота магазина
 }

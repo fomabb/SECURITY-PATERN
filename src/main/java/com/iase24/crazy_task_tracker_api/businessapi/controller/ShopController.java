@@ -1,6 +1,7 @@
 package com.iase24.crazy_task_tracker_api.businessapi.controller;
 
 import com.iase24.crazy_task_tracker_api.businessapi.dto.ShopDto;
+import com.iase24.crazy_task_tracker_api.businessapi.dto.ShopRouteInfoDto;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.ShopAddRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.LocationClientResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.projection.ShopProjection;
@@ -15,6 +16,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -213,6 +216,29 @@ public class ShopController {
         ShopProjection shop = shopService.getShopDistanceById(id, lat, lon);
         return shop != null
                 ? ResponseEntity.ok(convertToDto(shop))
+                : ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/nearest-with-route")
+    public ResponseEntity<ShopRouteInfoDto> getClosestShopWithRoute(
+            @RequestParam @Min(-90) @Max(90) double lat,
+            @RequestParam @Min(-180) @Max(180) double lon
+    ) {
+        ShopRouteInfoDto result = shopService.getClosestShopWithRoute(lat, lon);
+        return result != null
+                ? ResponseEntity.ok(result)
+                : ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/nearest-with-route/{id}")
+    public ResponseEntity<ShopRouteInfoDto> getShopWithRouteById(
+            @PathVariable("id") Long id,
+            @RequestParam @Min(-90) @Max(90) double lat,
+            @RequestParam @Min(-180) @Max(180) double lon
+    ) {
+        ShopRouteInfoDto result = shopService.getShopWithRouteById(id, lat, lon);
+        return result != null
+                ? ResponseEntity.ok(result)
                 : ResponseEntity.notFound().build();
     }
 
