@@ -12,4 +12,6 @@
 
     <include file="v.1.0.4/db.changelog-v.1.0.4-commutative.xml" relativeToChangelogFile="true"/>
 
+    <include file="v.1.0.5/db.changelog-v.1.0.5-cumulative.xml" relativeToChangelogFile="true"/>
+
 </databaseChangeLog>
