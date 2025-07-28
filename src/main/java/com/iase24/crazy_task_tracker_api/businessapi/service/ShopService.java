@@ -8,7 +8,7 @@ import jakarta.validation.Valid;
 
 import java.util.List;
 
-import static com.iase24.crazy_task_tracker_api.businessapi.service.OsrmRoutingService.RoutingMode;
+import static com.iase24.crazy_task_tracker_api.businessapi.service.RoutingService.RoutingMode;
 
 public interface ShopService {
 
