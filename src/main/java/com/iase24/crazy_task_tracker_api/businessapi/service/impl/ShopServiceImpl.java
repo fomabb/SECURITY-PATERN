@@ -6,7 +6,7 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.ShopRouteInfoDto;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.request.ShopAddRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.projection.ShopProjection;
 import com.iase24.crazy_task_tracker_api.businessapi.repository.ShopRepository;
-import com.iase24.crazy_task_tracker_api.businessapi.service.OsrmRoutingService;
+import com.iase24.crazy_task_tracker_api.businessapi.service.RoutingService;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ShopService;
 import com.iase24.crazy_task_tracker_api.entity.Shop;
 import jakarta.persistence.EntityNotFoundException;
@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-import static com.iase24.crazy_task_tracker_api.businessapi.service.OsrmRoutingService.RoutingMode;
+import static com.iase24.crazy_task_tracker_api.businessapi.service.RoutingService.RoutingMode;
 
 @Service
 @RequiredArgsConstructor
@@ -30,7 +30,7 @@ public class ShopServiceImpl implements ShopService {
     private final GeometryFactory geometryFactory;
 
     private final ShopRepository shopRepository;
-    private final OsrmRoutingService osrmRoutingService;
+    private final RoutingService routingService;
 
     @Override
     @Transactional
@@ -92,7 +92,7 @@ public class ShopServiceImpl implements ShopService {
 
         ShopProjection closest = shops.getFirst();
 
-        RouteInfoDto route = osrmRoutingService.calculateRoute(lon, lat, closest.getLon(), closest.getLat(), mode);
+        RouteInfoDto route = routingService.calculateRouteGraph(lon, lat, closest.getLon(), closest.getLat(), mode);
 
         return new ShopRouteInfoDto(closest, route.getDistance(), route.getDuration(), mode.toString());
     }
@@ -105,7 +105,7 @@ public class ShopServiceImpl implements ShopService {
         ShopProjection shop = shopRepository.findShopWithinDistanceById(shopId.getId(), point);
 
 
-        RouteInfoDto route = osrmRoutingService.calculateRoute(lon, lat, shop.getLon(), shop.getLat(), mode);
+        RouteInfoDto route = routingService.calculateRouteGraph(lon, lat, shop.getLon(), shop.getLat(), mode);
 
         return new ShopRouteInfoDto(shop, route.getDistance(), route.getDuration(), mode.name());
     }

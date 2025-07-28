@@ -6,7 +6,7 @@ import com.iase24.crazy_task_tracker_api.businessapi.dto.request.ShopAddRequest;
 import com.iase24.crazy_task_tracker_api.businessapi.dto.response.LocationClientResponse;
 import com.iase24.crazy_task_tracker_api.businessapi.projection.ShopProjection;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ClientService;
-import com.iase24.crazy_task_tracker_api.businessapi.service.OsrmRoutingService.RoutingMode;
+import com.iase24.crazy_task_tracker_api.businessapi.service.RoutingService.RoutingMode;
 import com.iase24.crazy_task_tracker_api.businessapi.service.ShopService;
 import com.iase24.crazy_task_tracker_api.dto.exception.CommonExceptionResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -228,9 +228,7 @@ public class ShopController {
                     офиса, а также можно указать параметр mode=DRIVING, WALKING или BICYCLE
                     `
                     """,
-            parameters = {
-                    @Parameter(name = "id", required = true, description = "ID объекта офиса", example = "7"),
-                    @Parameter(name = "lat", required = true, description = "Широта по оси Y.", example = "52.198938"),
+            parameters = {@Parameter(name = "lat", required = true, description = "Широта по оси Y.", example = "52.198938"),
                     @Parameter(name = "lon", required = true, description = "Долгота по оси X.", example = "24.038436"),
                     @Parameter(
                             name = "mode",
