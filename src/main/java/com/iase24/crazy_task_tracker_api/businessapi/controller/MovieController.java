@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.MOVIES_API;
+
 @RestController
-@RequestMapping("/api/v1/movies")
+@RequestMapping(MOVIES_API)
 @RequiredArgsConstructor
 @Validated
 @Slf4j

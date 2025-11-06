@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.AUTH_API;
+
 @RestController
-@RequestMapping("/auth")
+@RequestMapping(AUTH_API)
 @RequiredArgsConstructor
 @Slf4j
 @Tag(name = "Аутентификация", description = "Интерфейс для логики аутентификации")

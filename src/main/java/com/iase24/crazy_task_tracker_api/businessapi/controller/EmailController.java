@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.FileNotFoundException;
 
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.EMAIL_API;
+
 @RestController
-@RequestMapping("/email")
+@RequestMapping(EMAIL_API)
 @Slf4j
 @RequiredArgsConstructor
 @Tag(name = "API для отправки сообщений", description = "Интерфейс для отправки сообщений")

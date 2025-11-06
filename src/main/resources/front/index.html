@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Chat</title>
+    <link rel="stylesheet" href="style.css" id="themeStylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+<h2>Chat</h2>
+
+<div id="messages" class="messages"></div>
+
+<div class="field">
+    <input type="text" id="inputMessage" placeholder="Type a message">
+    <button id="send" onclick="sendMessage()">Send</button>
+</div>
+
+<button id="themeToggle" onclick="toggleTheme()">Switch to Dark Theme</button>
+
+<script src="script.js"></script>
+<script>
+    function toggleTheme() {
+        const body = document.body;
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = body.classList.toggle('dark-theme');
+
+        if (currentTheme) {
+            themeToggle.textContent = 'Switch to Light Theme';
+        } else {
+            themeToggle.textContent = 'Switch to Dark Theme';
+        }
+    }
+</script>
+</body>
+</html>

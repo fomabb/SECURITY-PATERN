@@ -27,9 +27,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import static com.iase24.crazy_task_tracker_api.filter.IpLoggingFilter.getClientIP;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.CLIENT_API;
 
 @RestController
-@RequestMapping("/api/client")
+@RequestMapping(CLIENT_API)
 @RequiredArgsConstructor
 @Slf4j
 @Validated

@@ -37,8 +37,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.NEWS_API;
+
 @RestController
-@RequestMapping("/api/news")
+@RequestMapping(NEWS_API)
 @RequiredArgsConstructor
 @Slf4j
 @Validated

@@ -26,8 +26,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.UUID;
 
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.ADMIN_API;
+
 @RestController
-@RequestMapping("/api/v1/admin")
+@RequestMapping(ADMIN_API)
 @RequiredArgsConstructor
 @Slf4j
 @Validated
