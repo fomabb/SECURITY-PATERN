@@ -33,9 +33,10 @@ import java.net.URI;
 import java.util.List;
 
 import static com.iase24.crazy_task_tracker_api.filter.IpLoggingFilter.getClientIP;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.OFFICES_API;
 
 @RestController
-@RequestMapping("/api/v1/offices")
+@RequestMapping(OFFICES_API)
 @RequiredArgsConstructor
 @Tag(name = "Офисы на карте")
 public class ShopController {

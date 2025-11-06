@@ -1,0 +1,161 @@
+/* ---------- Общий стиль ---------- */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* ---------- Контейнер сообщений ---------- */
+
+#messages {
+    width: 420px;
+    max-height: 60vh;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    overflow-y: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Сообщения клиента ---------- */
+
+.messages_client {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+    color: #000;
+    border-radius: 15px 15px 0 15px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    max-width: 75%;
+    word-wrap: break-word;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Сообщения сервера ---------- */
+
+.messages_server {
+    align-self: flex-start;
+    background-color: #e2e3f0;
+    color: #111;
+    border-radius: 15px 15px 15px 0;
+    padding: 10px 15px;
+    margin: 5px 0;
+    max-width: 75%;
+    word-wrap: break-word;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Контейнер сообщений (общий стиль) ---------- */
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* ---------- Поле ввода и кнопка ---------- */
+
+.field {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    width: 420px;
+}
+
+input#inputMessage {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input#inputMessage:focus {
+    border-color: #6c63ff;
+}
+
+button#send {
+    margin-left: 10px;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#send:hover {
+    background-color: #574bff;
+}
+
+/* ---------- Текст и время ---------- */
+
+p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+span {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: #666;
+    margin-top: 3px;
+}
+
+/* ---------- Темная тема ---------- */
+.dark-theme {
+    background: #121212;
+    color: #ffffff;
+}
+
+.dark-theme #messages {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+}
+
+.dark-theme .messages_client {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+.dark-theme .messages_server {
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+.dark-theme input#inputMessage {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.dark-theme button#send {
+    background-color: #575757;
+}
+
+.dark-theme button#send:hover {
+    background-color: #474747;
+}
+
+.dark-theme span {
+    color: #bbb;
+}

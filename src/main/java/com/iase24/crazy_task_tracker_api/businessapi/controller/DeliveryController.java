@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.DELIVERIES_API;
+
 @RestController
-@RequestMapping("/api/v1/deliveries")
+@RequestMapping(DELIVERIES_API)
 @RequiredArgsConstructor
 @Tag(name = "Зоны доставки")
 @ApiResponses({

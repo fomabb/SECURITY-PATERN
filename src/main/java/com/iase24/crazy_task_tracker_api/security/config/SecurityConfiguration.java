@@ -19,7 +19,18 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.ACTUATOR_URL;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.ADMIN_API;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.AUTH_API;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.CLIENT_API;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.DELIVERIES_API;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.ENDPOINT_URL;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.MOVIES_API;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.NEWS_API;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.OFFICES_API;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.WEB_SOCKET_WS;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
 @Configuration
@@ -30,6 +41,14 @@ public class SecurityConfiguration {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final UserServiceSecurity userService;
+
+    private static final List<String> PERMIT_ALL = List.of(
+            AUTH_API, ACTUATOR_URL, NEWS_API, CLIENT_API, MOVIES_API, DELIVERIES_API, OFFICES_API, WEB_SOCKET_WS
+    );
+
+    private static final List<String> ADMIN_ACCESS = List.of(
+            ENDPOINT_URL, ADMIN_API
+    );
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -52,10 +71,10 @@ public class SecurityConfiguration {
                           hasRole - Пользователь должен иметь конкретную роль, и, соответственно быть авторизованным
                           hasAnyRole - Должен иметь одну из перечисленных ролей (не представлено в коде)
                          */
-                        .requestMatchers("/auth/**", "/actuator/**", "/api/news/**", "/api/client/**", "/api/v1/movies/**", "/api/v1/deliveries/**", "/api/v1/offices/**").permitAll()
+                        .requestMatchers(appendAllPattern(PERMIT_ALL).toArray(new String[]{})).permitAll()
+                        .requestMatchers(appendAllPattern(ADMIN_ACCESS).toArray(new String[]{})).hasRole("ADMIN")
                         .requestMatchers("/swagger-ui/**", "/swagger-resources/*", "/v3/api-docs/**").permitAll()
                         .requestMatchers("/graphql/**").permitAll()
-                        .requestMatchers("/endpoint", "/api/v1/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
                 .authenticationProvider(authenticationProvider())
@@ -80,5 +99,9 @@ public class SecurityConfiguration {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config)
             throws Exception {
         return config.getAuthenticationManager();
+    }
+
+    private List<String> appendAllPattern(List<String> urls) {
+        return urls.stream().map(s -> s + "/**").collect(Collectors.toList());
     }
 }
