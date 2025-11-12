@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet id="2025-11-13-create-group-chats-table-001" author="Nikolay Kirilyuk">
+        <tagDatabase tag="postgreSQL/security_db"/>
+    </changeSet>
+
+    <include file="001-create-group-chats-table.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2025-11-13-create-group-chat-members-table-002" author="Nikolay Kirilyuk">
+        <tagDatabase tag="postgreSQL/security_db"/>
+    </changeSet>
+
+    <include file="002-create-group-chat-members-table.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2025-11-13-create-chat-rooms-table-003" author="Nikolay Kirilyuk">
+        <tagDatabase tag="postgreSQL/security_db"/>
+    </changeSet>
+
+    <include file="003-create-chat-rooms-table.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2025-11-13-create-chat-room-members-table" author="Nikolay Kirilyuk">
+        <tagDatabase tag="postgreSQL/security_db"/>
+    </changeSet>
+
+    <include file="004-create-chat-room-members-table.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2025-11-13-create-chat-messages-table-005" author="Nikolay Kirilyuk">
+        <tagDatabase tag="postgreSQL/security_db"/>
+    </changeSet>
+
+    <include file="005-create-chat-messages-table.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2025-11-13add-chatroom-fk-to-group-chats-006" author="Nikolay Kirilyuk">
+        <tagDatabase tag="postgreSQL/security_db"/>
+    </changeSet>
+
+    <include file="006-add-chatroom-fk-to-group-chats.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="2025-11-08-add-column-avatar_url-users-007" author="Nikolay Kirilyuk">
+        <tagDatabase tag="postgreSQL/security_db"/>
+    </changeSet>
+
+    <include file="007-add-column-avatar_url-users.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

@@ -19,6 +19,7 @@
     <properties>
         <java.version>21</java.version>
         <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
     </properties>
 
     <!--    <repositories>-->
@@ -133,6 +134,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
         </dependency>
 
         <dependency>
@@ -267,12 +274,38 @@
                     <source>21</source>
                     <target>21</target>
                     <annotationProcessorPaths>
+                        <!-- 1. Обработчик аннотаций MapStruct -->
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <!-- 2. Обработчик аннотаций Lombok (ОБЯЗАТЕЛЬНО должен быть здесь) -->
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
                             <version>${lombok.version}</version>
                         </path>
+                        <!--
+                            Дополнительная зависимость для интеграции Lombok и MapStruct.
+                            Она помогает MapStruct "видеть" геттеры, сгенерированные Lombok.
+                        -->
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>0.2.0</version>
+                        </path>
                     </annotationProcessorPaths>
+
+                    <!--
+                    Эта опция говорит MapStruct генерировать Spring-компоненты (@Component),
+                    чтобы вы могли внедрять мапперы через @Autowired или конструктор.
+                -->
+                    <compilerArgs>
+                        <compilerArg>
+                            -Amapstruct.defaultComponentModel=spring
+                        </compilerArg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>

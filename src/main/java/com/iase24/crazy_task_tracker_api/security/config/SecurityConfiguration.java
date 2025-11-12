@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.ACTUATOR_URL;
 import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.ADMIN_API;
 import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.AUTH_API;
+import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.CHAT_API;
 import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.CLIENT_API;
 import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.DELIVERIES_API;
 import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.ENDPOINT_URL;
@@ -44,6 +45,10 @@ public class SecurityConfiguration {
 
     private static final List<String> PERMIT_ALL = List.of(
             AUTH_API, ACTUATOR_URL, NEWS_API, CLIENT_API, MOVIES_API, DELIVERIES_API, OFFICES_API, WEB_SOCKET_WS
+    );
+
+    private static final List<String> USER_ACCESS = List.of(
+        CHAT_API
     );
 
     private static final List<String> ADMIN_ACCESS = List.of(
@@ -72,6 +77,7 @@ public class SecurityConfiguration {
                           hasAnyRole - Должен иметь одну из перечисленных ролей (не представлено в коде)
                          */
                         .requestMatchers(appendAllPattern(PERMIT_ALL).toArray(new String[]{})).permitAll()
+                        .requestMatchers(appendAllPattern(USER_ACCESS).toArray(new String[]{})).hasRole("USER")
                         .requestMatchers(appendAllPattern(ADMIN_ACCESS).toArray(new String[]{})).hasRole("ADMIN")
                         .requestMatchers("/swagger-ui/**", "/swagger-resources/*", "/v3/api-docs/**").permitAll()
                         .requestMatchers("/graphql/**").permitAll()
