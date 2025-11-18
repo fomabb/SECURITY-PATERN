@@ -92,6 +92,7 @@ public class GroupChatServiceImpl implements GroupChatService {
     }
 
     @Override
+    @Transactional
     public void leaveGroup(UUID groupId, UUID userId) {
         GroupChatMember member = groupChatMemberRepository.findByGroupChatIdAndUserId(groupId, userId)
                 .orElseThrow(() -> new EntityNotFoundException("Member not found in the group."));
