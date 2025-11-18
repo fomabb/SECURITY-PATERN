@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Chat Demo</title>
+    <!-- Подключаем библиотеки -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <style>
+        /* Общий стиль */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Контейнер сообщений */
+        #messages {
+            flex-grow: 1;
+            height: 60vh;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Сообщения */
+        .message-bubble {
+            max-width: 75%;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        .message-bubble.client {
+            background-color: #007bff;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message-bubble.server {
+            background-color: #e9e9eb;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .message-sender {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #666;
+        }
+
+        .message-bubble.server .message-sender { color: #007bff; }
+        .message-bubble.client .message-sender { display: none; }
+
+
+        .message-content {
+            font-size: 15px;
+        }
+
+        .message-time {
+            font-size: 11px;
+            color: #999;
+            margin-top: 5px;
+            text-align: right;
+        }
+        .message-bubble.client .message-time { color: rgba(255,255,255,0.7); }
+
+        /* Поле ввода */
+        .input-area {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #e0e0e0;
+            background-color: #f8f9fa;
+        }
+
+        #inputMessage {
+            flex: 1;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        #inputMessage:focus {
+            border-color: #007bff;
+        }
+
+        #send {
+            margin-left: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            width: 48px;
+            height: 48px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #send:hover { background-color: #0056b3; }
+
+        /* Панель управления */
+        .controls {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .controls button { margin: 5px; }
+        #current-room-info { margin-top: 10px; font-weight: bold; color: #007bff; }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <h3>Панель управления</h3>
+    <div>
+        <label for="user-select">Войти как:</label>
+        <select id="user-select">
+            <option value="vika">Виктория</option>
+            <option value="nik">Николай</option>
+        </select>
+        <button onclick="login()">Войти</button>
+    </div>
+    <div id="chat-actions" style="display:none;">
+        <button id="start-private-chat" onclick="startPrivateChat()">Начать чат с другим пользователем</button>
+        <button onclick="joinGroupChat()">Войти в групповой чат</button>
+    </div>
+    <div id="current-room-info"></div>
+</div>
+
+<div class="chat-container">
+    <div class="chat-header">Чат</div>
+    <div id="messages"></div>
+    <div class="input-area">
+        <input type="text" id="inputMessage" placeholder="Введите сообщение..." disabled>
+        <button id="send" onclick="sendMessage()" disabled>&#10148;</button>
+    </div>
+</div>
+
+<script>
+    // --- Глобальные переменные ---
+    let stompClient = null;
+    let currentRoomId = null;
+    let currentUser = null;
+
+    // --- Симуляция пользователей и их JWT токенов ---
+    const USERS = {
+        'vika': {
+            id: 'f1116ff0-6cbd-4032-8e7d-e1af81a64698', // Пример UUID
+            name: 'Виктория',
+            jwt: 'eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiaWQiOiJmMTExNmZmMC02Y2JkLTQwMzItOGU3ZC1lMWFmODFhNjQ2OTgiLCJ1c2VybmFtZSI6InZpa2FiYjEyM0BnbWFpbC5jb20iLCJzdWIiOiJ2aWthYmIxMjNAZ21haWwuY29tIiwiaWF0IjoxNzYyOTU5MDIzLCJleHAiOjE3NjMxMDMwMjN9.uPLC3xJRnO5Nulr3cgLp8AxG1Tfkb4a7aW0wlny93JY'
+        },
+        'nik': {
+            id: '614cfa1b-7f2e-48b6-8225-a59e8af85b6b', // Пример UUID
+            name: 'Николай',
+            jwt: 'eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiaWQiOiI2MTRjZmExYi03ZjJlLTQ4YjYtODIyNS1hNTllOGFmODViNmIiLCJ1c2VybmFtZSI6ImNoYW9zYmJAeWFuZGV4LmJ5Iiwic3ViIjoiY2hhb3NiYkB5YW5kZXguYnkiLCJpYXQiOjE3NjI5NTkwNzksImV4cCI6MTc2MzEwMzA3OX0.u8hXsxyirt5QR-UMrrblIzxfJsrv0_gHeFTodZ5GUyc'
+        }
+    };
+
+    function login() {
+        const selectedUser = document.getElementById('user-select').value;
+        currentUser = USERS[selectedUser];
+
+        document.getElementById('chat-actions').style.display = 'block';
+        const otherUser = selectedUser === 'vika' ? 'Николаем' : 'Викторией';
+        document.getElementById('start-private-chat').innerText = `Начать чат с ${otherUser}`;
+
+        console.log(`Вы вошли как ${currentUser.name} с ID: ${currentUser.id}`);
+        alert(`Вы вошли как ${currentUser.name}. Теперь вы можете начать чат.`);
+    }
+
+    // --- Логика WebSocket ---
+    function connectToWebSocket(roomId) {
+        if (!currentUser) {
+            alert("Сначала нужно войти!");
+            return;
+        }
+        if (stompClient && stompClient.connected) {
+            stompClient.disconnect(() => console.log('Отключен от старой комнаты.'));
+        }
+
+        const socket = new SockJS('http://localhost:8076/ws'); // Укажите ваш порт
+        stompClient = Stomp.over(socket);
+
+        // Передаем JWT токен в заголовках для аутентификации
+        const headers = {
+            'Authorization': 'Bearer ' + currentUser.jwt
+        };
+
+        stompClient.connect(headers, function (frame) {
+            console.log('Подключено: ' + frame);
+            currentRoomId = roomId;
+            updateRoomInfo(`Комната: ${roomId.substring(0, 8)}...`);
+
+            // Подписываемся на топик КОНКРЕТНОЙ комнаты
+            stompClient.subscribe('/topic/room/' + roomId, function (message) {
+                showMessage(JSON.parse(message.body), false);
+            });
+
+            enableChatInput(true);
+        }, function(error) {
+            console.error('Ошибка подключения:', error);
+            updateRoomInfo('Ошибка подключения!');
+            enableChatInput(false);
+        });
+    }
+
+    function sendMessage() {
+        const messageContent = document.getElementById("inputMessage").value.trim();
+        if (messageContent && stompClient && currentRoomId) {
+            const chatMessage = {
+                content: messageContent,
+                roomId: currentRoomId,
+            };
+
+            // Отправляем сообщение на эндпоинт КОНКРЕТНОЙ комнаты
+            stompClient.send("/app/chat/" + currentRoomId + "/sendMessage", {}, JSON.stringify(chatMessage));
+
+            // Оптимистично отображаем свое сообщение сразу
+            const optimisticMessage = {
+                senderName: currentUser.name,
+                content: messageContent,
+                createdAt: new Date().toISOString()
+            }
+            showMessage(optimisticMessage, true);
+
+            document.getElementById("inputMessage").value = '';
+        }
+    }
+
+    // --- Логика REST API ---
+    async function startPrivateChat() {
+        const selectedUserKey = document.getElementById('user-select').value;
+        const recipientKey = selectedUserKey === 'vika' ? 'nik' : 'vika';
+        const recipientId = USERS[recipientKey].id;
+
+        try {
+            updateRoomInfo('Создание приватного чата...');
+            const response = await fetch(`http://localhost:8076/api/v1/chats/private/${recipientId}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + currentUser.jwt,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`Ошибка сервера: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log('Получен roomId для приватного чата:', data.roomId);
+            clearMessages();
+            connectToWebSocket(data.roomId);
+            // Загружаем историю сообщений после подключения
+            loadMessageHistory(data.roomId);
+
+        } catch (error) {
+            console.error('Не удалось создать приватный чат:', error);
+            updateRoomInfo('Ошибка создания чата!');
+        }
+    }
+
+    function joinGroupChat() {
+        // Захардкодим ID группового чата для примера
+        const GROUP_CHAT_ROOM_ID = '3280227d-f783-4775-b49a-a66f0771dec7';
+        console.log('Входим в групповой чат с ID:', GROUP_CHAT_ROOM_ID);
+        clearMessages();
+        connectToWebSocket(GROUP_CHAT_ROOM_ID);
+        loadMessageHistory(GROUP_CHAT_ROOM_ID);
+    }
+
+    async function loadMessageHistory(roomId) {
+        try {
+            const response = await fetch(`http://localhost:8076/api/v1/chats/${roomId}/messages?page=0&size=20`, {
+                headers: { 'Authorization': 'Bearer ' + currentUser.jwt }
+            });
+            if (!response.ok) throw new Error('Ошибка загрузки истории');
+
+            const page = await response.json();
+            page.content.reverse().forEach(msg => showMessage(msg, msg.senderId === currentUser.id));
+
+        } catch(error) {
+            console.error("Ошибка загрузки истории сообщений:", error);
+        }
+    }
+
+    // --- UI Функции ---
+    function showMessage(message, isClient) {
+        const messagesContainer = document.getElementById("messages");
+
+        const messageBubble = document.createElement('div');
+        messageBubble.classList.add('message-bubble');
+
+        const sender = document.createElement('div');
+        sender.classList.add('message-sender');
+        sender.innerText = message.senderName || "Неизвестно";
+
+        const content = document.createElement('div');
+        content.classList.add('message-content');
+        content.innerText = message.content;
+
+        const time = document.createElement('div');
+        time.classList.add('message-time');
+        time.innerText = new Date(message.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+        messageBubble.appendChild(sender);
+        messageBubble.appendChild(content);
+        messageBubble.appendChild(time);
+
+        if (isClient) {
+            messageBubble.classList.add("client");
+        } else {
+            messageBubble.classList.add("server");
+        }
+
+        messagesContainer.appendChild(messageBubble);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function enableChatInput(isEnabled) {
+        document.getElementById("inputMessage").disabled = !isEnabled;
+        document.getElementById("send").disabled = !isEnabled;
+    }
+
+    function updateRoomInfo(text) {
+        document.getElementById('current-room-info').innerText = text;
+    }
+
+    function clearMessages() {
+        document.getElementById('messages').innerHTML = '';
+    }
+
+    // Добавляем отправку по Enter
+    document.getElementById("inputMessage").addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+
+</script>
+</body>
+</html>

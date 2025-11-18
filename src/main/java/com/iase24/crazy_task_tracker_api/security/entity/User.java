@@ -35,6 +35,9 @@ public class User implements UserDetails {
     @Column(name = "id")
     private UUID id;
 
+    @Column(name = "avatar_url")
+    private String avatarUrl;
+
     @Column(name = "first_name")
     private String firstName;
 

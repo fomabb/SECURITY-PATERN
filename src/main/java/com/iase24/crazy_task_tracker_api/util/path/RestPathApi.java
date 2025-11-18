@@ -5,6 +5,7 @@ public class RestPathApi {
 
     public static final String NEWS_API = BASE_API + "news";
     public static final String AUTH_API = BASE_API + "auth";
+    public static final String CHAT_API = BASE_API + "chats";
     public static final String ADMIN_API = BASE_API + "admin";
     public static final String EMAIL_API = BASE_API + "email";
     public static final String MOVIES_API = BASE_API + "movies";
