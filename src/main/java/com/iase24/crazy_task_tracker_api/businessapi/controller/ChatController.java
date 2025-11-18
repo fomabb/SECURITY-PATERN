@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.core.annotations.ParameterObject;
@@ -41,6 +42,7 @@ import static com.iase24.crazy_task_tracker_api.util.path.RestPathApi.CHAT_API;
 @RequiredArgsConstructor
 @PreAuthorize("hasRole('USER')")
 @SecurityRequirement(name = "bearerAuth")
+@Tag(name = "Chat API", description = "`Интерфейс для работы с чатами`")
 public class ChatController {
 
     private final ChatService chatService;
@@ -71,7 +73,7 @@ public class ChatController {
             description = "Возвращает страницу с сообщениями для указанной комнаты. " +
                     "Используется для начальной загрузки и для 'бесконечной прокрутки' истории."
     )
-    @ApiResponse(responseCode = "200", description = "Страница с сообщениями успешно получена.")
+    @ApiResponse(responseCode = "200", description = "Страница с сообщениями 1успешно получена.")
     @ApiResponse(responseCode = "403", description = "Доступ запрещен (пользователь не является участником чата).")
     @GetMapping("/{roomId}/messages")
     public ResponseEntity<Page<ChatMessageDto>> getChatMessages(
