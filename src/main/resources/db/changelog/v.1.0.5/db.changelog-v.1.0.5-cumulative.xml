@@ -5,22 +5,20 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="2025-07-23-create-table-organizations-20" author="Nikolay Kirilyuk">
-        <tagDatabase tag="postgreSQL/security_db"/>
+    <changeSet id="1763464639226-v.1.0.5" author="Nikolay Kirilyuk">
+        <tagDatabase tag="v.1.0.5-PostgreSQL-security_db"/>
     </changeSet>
 
-    <include file="20-create-table-organizations.sql" relativeToChangelogFile="true"/>
+    <changeSet id="2025-07-23-create-table-organizations-20" author="Nikolay Kirilyuk">
+        <sqlFile path="20-create-table-organizations.sql" relativeToChangelogFile="true"/>
+    </changeSet>
 
     <changeSet id="2025-07-23-create-table-departments-21" author="Nikolay Kirilyuk">
-        <tagDatabase tag="postgreSQL/security_db"/>
+        <sqlFile path="21-create-table-departments.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="21-create-table-departments.sql" relativeToChangelogFile="true"/>
 
     <changeSet id="2025-07-23-create-table-employees-22" author="Nikolay Kirilyuk">
-        <tagDatabase tag="postgreSQL/security_db"/>
+        <sqlFile path="22-create-table-employees.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="22-create-table-employees.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

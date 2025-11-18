@@ -15,7 +15,7 @@ public interface GroupChatMemberRepository extends JpaRepository<GroupChatMember
      * Используется для проверки членства или получения роли.
      *
      * @param groupChatId ID группы.
-     * @param userId ID пользователя.
+     * @param userId      ID пользователя.
      * @return Optional с участником, если он найден.
      */
     Optional<GroupChatMember> findByGroupChatIdAndUserId(UUID groupChatId, UUID userId);
@@ -25,7 +25,7 @@ public interface GroupChatMemberRepository extends JpaRepository<GroupChatMember
      * Более эффективен, чем findBy, так как выполняет COUNT-запрос.
      *
      * @param groupChatId ID группы.
-     * @param userId ID пользователя.
+     * @param userId      ID пользователя.
      * @return true, если пользователь является участником, иначе false.
      */
     boolean existsByGroupChatIdAndUserId(UUID groupChatId, UUID userId);
@@ -34,7 +34,7 @@ public interface GroupChatMemberRepository extends JpaRepository<GroupChatMember
      * Возвращает страницу с участниками конкретной группы.
      *
      * @param groupChatId ID группы.
-     * @param pageable Параметры пагинации.
+     * @param pageable    Параметры пагинации.
      * @return Страница с участниками.
      */
     Page<GroupChatMember> findByGroupChatId(UUID groupChatId, Pageable pageable);

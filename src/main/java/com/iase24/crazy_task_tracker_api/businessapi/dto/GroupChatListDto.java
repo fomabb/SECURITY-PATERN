@@ -17,4 +17,5 @@ public record GroupChatListDto(
 
         @Schema(description = "Количество участников")
         int memberCount
-) {}
+) {
+}

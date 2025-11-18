@@ -23,4 +23,5 @@ public record GroupChatMemberDto(
 
         @Schema(description = "Дата вступления в группу")
         Instant joinedAt
-) {}
+) {
+}

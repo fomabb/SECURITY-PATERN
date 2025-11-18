@@ -31,4 +31,5 @@ public record GroupChatCreateRequest(
 
         @Schema(description = "ID клуба (если это группа клуба)", example = "a1b2c3d4-e5f6-...")
         UUID clubId
-) {}
+) {
+}

@@ -48,7 +48,7 @@ public class SecurityConfiguration {
     );
 
     private static final List<String> USER_ACCESS = List.of(
-        CHAT_API
+            CHAT_API
     );
 
     private static final List<String> ADMIN_ACCESS = List.of(

@@ -35,15 +35,15 @@ public class ChatMessageController {
     /**
      * Принимает новое сообщение от клиента, предназначенное для определенной чат-комнаты.
      *
-     * @param roomId  ID чат-комнаты, куда отправляется сообщение.
-     * @param request DTO с текстом сообщения.
+     * @param roomId      ID чат-комнаты, куда отправляется сообщение.
+     * @param request     DTO с текстом сообщения.
      * @param currentUser Spring Security Principal для определения отправителя.
      */
     @MessageMapping("/chat/{roomId}/sendMessage")
     public void sendMessage(@DestinationVariable UUID roomId,
                             @Payload MessageSendRequest request,
                             @AuthenticationPrincipal User currentUser
-                            ) throws AccessDeniedException {
+    ) throws AccessDeniedException {
 
         UUID senderId = currentUser.getId();
         request.setRoomId(roomId);
@@ -57,7 +57,8 @@ public class ChatMessageController {
 
     /**
      * (Опционально) Пример для обработки "пользователь печатает..."
-     * @param roomId ID комнаты.
+     *
+     * @param roomId      ID комнаты.
      * @param currentUser Пользователь, который печатает.
      */
     @MessageMapping("/chat/{roomId}/typing")

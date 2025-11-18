@@ -32,5 +32,6 @@ public record ChatRoomListDto(
 
             @Schema(description = "Время отправки последнего сообщения")
             Instant createdAt
-    ) {}
+    ) {
+    }
 }

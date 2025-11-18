@@ -19,10 +19,10 @@ public interface ChatRoomRepository extends JpaRepository<ChatRoom, UUID> {
      * @return Optional с чат-комнатой, если она существует.
      */
     @Query("""
-        SELECT cr FROM ChatRoom cr
-        WHERE cr.type = 'PRIVATE'
-        AND EXISTS (SELECT 1 FROM ChatRoomMember crm WHERE crm.room = cr AND crm.userId = :user1Id)
-        AND EXISTS (SELECT 1 FROM ChatRoomMember crm WHERE crm.room = cr AND crm.userId = :user2Id)
-    """)
+                SELECT cr FROM ChatRoom cr
+                WHERE cr.type = 'PRIVATE'
+                AND EXISTS (SELECT 1 FROM ChatRoomMember crm WHERE crm.room = cr AND crm.userId = :user1Id)
+                AND EXISTS (SELECT 1 FROM ChatRoomMember crm WHERE crm.room = cr AND crm.userId = :user2Id)
+            """)
     Optional<ChatRoom> findPrivateRoomBetweenUsers(@Param("user1Id") UUID user1Id, @Param("user2Id") UUID user2Id);
 }

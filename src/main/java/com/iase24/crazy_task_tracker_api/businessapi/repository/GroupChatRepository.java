@@ -14,7 +14,7 @@ public interface GroupChatRepository extends JpaRepository<GroupChat, UUID>, Jpa
      * Находит все группы, в которых состоит указанный пользователь.
      * Spring Data JPA автоматически создаст запрос с JOIN на group_chat_members.
      *
-     * @param userId ID пользователя.
+     * @param userId   ID пользователя.
      * @param pageable Параметры пагинации.
      * @return Страница с группами пользователя.
      */

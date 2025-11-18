@@ -23,4 +23,5 @@ public record GroupChatUpdateRequest(
         @Schema(description = "Тип группы (доступ)", requiredMode = Schema.RequiredMode.REQUIRED, example = "OPEN")
         @NotNull(message = "Тип группы должен быть указан")
         GroupChatType type
-) {}
+) {
+}

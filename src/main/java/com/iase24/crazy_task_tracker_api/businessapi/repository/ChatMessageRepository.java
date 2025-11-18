@@ -13,7 +13,7 @@ public interface ChatMessageRepository extends JpaRepository<ChatMessage, UUID> 
      * Находит страницу с сообщениями для указанной комнаты, отсортированными по времени создания (сначала новые).
      * Идеально подходит для реализации "бесконечной прокрутки" истории чата.
      *
-     * @param roomId ID чат-комнаты.
+     * @param roomId   ID чат-комнаты.
      * @param pageable Параметры пагинации (обычно включает сортировку по createdAt DESC).
      * @return Страница с сообщениями.
      */

@@ -5,60 +5,46 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="2024-12-10-create-table-news-11" author="Nikolay Kirilyuk">
-        <tagDatabase tag="security_service_db/postgres"/>
+    <changeSet id="1763464582182-v.1.0.2" author="Nikolay Kirilyuk">
+        <tagDatabase tag="v.1.0.2-PostgreSQL-security_db"/>
     </changeSet>
 
-    <include file="11-create-table-news.sql" relativeToChangelogFile="true"/>
+    <changeSet id="2024-12-10-create-table-news-11" author="Nikolay Kirilyuk">
+        <sqlFile path="11-create-table-news.sql" relativeToChangelogFile="true"/>
+    </changeSet>
 
     <changeSet id="2024-12-10-create-table-news-translations-12" author="Nikolay Kirilyuk">
-        <tagDatabase tag="security_service_db/postgres"/>
+        <sqlFile path="12-create-table-news-news_translations.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="12-create-table-news-news_translations.sql" relativeToChangelogFile="true"/>
 
     <changeSet id="2024-12-12-create-table-pars_language_data-13" author="Nikolay Kirilyuk">
-        <tagDatabase tag="security_service_db/postgres"/>
+        <sqlFile path="13-parsing-table-new-data-for-new-language.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="13-parsing-table-new-data-for-new-language.sql" relativeToChangelogFile="true"/>
 
     <changeSet id="2024-12-16-create-table-likes-14" author="Nikolay Kirilyuk">
-        <tagDatabase tag="security_service_db/postgres"/>
+        <sqlFile path="14-create-table-like.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="14-create-table-like.sql" relativeToChangelogFile="true"/>
 
     <changeSet id="2024-12-16-create-table-comments-15" author="Nikolay Kirilyuk">
-        <tagDatabase tag="security_service_db/postgres"/>
+        <sqlFile path="15-create-table-comments.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <include file="15-create-table-comments.sql" relativeToChangelogFile="true"/>
-
-    <!--=========================Static=============================================================================-->
+    <!--Static~Data-->
 
     <changeSet id="2024-12-10-insert-news-translate-static-data" author="Nikolay Kirilyuk">
-        <tagDatabase tag="security_service_db/postgres"/>
+        <sqlFile path="static-data-insert/static-data-insert-into-news-translate.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="static-data-insert/static-data-insert-into-news-translate.sql" relativeToChangelogFile="true"/>
 
     <changeSet id="2024-12-12-insert-into-pars-language-static-data" author="Nikolay Kirilyuk">
-        <tagDatabase tag="security_service_db/postgres/pars_language_data"/>
+        <sqlFile path="static-data-insert/static-data-insert-pars-language.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="static-data-insert/static-data-insert-pars-language.sql" relativeToChangelogFile="true"/>
 
     <changeSet id="2024-12-16-alter-table-news-column-update_at-static-data" author="Nikolay Kirilyuk">
-        <tagDatabase tag="security_service_db/postgres/news"/>
+        <sqlFile path="static-data-insert/static-data-alter-table-news-column.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="static-data-insert/static-data-alter-table-news-column.sql" relativeToChangelogFile="true"/>
 
     <changeSet id="2024-12-18-alter-column-reaction-static-data" author="Nikolay Kirilyuk">
-        <tagDatabase tag="security_service_db/postgres/like"/>
+        <sqlFile path="static-data-insert/static-data-alter-like-column-reaction.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="static-data-insert/static-data-alter-like-column-reaction.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

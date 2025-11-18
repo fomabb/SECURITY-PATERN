@@ -4,25 +4,23 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-
-    <changeSet id="2025-07-18" author="Nikolay Kirilyuk">
-        <tagDatabase tag="postgreSQL/security_db"/>
+    
+    <changeSet id="1763464625793-v.1.0.4" author="Nikolay Kirilyuk">
+        <tagDatabase tag="v.1.0.4-PostgreSQL-security_db"/>
     </changeSet>
 
-    <include file="18-create-table-delivery-location.sql" relativeToChangelogFile="true"/>
-
-    <changeSet id="2025-07-21-create-table-shop" author="Nikolay Kirilyuk">
-        <tagDatabase tag="postgreSQL/security_db"/>
+    <changeSet id="2025-07-18-create-table-delivery-location-18" author="Nikolay Kirilyuk">
+        <sqlFile path="18-create-table-delivery-location.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <include file="19-create-table-shop.sql" relativeToChangelogFile="true"/>
-
-                                <!--STATIC~DATA-->
-
-    <changeSet id="2025-07-21-insert-data-shop" author="Nikolay Kirilyuk">
-        <tagDatabase tag="postgreSQL/security_db"/>
+    <changeSet id="2025-07-21-create-table-shop-19" author="Nikolay Kirilyuk">
+        <sqlFile path="19-create-table-shop.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <include file="static-data/01-insert-shop-data.sql" relativeToChangelogFile="true"/>
+    <!--Static~Data-->
+
+    <changeSet id="2025-07-21-insert-data-shop-static-data" author="Nikolay Kirilyuk">
+        <sqlFile path="static-data/01-insert-shop-data.sql" relativeToChangelogFile="true"/>
+    </changeSet>
 
 </databaseChangeLog>

@@ -5,59 +5,48 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="2024-11-30-crate-table-users-06" author="Nikolay Kirilyuk">
-        <tagDatabase tag="create-table-users"/>
+    <changeSet id="1763464501524-v.1.0.1" author="Nikolay Kirilyuk">
+        <tagDatabase tag="v.1.0.1-PostgreSQL-security_db"/>
     </changeSet>
 
-    <include file="06-create-table-users.sql" relativeToChangelogFile="true"/>
+    <changeSet id="2024-11-30-crate-table-users-06" author="Nikolay Kirilyuk">
+        <sqlFile path="06-create-table-users.sql" relativeToChangelogFile="true"/>
+    </changeSet>
 
     <changeSet id="2024-11-30-create-table-archive-deleted-user-07 " author="Nikolay Kirilyuk">
-        <tagDatabase tag="archive-deleted-user-table"/>
+        <sqlFile path="07-create-table-archive-deleted.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="07-create-table-archive-deleted.sql" relativeToChangelogFile="true"/>
 
     <changeSet id="2024-11-30-create-index-message-for-table-archive-08" author="Nikolay Kirilyuk">
-        <tagDatabase tag="index-message"/>
-    </changeSet>
-
-    <include file="08-create-index-message.sql" relativeToChangelogFile="true"/>
-
-    <changeSet id="2024-11-30-insert-admin-static" author="Nikolay Kirilyuk">
-        <tagDatabase tag="insert-admin"/>
+        <sqlFile path="08-create-index-message.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="2024-12-09-create-table-news-ru-09" author="Nikolay Kirilyuk">
-        <tagDatabase tag="news_ru"/>
+        <sqlFile path="09-create-table-news-ru.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-    <include file="09-create-table-news-ru.sql" relativeToChangelogFile="true"/>
 
     <changeSet id="2024-12-09-create-table-news-en-10" author="Nikolay Kirilyuk">
-        <tagDatabase tag="news_ru"/>
+        <sqlFile path="10-create-table-news-en.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <include file="10-create-table-news-en.sql" relativeToChangelogFile="true"/>
-
-    <include file="static-data-insert/static-data-insert-admin.sql" relativeToChangelogFile="true"/>
-
-    <changeSet id="2024-12-01-alter-column-work-email-to-users" author="Nikolay Kirilyuk">
-        <tagDatabase tag="alter-column-work-email"/>
-    </changeSet>
-
-    <include file="static-data-insert/static-data-insert-column-work_email-to-users.sql"
-             relativeToChangelogFile="true"/>
-
-    <changeSet id="2024-12-01-update-set-work_email-static-data" author="Nikolay Kirilyuk">
-        <tagDatabase tag="add-work_email-to-admin"/>
-    </changeSet>
-
-    <include file="static-data-insert/static-data-update-set-work-email.sql" relativeToChangelogFile="true"/>
+    <!--Static~Data-->
 
     <changeSet id="2024-12-03-add-columns-resetpass-enabled-static-data" author="Nikolay Kirilyuk">
-        <tagDatabase tag="alter-add-users"/>
+        <sqlFile path="static-data-insert/static-data-alter-column-resetpass-enabled.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <include file="static-data-insert/static-data-alter-column-resetpass-enabled.sql" relativeToChangelogFile="true"/>
+    <changeSet id="2024-11-30-insert-admin-static" author="Nikolay Kirilyuk">
+        <sqlFile path="static-data-insert/static-data-insert-admin.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2024-12-03-data-insert-column-work_email-to-users-static-data" author="Nikolay Kirilyuk">
+        <sqlFile path="static-data-insert/static-data-insert-column-work_email-to-users.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2024-12-01-update-set-work_email-static-data" author="Nikolay Kirilyuk">
+        <sqlFile path="static-data-insert/static-data-update-set-work-email.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+
 
 </databaseChangeLog>

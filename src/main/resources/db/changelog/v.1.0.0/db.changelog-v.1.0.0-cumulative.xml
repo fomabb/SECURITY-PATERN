@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1763464428897-v.1.0.0" author="Nikolay Kirilyuk">
+        <tagDatabase tag="v.1.0.0-PostgreSQL-security_db"/>
+    </changeSet>
+
+    <changeSet id="2024-11-20-user-table-create-1" author="Nikolay Kirilyuk">
+        <sqlFile path="01-create-table-user.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2024-11-21-create-user-details-2" author="Nikolay Kirilyuk">
+        <sqlFile path="02-create-table-user-details.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2024-11-22-udate-varchar(100)-username-3" author="Nikolay Kirilyuk">
+        <sqlFile path="03-update-colum-username.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2024-11-22-create-table-archive-deleted-4" author="Nikolay Kirilyuk">
+        <sqlFile path="04-create-table-archive-deleted.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2024-11-22-create-index-message-5" author="Nikolay Kirilyuk">
+        <sqlFile path="05-create-indx-message.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+</databaseChangeLog>
